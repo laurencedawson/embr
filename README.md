@@ -1,16 +1,6 @@
 About
 -------
-Lightweight blog built using the CodeIgniter framework. 
-
-Current features include: 
-
-    - Basic post index page
-    
-    - Basic post page
-    
-      - Uses the DISQUS comment system
-      
-      - 
+Lightweight blog built using the CodeIgniter framework. As it's very early days the list of features is very minimal but currently supports: Basic posts, post indexing and recent posts. Commenting handled through the Disqus. 
 
 Example
 -------
@@ -32,4 +22,4 @@ More details to follow.
 Known problems
 -------
 
-URL routing errors when using CI 2.0.1
+      - URL routing errors when using CI 2.0.1
