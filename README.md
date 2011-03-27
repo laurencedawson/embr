@@ -3,10 +3,14 @@ About
 Lightweight blog built using the CodeIgniter framework. 
 
 Current features include: 
-  - Basic post index page
-  - Basic post page
-    - Uses the DISQUS comment system
-    - 
+
+    - Basic post index page
+    
+    - Basic post page
+    
+      - Uses the DISQUS comment system
+      
+      - 
 
 Example
 -------
