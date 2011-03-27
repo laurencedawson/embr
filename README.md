@@ -1,6 +1,6 @@
 About
 -------
-Lightweight blog built using the CodeIgniter framework. As it's very early days the list of features is very minimal but currently supports: Basic posts, post indexing and recent posts. Commenting handled through the Disqus. 
+Lightweight blog built using the CodeIgniter framework. As it's very early days the list of features is very minimal but currently supports: Basic posts, post indexing and recent posts. Commenting provided by Disqus. Currently there is no graphical CMS for post creation, deletion etc - SQL for now.
 
 Example
 -------
@@ -15,11 +15,24 @@ Requires
 Installation
 -------
 
-Copy the contents of Application to your CI install. 
+1. Deploy Codeigniter 2.0.0 to your site
 
-More details to follow.
+2. Install [CI Template Library](http://williamsconcepts.com/ci/codeigniter/libraries/template/) - instructions can be viewed online [here](http://williamsconcepts.com/ci/codeigniter/libraries/template/start.html).
+
+3. Copy the contents of application to your CI application directory
+
+4. Create a new database and import 'tables.sql'; update your database details in application/config/database
 
 Known problems
 -------
 
       - URL routing errors when using CI 2.0.1
+      
+Features Comming Soon
+-------
+
+      - Graphical CMS
+      
+      - META tags
+      
+      - Facebook Graph Tags

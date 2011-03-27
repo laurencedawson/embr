@@ -1,0 +1,105 @@
+body{
+  font-family: Georgia, Times, Times New Roman, serif;
+  color:#666;
+  background-color:#eee;
+}
+
+h3, h2, h1{
+  
+  
+  font-family:"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+  font-weight:400
+}
+
+h1{
+  border-bottom: 1px #ddd solid;
+  color: #CC0000;
+  padding-bottom:10px
+}
+
+h1 a{
+  color:#CC0000;
+  text-shadow:0 -1px 0 rgba(0,0,0,0.15),0 1px 0 rgba(255,255,255,0.8);
+  text-decoration:none
+}
+
+h1 a:hover{
+  color: #555;
+}
+
+
+
+h2{
+  border-bottom: 0px #eee solid; 
+  margin-bottom:5px; 
+}
+
+h2 a{
+  color: #555;  
+  text-shadow:0 -1px 0 rgba(0,0,0,0.15),0 1px 0 rgba(255,255,255,0.8);
+  text-decoration:none
+}
+
+h2 a:hover{
+  color: #CC0000;
+}
+
+
+
+.container{
+  margin:auto;
+  margin-top:20px;
+  width:800px;
+}
+
+.navigation{
+  margin-bottom:10px;
+}
+
+p a{
+  text-decoration:none;
+  border-bottom: 1px #999 dashed;
+}
+
+a{
+  color: #555;
+  margin-right:10px
+  
+}
+
+a:hover{
+  color: #CC0000;
+}
+
+.blogP{
+margin-top:0px;
+  font-size:12px;margin-bottom:10px;border-bottom:1px solid #e0e0e0
+  }
+  
+p{
+color:#666;
+line-height:1.5
+}  
+
+.footer{
+  border-top: 1px #ddd solid;
+  padding-top:10px;
+  padding-bottom:5px;
+  margin-top:50px;
+}
+
+.post{
+  border-bottom: 1px #ddd solid;  
+}
+
+.tools{
+  margin-top:20px;
+  margin-bottom:10px;
+}
+
+.recent{
+  margin-top:20px;
+  margin-bottom:10px;
+  border-top: 1px #ddd solid;
+  border-bottom: 1px #ddd solid;
+}
