@@ -21,7 +21,13 @@ Installation
 
 3. Copy the contents of application to your CI application directory
 
-4. Create a new database and import 'tables.sql'; update your database details in application/config/database
+4. Copy the themes directory to the base of your install
+
+5. Create a new database and import 'tables.sql'; update your database details in application/config/database
+
+6. Edit the values in appication/config/blog.php
+
+7. Copy the contents of htaccess.txt into the .htaccess file in the base of your installation, swapping blog.laurencedawson.com for your site domain
 
 Known problems
 -------

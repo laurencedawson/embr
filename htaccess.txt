@@ -1,0 +1,52 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+#stop libwww access
+RewriteCond %{HTTP_USER_AGENT} libwww [NC,OR]
+RewriteCond %{QUERY_STRING} ^(.*)=http [NC]
+RewriteRule ^(.*)$ – [F,L]
+
+
+#Remove duplicate entry point
+RewriteRule ^(blog(/index)?|index(\.php)?)/?$ / [L,R=301]
+RewriteRule ^(.*)/index/?$ http://blog.laurencedawson.com/$1 [L,R=301]
+
+RewriteRule ^blog/posts/(.+)$  http://blog.laurencedawson.com/$1 [L,R=301]
+
+#Remove backslashes from url
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ http://blog.laurencedawson.com/$1 [L,R=301]
+
+#Remove access to system
+RewriteCond %{REQUEST_URI} ^system.*
+RewriteRule ^(.*)$ http://blog.laurencedawson.com [L]
+
+#Remove index.php from urls
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+AddHandler php5-script .php
+FileETag none
+
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE text/javascript
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE image/png
+AddOutputFilterByType DEFLATE image/jpg
+AddOutputFilterByType DEFLATE image/gif
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/atom_xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/x-httpd-php
+AddOutputFilterByType DEFLATE application/x-httpd-fastphp
+AddOutputFilterByType DEFLATE application/x-httpd-eruby
+AddOutputFilterByType DEFLATE application/x-shockwave-flash
+AddOutputFilterByType DEFLATE application/x-amf
+AddOutputFilterByType DEFLATE text/javascript
