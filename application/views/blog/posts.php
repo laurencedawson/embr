@@ -1,9 +1,26 @@
+<?php if( isset( $post['content']) ){
+
+  if( isset( $post['prev']['title'] ) )
+    echo "<div class=\"blogNav left\"><a href=\"".base_url().strtolower( str_replace(" ","-",$post['prev']['title']) )."\">&laquo; Previous Post</a></div>"; 
+  else
+    echo "<div class=\"blogNav left\">&laquo; Previous Post</div>";  
+  
+  if( isset( $post['next']['title'] ) )
+    echo "<div class=\"blogNav right\"><a href=\"".base_url().strtolower( str_replace(" ","-",$post['next']['title']) )."\">Next Post &raquo;</a></div>"; 
+  else
+    echo "<div class=\"blogNav right\">Next Post &raquo;</div>";
+
+}?>
+
 <div class="post">
-<h2 class="blogH2"> <?php echo $post[0]['title'] ?></h2>
+<h2 class="blogH2"> <?= $post['content']['title'] ?></h2>
 <?php
-	echo "<p class=\"blogP\">Posted by Laurence on ".date("l dS F\, Y",strtotime ($post[0]['datet']))."</p>";
+  if( $post['content']['category'] )
+    echo "<p class=\"blogP\">by ".$first_name." on ".date("l dS F\, Y",strtotime ($post['content']['datet']))." in <a href=\"".base_url()."category/".strtolower( str_replace(" ","-",$post['content']['category']) )."\">".$post['content']['category']."</a></p>";
+  else
+    echo "<p class=\"blogP\">by ".$first_name." on ".date("l dS F\, Y",strtotime ($post['content']['datet']))."</p>";
+  echo $post['content']['content'];
 ?>
-	<?php
-		echo $post[0]['content'];
-	?>
+
+
 </div>

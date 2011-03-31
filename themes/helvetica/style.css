@@ -1,31 +1,29 @@
 body{
-  font-family: Georgia, Times, Times New Roman, serif;
+  font:13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#666;
-  background-color:#eee;
+  background-color:#fff;
 }
 
 h3, h2, h1{
-  
-  
-  font-family:"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight:400
 }
 
 h1{
-  border-bottom: 1px #ddd solid;
-  color: #CC0000;
-  padding-bottom:10px;
-  margin-bottom:10px;
+  color: #000;
+  padding-top:20px;
+  margin-bottom:40px;
+  font-weight: bold;
 }
 
 h1 a{
-  color:#CC0000;
+  color:#000;
   text-shadow:0 -1px 0 rgba(0,0,0,0.15),0 1px 0 rgba(255,255,255,0.8);
   text-decoration:none
 }
 
 h1 a:hover{
-  color: #555;
+  color: #CC0000;
 }
 
 
@@ -51,7 +49,7 @@ h2 a:hover{
 .container{
   margin:auto;
   margin-top:20px;
-  width:800px;
+  width: 576px;
 }
 
 .navigation{
@@ -92,6 +90,10 @@ margin-top:0px;
   font-size:12px;margin-bottom:10px;border-bottom:1px solid #e0e0e0;
   
   }
+  
+.blogP a{
+  border-bottom: 0px #999 dashed;
+}  
 
 .blogNav{
   margin-bottom:10px;
@@ -153,4 +155,13 @@ line-height:1.5
   padding-bottom:10px;
   margin-bottom:20px;
   font-style: italic;
+}
+
+.footy{
+  color:#000
+}
+
+.nav{
+  padding-top:26px;
+  float:right;
 }

@@ -23,7 +23,7 @@
 | RESERVED ROUTES
 | -------------------------------------------------------------------------
 |
-| There area two reserved routes:
+| Tcohere area two reserved routes:
 |
 |	$route['default_controller'] = 'welcome';
 |
@@ -37,13 +37,10 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-
-$route['default_controller'] = "blog";
-$route['^((?!reading|about|blog|university|contact|feed|rss|error)\S*)'] = "blog/posts/$1";
-$route['feed.xml$'] = "feed";
-$route['rss.xml$'] = "feed";
-$route['rss'] = "feed";
-$route['404_override'] = "error";
+$route['default_controller'] = 'blog';
+$route['tag/(:any)'] = 'blog/tag/$1';
+$route['category/(:any)'] = 'blog/category/$1';
+$route['^((?!reading|about|blog|tag|university|contact|feed|rss|error)\S*)'] = "blog/posts/$1";
 
 
 /* End of file routes.php */

@@ -13,16 +13,44 @@ class blog_model extends CI_Model {
           return $query->result_array();
 	}
 
-	function getPost( $id )
+    function getID( $title ){
+      $this->db->select('id');
+      $query = $this->db->get_where( 'blog', array('title' => $title ) );
+      return $query->row();
+    }
+
+
+	/*
+     	Requires post title
+	*/
+	function getPost( $title )
 	{
-     	//$this->db->cache_off();
-     	$this->db->where('title', $id);
-     	$this->db->set('views','views + 1',false);
-     	$this->db->update('blog'); 
-		$query = $this->db->get_where( 'blog', array('title' => $id) );
-		//$this->db->cache_on();
-		return $query->result_array();
+        $temp = $this->getID($title);
+        if( isset($temp->id) ){
+          $id = $temp->id;
+          $this->db->select('*');
+          $this->db->join('post_categories', 'post_categories.post_id = blog.id', 'left outer' );
+          $this->db->join('categories', 'categories.id = post_categories.category_id', 'left' );
+          $query = $this->db->get_where( 'blog', array('blog.id' => $id) );
+          $data['id'] = $id; //Save the id if the second join fails
+          $data['content'] = $query->row_array();
+          $data['tags'] = $this->getTags( $id );        
+          $data['next'] = $this->getNext($id);
+          $data['prev'] = $this->getPrev($id);        
+          return $data;
+        }
 	}
+	
+	
+    function getCategory( $id ){
+        $this->db->select('categories.*');
+        $this->db->from('post_categories');
+        $where = "post_categories.post_id = $id AND categories.id = post_categories.category_id";
+        $this->db->where( $where);
+        $query = $this->db->get('categories');
+        return $query->result_array();
+	}
+	
 
 	function getTags( $id ){
         $this->db->select('tags.tag');
@@ -32,9 +60,69 @@ class blog_model extends CI_Model {
         $query = $this->db->get('tags');
         return $query->result_array();
 	}
+	
+	
+	function getTagID( $tag ){
+      $this->db->select('id');     	
+      $query = $this->db->get_where( 'tags', array('tag' => $tag) );
+      return $query->row();
+	}
+	
+	function getCatID( $cat ){
+      $this->db->select('id');     	
+      $query = $this->db->get_where( 'categories', array('category' => $cat) );
+      return $query->row();
+	}
+	
+	function getRelatedPostsTags( $tag ){
+        $result = $this->getTagID( $tag );
+        if( isset( $result->id ) ){        
+          $this->db->select('*');
+          $this->db->order_by("blog.datet", "desc"); 
+          $this->db->from('post_tags');	
+          $where = "blog.id = post_tags.post_id AND post_tags.tag_id = $result->id";
+          $this->db->where( $where);
+          $query = $this->db->get('blog');
+          return $query->result_array();
+        }
+	}
+	
+	function getRelatedPostsCategory( $cat ){
+        $result = $this->getCatID( $cat );
+        if( isset( $result->id ) ){        
+          $this->db->select('*');
+          $this->db->order_by("blog.datet", "desc"); 
+          $this->db->from('post_categories');
+          $where = "blog.id = post_categories.post_id AND post_categories.category_id = $result->id";
+          $this->db->where( $where);
+          $query = $this->db->get('blog');
+          return $query->result_array();
+        }
+	}	
+	
+	
 
+    /*
+      Requires post ID
+    */
+    function getNext( $id ){
+        $this->db->select('title');
+        $where = "blog.id = $id+1";
+        $this->db->where( $where );
+        $query = $this->db->get('blog');
+        return $query->row_array();
+    }
 
-
+    /*
+      Requires post ID
+    */
+    function getPrev( $id ){
+        $this->db->select('title');
+        $where = "blog.id = $id-1";
+        $this->db->where( $where );
+        $query = $this->db->get('blog');
+        return $query->row_array();
+    }  
 
 
 	function getRecent()

@@ -1,15 +1,13 @@
-<div class="tools">
-
-<p>Posted in: <?=$post[0]['category']?> | Tags: 
-<?php 
+<?php
+  echo "<div class=\"tools\">";
+  echo "<p class=\"tags\">Tags: ";
 	$count = 0;
-	foreach ($tags as $tag){		
-		echo $tag['tag'];
-		if( $count < count($tags)-1 ){
+	foreach ($post['tags'] as $tag){
+		echo "<a href=\"".base_url()."tag/".strtolower(str_replace(" ","-",$tag['tag']))."\">".$tag['tag']."</a>";
+		if( $count < count($post['tags'])-1 ){
 			echo ", ";
 		}
 		$count++;
  	}
-?> | <a class="feed" href="http://laurencedawson.com/rss.xml">Subscribe</a></p>
-
-</div>
+echo "</p></div>";
+?>

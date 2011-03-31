@@ -64,7 +64,8 @@ $template['default']['regions'] = array(
    'contents',
    'tools',
    'comments',
-   'recent'
+   'recent',
+   'related'
 );
 $template['default']['parser'] = 'parser';
 $template['default']['parser_method'] = 'parse';

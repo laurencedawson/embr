@@ -1,5 +1,9 @@
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
+--
+-- Database: `ci-blog`
+--
+
 -- --------------------------------------------------------
 
 --
@@ -13,10 +17,32 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `datet` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `shorturl` varchar(100) NOT NULL,
   `qr` varchar(100) NOT NULL,
-  `category` varchar(100) NOT NULL,
   `views` int(11) NOT NULL,
   `summary` varchar(5000) NOT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_categories`
+--
+
+CREATE TABLE IF NOT EXISTS `post_categories` (
+  `post_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -40,4 +66,4 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tag` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;

@@ -4,20 +4,19 @@
 <head>
   <title><?= $title ?></title>
   <link rel="stylesheet" type="text/css" href="<?=base_url()."themes/".$style."/style.css"?>"/>
-  
 </head>
 <body>
+
 <div class="container">
-  <h1><?= anchor('/', $blog_title, 'title="$blog_title"'); ?></h1>  
-  <div class="navigation">
-    <p><?= anchor('/about', 'about', 'title="about"'); ?> <?= anchor('/blog', 'blog', 'title="blog"'); ?></p>
-  </div>  
+  <!--<div class="nav"><?= anchor('/', "About", 'title="About"'); ?> <?= anchor('/', "about", 'title="About"'); ?></div>-->
+  <h1><?= anchor('/', $blog_title, 'title="$blog_title"'); ?></h1>    
   <?= $contents ?>
   <?= $tools ?>
-  <?= $recent ?>
-  <?= $comments ?>
+<!--  <?= $recent ?> -->
+<!--  <?= $related ?>  -->
+<!--  <?= $comments ?>-->
   <div class="footer">
-    <?= "Copyright &copy; 2011 ".$first_name." ".$last_name.". All Rights Reserved"?> | Powered by <a href="https://github.com/laurencedawson/codeigniter-blog">codeigniter-blog</a>
+    <?= "Copyright &copy; 2011 <b>".$first_name." ".$last_name."</b>. All Rights Reserved"?> | Powered by <a href="https://github.com/laurencedawson/codeigniter-blog">codeigniter-blog</a>
   </div>  
 </div>
 
