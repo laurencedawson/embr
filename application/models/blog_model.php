@@ -6,9 +6,11 @@ class blog_model extends CI_Model {
 		parent::__construct();
 	}
  
-    	function getPosts()
+    	function getPosts($limit = null, $offset = null)
 	{
           $this->db->order_by("datet", "desc"); 
+          $this->db->limit($limit, $offset);
+          
           $query = $this->db->get('blog');
           return $query->result_array();
 	}

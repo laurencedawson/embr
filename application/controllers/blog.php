@@ -6,19 +6,41 @@ class Blog extends CI_Controller {
 		parent::__construct(); 
 	}
 	
-	function index( )
+	function index( $page = null )
 	{	
+     	if( !isset($page) )
+            $page = '0';
+	
 		// Set the cache duration
 		$this->output->cache(3600);
 		
+		// Setup pagination
+		$this->load->library('pagination');
+         $per_page = 2;
+         $config['base_url'] = 'http://blog.laurencedawson.com/blog/archive';
+         $config['total_rows'] = $this->db->count_all('blog');
+         $config['per_page'] = $per_page;       
+         $config['next_link'] = 'Older Posts &raquo;';
+         $config['prev_link'] = '&laquo; Newer Posts';
+         $config['next_tag_open'] = '<div class="blogNav right">';
+         $config['next_tag_close'] = '</div>';
+         $config['prev_tag_open'] = '<div class="blogNav left">';
+         $config['prev_tag_close'] = '</div>';
+         $config['display_pages'] = FALSE;          
+         $this->pagination->initialize($config);         
+          
 		// Pass the users info through
 		$data = $this->data_model->getSiteData();
 				
-		$data['posts'] = $this->blog_model->getPosts();
+		$data['posts'] = $this->blog_model->getPosts($per_page, $page );
 		
 		$this->template->write('title', 'Blog');
 		$this->template->write_view('contents', 'blog/index', $data);
 		$this->template->render();	
+	}
+	
+	function archive( $page = null ){
+      $this->index( $page );
 	}
 
 	function posts( $id = null ){
