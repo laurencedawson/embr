@@ -40,7 +40,11 @@ class Blog extends CI_Controller {
 	}
 	
 	function archive( $page = null ){
+      if( $page < $this->db->count_all('blog') )       
       $this->index( $page );
+      else{
+        show_404();
+      }
 	}
 
 	function posts( $id = null ){
