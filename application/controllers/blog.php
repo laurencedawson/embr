@@ -16,22 +16,22 @@ class Blog extends CI_Controller {
 		
 		// Setup pagination
 		$this->load->library('pagination');
-         $per_page = 2;
+         $per_page = 5;
+         $total = $this->db->count_all('blog');
          $config['base_url'] = 'http://blog.laurencedawson.com/blog/archive';
-         $config['total_rows'] = $this->db->count_all('blog');
+         $config['total_rows'] = $total;
          $config['per_page'] = $per_page;       
-         $config['next_link'] = 'Older Posts &raquo;';
-         $config['prev_link'] = '&laquo; Newer Posts';
-         $config['next_tag_open'] = '<div class="blogNav right">';
+         $config['next_link'] = 'Older Posts';
+         $config['prev_link'] = 'Newer Posts';
+         $config['next_tag_open'] = '<div class="next">';
          $config['next_tag_close'] = '</div>';
-         $config['prev_tag_open'] = '<div class="blogNav left">';
+         $config['prev_tag_open'] = '<div class="prev">';
          $config['prev_tag_close'] = '</div>';
          $config['display_pages'] = FALSE;          
          $this->pagination->initialize($config);         
-          
+                 
 		// Pass the users info through
 		$data = $this->data_model->getSiteData();
-				
 		$data['posts'] = $this->blog_model->getPosts($per_page, $page );
 		
 		$this->template->write('title', 'Blog');
@@ -74,7 +74,10 @@ class Blog extends CI_Controller {
 		$this->template->render();
 	}
 
-	function tag( $tag = null ){
+	function tag( $tag = null, $page = null )
+	{
+     	if( !isset($page) )
+            $page = '0';
 	
 		// Set the cache duration
 		$this->output->cache(3600);
@@ -85,14 +88,32 @@ class Blog extends CI_Controller {
          // Load the related posts
          $data['tag'] = $tag;
          
-         // Load the posts with the related tags
-         $data['posts'] = $this->blog_model->getRelatedPostsTags( str_replace("-"," ",$tag) );
-         
-        // Test
-         $this->blog_model->getCategory( 0 );
+         //Number of posts per page
+         $per_page = 5;
          
          // Count how many related posts there are
-         $data['count'] = count( $data['posts'] );
+         $data['count'] = count( $this->blog_model->getRelatedPostsTags( str_replace("-"," ",$tag) ) );
+                  
+          // Load the posts with the related tags
+         $data['posts'] = $this->blog_model->getRelatedPostsTags( str_replace("-"," ",$tag), $per_page, $page );
+         
+         
+         
+         //Setup pagination
+         $this->load->library('pagination');
+         $total = $data['count'];
+         $config['base_url'] = 'http://blog.laurencedawson.com/tag/'.$tag;
+         $config['total_rows'] = $total;
+         $config['per_page'] = $per_page;       
+         $config['next_link'] = 'Older Posts';
+         $config['prev_link'] = 'Newer Posts';
+         $config['next_tag_open'] = '<div class="next">';
+         $config['next_tag_close'] = '</div>';
+         $config['prev_tag_open'] = '<div class="prev">';
+         $config['prev_tag_close'] = '</div>';
+         $config['display_pages'] = FALSE;          
+         $this->pagination->initialize($config);
+        
             
         // Write to the view                  
         $this->template->write_view('contents', 'blog/tags', $data);
@@ -100,7 +121,10 @@ class Blog extends CI_Controller {
 
 	}
 	
-	function category( $cat = null ){
+	function category( $cat = null, $page = null )
+	{	
+     	if( !isset($page) )
+            $page = '0';      
 	
 		// Set the cache duration
 		$this->output->cache(3600);
@@ -111,11 +135,30 @@ class Blog extends CI_Controller {
          // Load the related posts
          $data['category'] = $cat;
          
+         //Number of posts per page
+         $per_page = 5;
+         
          // Load the posts with the related tags
-         $data['posts'] = $this->blog_model->getRelatedPostsCategory( str_replace("-"," ",$cat) );                 
+         $data['posts'] = $this->blog_model->getRelatedPostsCategory( str_replace("-"," ",$cat), $per_page, $page );                 
          
          // Count how many related posts there are
-         $data['count'] = count( $data['posts'] );
+         $data['count'] = count( $this->blog_model->getRelatedPostsCategory( str_replace("-"," ",$cat) ) );
+         
+         //Setup pagination
+         $this->load->library('pagination');
+         $total = $data['count'];
+         $config['base_url'] = 'http://blog.laurencedawson.com/category/'.$cat;
+         $config['total_rows'] = $total;
+         $config['per_page'] = $per_page;       
+         $config['next_link'] = 'Older Posts';
+         $config['prev_link'] = 'Newer Posts';
+         $config['next_tag_open'] = '<div class="next">';
+         $config['next_tag_close'] = '</div>';
+         $config['prev_tag_open'] = '<div class="prev">';
+         $config['prev_tag_close'] = '</div>';
+         $config['display_pages'] = FALSE;          
+         $this->pagination->initialize($config);
+         
 		
 		$this->template->write_view('contents', 'blog/category', $data);
 		$this->template->render();

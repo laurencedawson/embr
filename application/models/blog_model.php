@@ -8,7 +8,7 @@ class blog_model extends CI_Model {
  
     	function getPosts($limit = null, $offset = null)
 	{
-          $this->db->order_by("datet", "desc"); 
+          $this->db->order_by("id", "desc"); 
           $this->db->limit($limit, $offset);
           
           $query = $this->db->get('blog');
@@ -76,11 +76,13 @@ class blog_model extends CI_Model {
       return $query->row();
 	}
 	
-	function getRelatedPostsTags( $tag ){
+	function getRelatedPostsTags( $tag, $limit=null, $offset=null ){
         $result = $this->getTagID( $tag );
-        if( isset( $result->id ) ){        
+        if( isset( $result->id ) ){
+          if(isset($limit))
+            $this->db->limit($limit, $offset);
           $this->db->select('*');
-          $this->db->order_by("blog.datet", "desc"); 
+          $this->db->order_by("blog.id", "desc"); 
           $this->db->from('post_tags');	
           $where = "blog.id = post_tags.post_id AND post_tags.tag_id = $result->id";
           $this->db->where( $where);
@@ -89,11 +91,13 @@ class blog_model extends CI_Model {
         }
 	}
 	
-	function getRelatedPostsCategory( $cat ){
+	function getRelatedPostsCategory( $cat, $limit=null, $offset=null){
         $result = $this->getCatID( $cat );
         if( isset( $result->id ) ){        
+          if(isset($limit))
+            $this->db->limit($limit, $offset);
           $this->db->select('*');
-          $this->db->order_by("blog.datet", "desc"); 
+          $this->db->order_by("blog.id", "desc"); 
           $this->db->from('post_categories');
           $where = "blog.id = post_categories.post_id AND post_categories.category_id = $result->id";
           $this->db->where( $where);

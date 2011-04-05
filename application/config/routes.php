@@ -40,8 +40,7 @@
 $route['default_controller'] = 'blog';
 $route['tag/(:any)'] = 'blog/tag/$1';
 $route['category/(:any)'] = 'blog/category/$1';
-$route['^((?!reading|about|blog|tag|university|contact|feed|rss|error)\S*)'] = "blog/posts/$1";
-
+$route['^((?!reading|about|blog|tag|university|contact|feed|rss|error|archive)\S*)'] = "blog/posts/$1";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

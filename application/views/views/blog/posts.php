@@ -1,3 +1,5 @@
+<div class="blog_post">
+
 <?php if( isset( $post['content']) ){
 
   if( isset( $post['prev']['title'] ) )
@@ -12,7 +14,7 @@
 
 }?>
 
-<div class="post">
+<div class="post theme">
 <h2 class="blogH2"> <?= $post['content']['title'] ?></h2>
 <?php
   if( $post['content']['category'] )
@@ -21,6 +23,6 @@
     echo "<p class=\"blogP\">by ".$first_name." on ".date("l dS F\, Y",strtotime ($post['content']['datet']))."</p>";
   echo $post['content']['content'];
 ?>
-
+</div>
 
 </div>

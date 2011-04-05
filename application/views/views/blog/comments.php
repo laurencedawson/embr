@@ -1,7 +1,7 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = '<?= $disqus ?>';
-    var disqus_url = '<?= site_url( strtolower(url_title($post['title'])) ) ?>';
+    var disqus_url = '<?= site_url( strtolower(url_title($post['content']['title'])) ) ?>';
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
