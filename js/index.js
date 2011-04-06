@@ -24,33 +24,32 @@ $(window).scroll(function(){
   if($(document).height()-$(window).height()<=$(window).scrollTop()+200){
     if(!loading){
       loading = true;
-      console.log("here");
-      $('.posts').append("<div class=\"loading\"><h2><img src=\"/img/load.gif\"/><br/>Loading</h2></div>");                             
       //First extract the next page to load
       var t=$("div.next a").attr('href');
       if( t==null ){
         endreached = true;
-        break;
+      }else{
+        $('.posts').append("<div class=\"loading\"><h2><img src=\"/img/load.gif\"/><br/>Loading</h2></div>");
+        //Remove the old pagination links
+        $(".next").remove();
+        $(".prev").remove();
+        //Get the next set of posts
+        $.get(t,function(data){
+          var d=$(data);
+          var items=d.find('.post');
+          $('.loading').remove();
+          //Add the next posts
+          $('.posts').append(items);
+          var v=d.find('.next');
+          $('.posts').append(v);
+          //See if there are any more pages
+          if(v.length==0){
+            endreached=true;
+            $('.posts').append("<div class=\"loading\"><h2>You've reached the end!</h2></div>"); 
+          }
+          loading = false;
+        });
       }
-      //Remove the old pagination links
-      $(".next").remove();
-      $(".prev").remove();
-      //Get the next set of posts
-      $.get(t,function(data){
-        var d=$(data);
-        var items=d.find('.post');
-        $('.loading').remove();
-        //Add the next posts
-        $('.posts').append(items);
-        var v=d.find('.next');
-        $('.posts').append(v);
-        //See if there are any more pages
-        if(v.length==0){
-          endreached=true;
-          $('.posts').append("<div class=\"loading\"><h2>You've reached the end!</h2></div>"); 
-        }
-        loading = false;
-      });
     }
   }
 });
