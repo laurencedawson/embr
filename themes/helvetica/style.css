@@ -227,11 +227,15 @@ line-height:1.5
   opacity:0.75;
 }
 
-.sliderH1{
+.sliderH1, .sliderH1 a{
   color: #eee;
   text-shadow: 0px 2px 3px #444;
   margin-top:8px;
   margin-bottom:10px;
   margin-left:10px;
   font-weight: bold;
+}
+
+.sliderH1 a:hover{
+  color: #CC0000;
 }

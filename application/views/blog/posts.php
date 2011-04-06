@@ -1,7 +1,6 @@
 <div class="blog_post">
 
 <?php if( isset( $post['content']) ){
-
   if( isset( $post['prev']['title'] ) )
     echo "<div class=\"blogNav left\"><a href=\"".base_url().strtolower( str_replace(" ","-",$post['prev']['title']) )."\">&laquo; Previous Post</a></div>"; 
   else
@@ -11,7 +10,6 @@
     echo "<div class=\"blogNav right\"><a href=\"".base_url().strtolower( str_replace(" ","-",$post['next']['title']) )."\">Next Post &raquo;</a></div>"; 
   else
     echo "<div class=\"blogNav right\">Next Post &raquo;</div>";
-
 }?>
 
 <div class="post theme">
@@ -24,5 +22,4 @@
   echo $post['content']['content'];
 ?>
 </div>
-
 </div>
