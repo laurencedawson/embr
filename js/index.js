@@ -24,9 +24,14 @@ $(window).scroll(function(){
   if($(document).height()-$(window).height()<=$(window).scrollTop()+200){
     if(!loading){
       loading = true;
-      $('.posts').append("<div class=\"loading\"><h2><img src=\"http://blog.laurencedawson.com/images/load.gif\"/><br/>Loading</h2></div>");                             
+      console.log("here");
+      $('.posts').append("<div class=\"loading\"><h2><img src=\"/img/load.gif\"/><br/>Loading</h2></div>");                             
       //First extract the next page to load
       var t=$("div.next a").attr('href');
+      if( t==null ){
+        endreached = true;
+        break;
+      }
       //Remove the old pagination links
       $(".next").remove();
       $(".prev").remove();
