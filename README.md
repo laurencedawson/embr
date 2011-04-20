@@ -8,14 +8,14 @@ A working example can be viewed [here](http://blog.laurencedawson.com/).
 
 Requires
 -------
-[Codeigniter 2.0.0](http://www.codeigniter.com/download_files/reactor/CodeIgniter_2.0.0.zip)
+[Codeigniter 2.0.2](http://codeigniter.com/download_files/reactor/CodeIgniter_2.0.2.zip)
 
 [CI Template Library](http://williamsconcepts.com/ci/codeigniter/libraries/template/)
 
 Installation
 -------
 
-1. Deploy Codeigniter 2.0.0 to your site
+1. Deploy Codeigniter 2.0.2 to your site
 
 2. Install [CI Template Library](http://williamsconcepts.com/ci/codeigniter/libraries/template/) - instructions can be viewed online [here](http://williamsconcepts.com/ci/codeigniter/libraries/template/start.html).
 
@@ -29,10 +29,6 @@ Installation
 
 7. Copy the contents of htaccess.txt into the .htaccess file in the base of your installation, swapping blog.laurencedawson.com for your site domain
 
-Known problems
--------
-
-      - URL routing errors when using CI 2.0.1
       
 Features Comming Soon
 -------
