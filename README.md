@@ -19,15 +19,13 @@ Installation
 
 2. Install [CI Template Library](http://williamsconcepts.com/ci/codeigniter/libraries/template/) - instructions can be viewed online [here](http://williamsconcepts.com/ci/codeigniter/libraries/template/start.html).
 
-3. Copy the contents of application to your CI application directory
+3. Merge the contents of codeigniter-blog with the base of your active CI installation
 
-4. Copy the themes directory to the base of your install
+4. Create a new database and import 'tables.sql'; update your database details in application/config/database
 
-5. Create a new database and import 'tables.sql'; update your database details in application/config/database
+5. Edit the values in appication/config/blog.php
 
-6. Edit the values in appication/config/blog.php
-
-7. Copy the contents of htaccess.txt into the .htaccess file in the base of your installation, swapping blog.laurencedawson.com for your site domain
+6. Modify the contents of .htaccess swapping blog.laurencedawson.com for your site domain
 
       
 Features Comming Soon
