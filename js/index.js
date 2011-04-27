@@ -2,7 +2,7 @@
 function visible(e){return (($(e).offset().top+$(e).height()>=$(window).scrollTop()) && ($(e).offset().top<=$(window).scrollTop()+$(window).height()));}
 //Set links for posts on index pages
 function linker(){
-$(".index").click(function(){var url=$(this).find('.blogH2 a').attr('href');$(".header_slide").slideUp("fast",function(){window.location = url;});});}
+$(".index").click(function(){var url=$(this).find('h2 a').attr('href');$(".header_slide").slideUp("fast",function(){window.location = url;});});}
 
 $(document).ready(function(){
 //Hide pagination controls

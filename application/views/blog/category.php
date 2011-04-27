@@ -1,4 +1,4 @@
-<h3 class="tagsH2">There were <?=$count?> posts in the category '<?=$category?>'</h3>
+<h3>There were <?=$count?> posts in the category '<?=$category?>'</h3>
 <div class="posts">
 <?php 
   if( isset( $posts ) ){
@@ -16,4 +16,4 @@
   }?>
 </div>
 
-<?=echo $this->pagination->create_links()?>
+<?=$this->pagination->create_links()?>

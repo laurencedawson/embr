@@ -12,13 +12,13 @@
     echo "<div class=\"blogNav right\">Next Post &raquo;</div>";
 }?>
 
-<div class="post theme">
-<h2 class="blogH2"> <?= $post['content']['title'] ?></h2>
+<div class="post">
+<h2><?= $post['content']['title'] ?></h2>
 <?php
   if( $post['content']['category'] )
-    echo "<p class=\"blogP\">by ".$first_name." on ".date("l dS F\, Y",strtotime ($post['content']['datet']))." in <a href=\"".base_url()."category/".strtolower( str_replace(" ","-",$post['content']['category']) )."\">".$post['content']['category']."</a></p>";
+    echo "<p class=\"info\">by ".$first_name." on ".date("l dS F\, Y",strtotime ($post['content']['datet']))." in <a href=\"".base_url()."category/".strtolower( str_replace(" ","-",$post['content']['category']) )."\">".$post['content']['category']."</a></p>";
   else
-    echo "<p class=\"blogP\">by ".$first_name." on ".date("l dS F\, Y",strtotime ($post['content']['datet']))."</p>";
+    echo "<p class=\"info\">by ".$first_name." on ".date("l dS F\, Y",strtotime ($post['content']['datet']))."</p>";
   echo $post['content']['content'];
 ?>
 </div>

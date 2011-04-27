@@ -58,7 +58,7 @@ class Blog extends CI_Controller {
     $data['post'] = $post;
     
     // Write to the view
-    $this->template->write_view( 'tools', 'blog/tools', $data );
+    $this->template->write_view( 'tags', 'blog/widgets/tags', $data );
     $this->template->write_view( 'comments', 'blog/comments', $data );
     $this->template->write_view( 'contents', 'blog/posts', $data );
     $this->template->render();

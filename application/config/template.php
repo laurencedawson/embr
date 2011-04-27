@@ -62,7 +62,7 @@ $template['default']['regions'] = array(
    'meta_description',
    'header',
    'contents',
-   'tools',
+   'tags',
    'comments',
    'recent',
    'related'

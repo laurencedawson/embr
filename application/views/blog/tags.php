@@ -1,4 +1,4 @@
-<h3 class="tagsH2">There were <?= $count ?> tag results for '<?= $tag ?>'</h3>
+<h3>There were <?= $count ?> tag results for '<?= $tag ?>'</h3>
 <div class="posts">
 <?php 
 if( isset( $posts ) ){
