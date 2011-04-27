@@ -25,8 +25,8 @@
     <?= $comments ?>     
 
     <div class="footer">
-        <p>Copyright &copy; 2011 <b>Laurence Dawson</b>. All Rights Reserved | Powered by <a href="https://github.com/laurencedawson/codeigniter-blog">codeigniter-blog</a></p>
-    </div>
+        <?="Copyright &copy; 2011 <b>".$first_name." ".$last_name."</b>. All Rights Reserved"?> | Powered by <a href="https://github.com/laurencedawson/codeigniter-blog">codeigniter-blog</a>      
+    </div>  
     
   </div>
 
