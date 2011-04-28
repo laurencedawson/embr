@@ -47,7 +47,9 @@ Automated Installation
 Around the web
 -------
 [reddit.com/r/PHP](http://www.reddit.com/r/PHP/comments/gjgco/a_simple_blog_using_codeigniter/)
+
 [Forrst](http://forrst.com/posts/codeigniter_blog_A_simple_blog_built_with_Codei-LHj)
+
 [Blogupstairs post](http://blogupstairs.com/framework/codeigniter/how-to-create-lightweight-blog-built-using-the-codeigniter-framework/)
       
 Features Comming Soon
