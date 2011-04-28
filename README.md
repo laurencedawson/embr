@@ -21,17 +21,21 @@ Development Installation
 
 3. Edit application/config/config.php (line 17) to match your base URL
 
-4. Merge the contents of codeigniter-blog with the base of your active CI installation
+4. Clone codeigniter-blog
 
-5. Create a new database and import 'tables.sql'; update your database details in application/config/database
+bc. $ git clone git://github.com/laurencedawson/codeigniter-blog.git
 
-6. Edit the values in appication/config/blog.php (sign up with [DISQUS](http://disqus.com/admin/register/) if you haven't already registered your site)
+5. Merge the contents of /codeigniter-blog with the base of your active CI installation
+
+6. Create a new database and import 'tables.sql'; update your database details in application/config/database
+
+7. Edit the values in appication/config/blog.php (sign up with [DISQUS](http://disqus.com/admin/register/) if you haven't already registered your site)
 
 Automated Installation
 -------
 1. Execute this mammoth script:
 
-		curl -OL https://github.com/philsturgeon/codeigniter-reactor/tarball/master && tar -zxvf master && mv philsturgeon-codeigniter-reactor-*/* . && rm master && rm -r phil* && curl -OL https://github.com/laurencedawson/codeigniter-blog/tarball/master && tar -zxvf master && rm master && cd laurencedawson-codeigniter-blog-* && ditto application ../application && rm -r application && mv * .. && mv .htaccess .. && cd .. && rm -r laurencedawson-codeigniter-blog-* && cd application && curl -OL http://williamsconcepts.com/ci/codeigniter/libraries/template/Template_1.4.1.zip && unzip Template_1.4.1.zip -x config/template.php views/template.php && rm Template_1.4.1.zip
+bc. $ curl -OL https://github.com/philsturgeon/codeigniter-reactor/tarball/master && tar -zxvf master && mv philsturgeon-codeigniter-reactor-*/* . && rm master && rm -r phil* && curl -OL https://github.com/laurencedawson/codeigniter-blog/tarball/master && tar -zxvf master && rm master && cd laurencedawson-codeigniter-blog-* && ditto application ../application && rm -r application && mv * .. && mv .htaccess .. && cd .. && rm -r laurencedawson-codeigniter-blog-* && cd application && curl -OL http://williamsconcepts.com/ci/codeigniter/libraries/template/Template_1.4.1.zip && unzip Template_1.4.1.zip -x config/template.php views/template.php && rm Template_1.4.1.zip
 
 2. Edit application/config/config.php (line 17) to match your base URL
 
