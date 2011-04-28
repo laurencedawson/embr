@@ -23,7 +23,7 @@ Installation
 
 4. Create a new database and import 'tables.sql'; update your database details in application/config/database
 
-5. Edit the values in appication/config/blog.php
+5. Edit the values in appication/config/blog.php; sign up with [DISQUS](http://disqus.com/admin/register/) if you haven't already registered your site
 
 6. Modify the contents of .htaccess swapping blog.laurencedawson.com for your site domain
 
