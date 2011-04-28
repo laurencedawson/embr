@@ -23,7 +23,8 @@ Development Installation
 
 4. Clone codeigniter-blog
 
-      $ git clone git://github.com/laurencedawson/codeigniter-blog.git
+bc. $ git clone git://github.com/laurencedawson/codeigniter-blog.git
+
 
 5. Merge the contents of /codeigniter-blog with the base of your active CI installation
 
