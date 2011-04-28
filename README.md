@@ -8,9 +8,9 @@ A working example can be viewed [here](http://blog.laurencedawson.com/).
 
 Requires
 -------
-	* [Codeigniter 2.0.2](http://codeigniter.com/download_files/reactor/CodeIgniter_2.0.2.zip)
+* [Codeigniter 2.0.2](http://codeigniter.com/download_files/reactor/CodeIgniter_2.0.2.zip)
 
-	* [CI Template Library](http://williamsconcepts.com/ci/codeigniter/libraries/template/)
+* [CI Template Library](http://williamsconcepts.com/ci/codeigniter/libraries/template/)
 
 Development Installation
 -------
