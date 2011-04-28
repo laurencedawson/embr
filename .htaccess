@@ -345,11 +345,11 @@ FileETag None
 # Option 1:
 # Rewrite "domain.com/foo -> domain.com/foo/"
 
-<IfModule mod_rewrite.c>
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/|#(.*))$
-  RewriteRule ^(.*)$ /$1/ [R=301,L]
-</IfModule>
+#<IfModule mod_rewrite.c>
+#  RewriteCond %{REQUEST_FILENAME} !-f
+#  RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/|#(.*))$
+#  RewriteRule ^(.*)$ /$1/ [R=301,L]
+#</IfModule>
 
 # ----------------------------------------------------------------------
 
@@ -481,12 +481,16 @@ RewriteRule ^(.*)$ – [F,L]
 
 #Remove duplicate entry point
 RewriteRule ^(blog(/index)?|index(\.php)?)/?$ / [L,R=301]
-RewriteRule ^(.*)/index/?$ http://blog.laurencedawson.com/$1 [L,R=301]
-RewriteRule ^blog/posts/(.+)$  http://blog.laurencedawson.com/$1 [L,R=301]
+RewriteRule ^(.*)/index/?$ ${lowercase:%{HTTP_HOST}}/$1 [L,R=301]
+RewriteRule ^blog/posts/(.+)$  ${lowercase:%{HTTP_HOST}}/$1 [L,R=301]
 
 #Remove access to system
 RewriteCond %{REQUEST_URI} ^system.*
-RewriteRule ^(.*)$ http://blog.laurencedawson.com [L]
+RewriteRule ^(.*)$ ${lowercase:%{HTTP_HOST}} [L]
+
+# Removes trailing slashes (prevents SEO duplicate content issues)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ ${lowercase:%{HTTP_HOST}}/$1 [L,R=301]
 
 #Remove index.php from urls
 RewriteCond %{REQUEST_FILENAME} !-f
