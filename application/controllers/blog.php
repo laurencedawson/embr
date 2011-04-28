@@ -8,7 +8,7 @@ class Blog extends CI_Controller {
   function index( $page = '0' )
   {	    
     // Setup pagination    
-    $config['base_url'] = 'http://blog.laurencedawson.com/blog/archive';
+    $config['base_url'] = base_url().'blog/archive';
     $config['total_rows'] = $this->db->count_all('blog');
     $this->pagination->initialize($config);
            
@@ -88,7 +88,7 @@ class Blog extends CI_Controller {
     $data['posts'] = $this->blog_model->getRelatedPostsTags( str_replace("-"," ",$tag), 5, $page );
     
     // Setup pagination    
-    $config['base_url'] = 'http://blog.laurencedawson.com/tag/'.$tag;
+    $config['base_url'] = base_url().'tag/'.$tag;
     $config['total_rows'] = $data['count'];
     $this->pagination->initialize($config);
       
@@ -120,7 +120,7 @@ class Blog extends CI_Controller {
     $data['count'] = count( $this->blog_model->getRelatedPostsCategory( str_replace("-"," ",$cat) ) );
     
     // Setup pagination    
-    $config['base_url'] = 'http://blog.laurencedawson.com/category/'.$cat;
+    $config['base_url'] = base_url()/'category/'.$cat;
     $config['total_rows'] = $data['count'];
     $this->pagination->initialize($config);
     
