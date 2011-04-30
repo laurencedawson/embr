@@ -14,6 +14,7 @@ class data_model extends CI_Model {
     $data['contact_email'] = $this->config->item('contact_email');
     $data['style'] = $this->config->item('style');	
     $data['disqus'] = $this->config->item('disqus');
+	$data['google_analytics'] = $this->config->item('google_analytics');
     $data['not_found'] = $this->config->item('not_found');
     return $data;
   }
