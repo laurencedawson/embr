@@ -18,9 +18,11 @@ $(".lg").click(function(){
 	if( d ){
 		
 	  if( !lg ){
+	    $(this).text("| Hide ");
         $('.header').find('.post').show();
 		lg= true;
 	  }else{
+	    $(this).text("| Admin ");
 		$('.header').find('.post').hide();
 		lg = false;
 	  }
@@ -29,9 +31,9 @@ $(".lg").click(function(){
 	}else{
 	
 	  if( !lg ){
-		$('.header').append("<div class=\"loading\"><h2><img src=\"/img/load.gif\"/><br/></h2></div>");
+		$('.header').append("<div class=\"loading\"><img src=\"/img/load.gif\"/></div>");
 		
-        var l = $(this).attr('href');
+        var l = $(this).attr('href')+"/index/min";
 	    $(this).text("| Hide ");
 	    $.get(l,function(data){
           var d=$(data);

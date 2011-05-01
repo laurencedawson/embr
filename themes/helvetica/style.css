@@ -169,8 +169,6 @@ img{
 
 /* Pagination loading element */
 .loading{
-  padding-top:10px;
-  padding-bottom:10px; 
   text-align:center 
 }
 
@@ -243,16 +241,18 @@ img{
 /* Each button in the admin cms is an 'activity' */
 .activity{
   border-radius: 5px;
-  width: 115px;
+  width: 95px;
   padding: 4px;
-  padding-top: 6px;
-  padding-bottom: 6px;
   font-weight: bold;
-  display: inline;
+  display: block;
   float: left;	
   text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
   color:#fff;
   background-color: #555
+}
+
+.activity a:hover, .activity a{
+	color:#fff;
 }
 
 .activity:hover{
@@ -262,8 +262,12 @@ img{
 
 /* A wrapper for the admin activities*/
 .admin{
-  margin:auto;
-  margin-top: 5px;
+  padding:0;
+  margin:0;
+  padding-top: 5px;
+  padding-bottom:10px;
+  background-color:#eee;
+  border:0;
 }
 
 .admin ul{

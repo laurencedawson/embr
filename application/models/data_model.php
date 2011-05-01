@@ -16,6 +16,7 @@ class data_model extends CI_Model {
     $data['disqus'] = $this->config->item('disqus');
 	$data['google_analytics'] = $this->config->item('google_analytics');
     $data['not_found'] = $this->config->item('not_found');
+	$data['site_description'] = $this->config->item('site_description');
     return $data;
   }
   

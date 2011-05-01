@@ -1,10 +1,10 @@
-<div class="post">
-  <div class="admin">
+<div class="post admin">
     <ul>
-      <a href="<?=base_url()?>admin/new_post"><li class="activity pad">New Post</li></a>
-	  <a href="<?=base_url()?>admin/edit"><li class="activity pad">Edit Post</li></a>
-      <a href="<?=base_url()?>admin/settings"><li class="activity pad">Settings</li></a>
-      <a href="<?=base_url()?>admin/logout"><li class="activity">Logout</li></a>
+      <li class="activity pad"><a href="<?=base_url()?>admin/new_post">New Post</a></li>
+      <li class="activity pad"><a href="<?=base_url()?>admin/edit">Edit Post</a></li>
+      <li class="activity pad"><a href="<?=base_url()?>admin/#">Another</a></li>
+      <li class="activity pad"><a href="<?=base_url()?>admin/settings">Settings</a></li>
+      <li class="activity"><a href="<?=base_url()?>admin/logout">Logout</a></li>
     </ul>
-  </div><div class="clearer"></div>
+  <div class="clearer"></div>
 </div>

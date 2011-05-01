@@ -4,15 +4,18 @@ class Admin extends CI_Controller{
   /**
     * The default entry point for Admin
     */
-  function index()
+  function index( $min = null)
   {
     //Check if the user is logged in  
     if (!$this->session->userdata('loggedin'))
-      redirect('admin/login');
+      redirect('admin/login/'.$min);
       
     // Pass the users info through
     $data = $this->data_model->getSiteData();
     
+	//If requested, set the template to the minified version
+	if( $min == "min" ) $this->template->set_master_template('min_template.php');	
+
     $this->template->write('title', 'Admin');
     $this->template->write_view('contents', 'admin/index', $data);
     $this->template->render();  	
@@ -31,6 +34,9 @@ class Admin extends CI_Controller{
 
 	// Alert the user to any errors
 	$data['msg'] = $msg;
+	
+	//If requested, set the template to the minified version
+	if( $msg == "min" ) $this->template->set_master_template('min_template.php');
 	      
     $this->template->write('title', 'Admin Login');
     $this->template->write_view('contents', 'admin/login', $data);

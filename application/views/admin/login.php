@@ -1,4 +1,4 @@
-<?  if($msg){
+<?  if($msg&&$msg!="min"){
       echo "<div class=\"post\">";
       echo "<h3>".$msg."</h3>";
 	  echo "</div>";
