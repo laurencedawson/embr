@@ -120,7 +120,7 @@ class Blog extends CI_Controller {
     $data['count'] = count( $this->blog_model->getRelatedPostsCategory( str_replace("-"," ",$cat) ) );
     
     // Setup pagination    
-    $config['base_url'] = base_url()/'category/'.$cat;
+    $config['base_url'] = base_url().'category/'.$cat;
     $config['total_rows'] = $data['count'];
     $this->pagination->initialize($config);
     

@@ -9,14 +9,21 @@
 </head>
 
 <body>
+  <? if (!strstr(uri_string(),"admin") ) $this->session->set_userdata('redirect', current_url() ) ?>  
+
   <div class="header_slide">
     <h3><?= anchor('/', $blog_title, 'title="'.$blog_title.'"')?></h3>
   </div>
   
-  <div id="container">
-
+  <div id="container">		
+	
     <div class="header">
       <h1><?= anchor('/', $blog_title, 'title="'.$blog_title.'"')?></h1> 
+	  <div class="navigation right">
+        <a href="#">Example Page</a> | <a href="#">Contact</a> 
+		<? if (!strstr(uri_string(),"admin") )
+		     echo "<a class=\"lg\" href=\"".base_url()."admin\">| Admin </a>" ?>
+      </div>
       <h2><?=$tagline?></h2>
     </div>
 
@@ -31,6 +38,7 @@
   </div>
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
   <script type="text/javascript" src="<?=base_url()."js/index.js"?>"></script>  
   <script>
     var _gaq=[["_setAccount","UA-22557362-1"],["_trackPageview"]];

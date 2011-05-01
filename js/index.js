@@ -10,6 +10,26 @@ $(document).ready(function(){
   //Set the index page linker
   linker();
 });
+
+var lg;
+//Login ajax panel
+$(".lg").click(function(){
+	if( !lg ){
+      var l = $(this).attr('href');
+	  $(this).text("| Hide ");
+	  $.get(l,function(data){
+        var d=$(data);
+        var items=d.find('.post');
+		$('.header').append( items ).slideDown("slow");
+
+		lg = true;
+      });
+	}else{
+	  $(this).text("| Admin ");
+	  $('.header').find('.post').remove();
+	  lg = false;
+	} return false;	
+});
     
 //Variables for the endless-scroll
 var loading = false, endreached = false;
