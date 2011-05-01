@@ -12,23 +12,44 @@ $(document).ready(function(){
 });
 
 var lg;
+var d =false;
 //Login ajax panel
 $(".lg").click(function(){
-	if( !lg ){
-      var l = $(this).attr('href');
-	  $(this).text("| Hide ");
-	  $.get(l,function(data){
-        var d=$(data);
-        var items=d.find('.post');
-		$('.header').append( items ).slideDown("slow");
+	if( d ){
+		
+	  if( !lg ){
+        $('.header').find('.post').show();
+		lg= true;
+	  }else{
+		$('.header').find('.post').hide();
+		lg = false;
+	  }
 
-		lg = true;
-      });
+
 	}else{
-	  $(this).text("| Admin ");
-	  $('.header').find('.post').remove();
-	  lg = false;
-	} return false;	
+	
+	  if( !lg ){
+		$('.header').append("<div class=\"loading\"><h2><img src=\"/img/load.gif\"/><br/></h2></div>");
+		
+        var l = $(this).attr('href');
+	    $(this).text("| Hide ");
+	    $.get(l,function(data){
+          var d=$(data);
+          var items=d.find('.post');
+		  $('.loading').remove();
+		  $('.header').append( items ).slideDown("slow");
+
+		  lg = true;
+        });
+	  }else{
+	    $(this).text("| Admin ");
+	    $('.header').find('.post').hide();
+	    lg = false;
+		d = true;
+	  }
+    }
+	
+	return false;	
 });
     
 //Variables for the endless-scroll
