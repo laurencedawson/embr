@@ -6,6 +6,7 @@
   <!-- TODO add meta tags -->
   <meta name="author" content="<?=$first_name." ".$last_name?>">
   <link rel="stylesheet" href="<?=base_url()."themes/".$style."/style.css"?>">
+   <link href="<?=base_url()."rss"?>" rel="alternate" type="application/rss+xml" title="<?= $blog_title ?>" />
 </head>
 
 <body>
