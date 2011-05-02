@@ -28,6 +28,17 @@ $(document).ready(function(){
   linker();
 });
 
+$(".cover").click(function(){
+  $('body').find('.cover').css({'visibility' : 'hidden'});
+});
+
+$(".legend").click(function(){
+  $('body').find('.cover').css({'visibility' : 'visible'});
+});
+
+
+
+
 /*
 	Keyboard Navigation (j forward, k backwards)
 */
@@ -51,7 +62,7 @@ $(window).keypress(function(e){
         if( endreached&&!stop )
           $('.key_spacer').height( $('.key_spacer').height() + t.clientHeight + 20 );
         //Scroll down to the next blog post
-        $(window).scrollTop( t.offsetTop-10 );
+        $(window).scrollTop( t.offsetTop-20 );
       }else if(!stop)
         stop = true;			
 	}	
@@ -66,7 +77,7 @@ $(window).keypress(function(e){
 		//Set the currently selected elements style
 		last = t.className; t.className+=" selected";
 		//Scroll up to the next blog post
-		$(window).scrollTop( t.offsetTop-10 );
+		$(window).scrollTop( t.offsetTop-20 );
 	  }else{
 		//Handles case to display header
         $('.posts').find('.post').get(index).className = last;
@@ -74,6 +85,10 @@ $(window).keypress(function(e){
 		index=-1;
 	  }
 	}
+	//Handle the view operation
+	else if( String.fromCharCode(e.which)=='v' )
+		window.location = 
+			$('.posts').find('.post h2 a').get(index-1).href;
 });
 
 /*
@@ -85,12 +100,12 @@ $(".lg").click(function(){
   //If cached, toggle the hide and show operations
   if( d ){
     if( !lg ){
-      $(this).text("| Hide ");
+      $(this).text("Hide ");
       $('.header').find('.post').show();
       lg= true;
     }else{
 
-      $(this).text("| Admin ");
+      $(this).text("Admin ");
       $('.header').find('.post').hide();
       lg = false;
     }

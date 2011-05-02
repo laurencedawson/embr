@@ -20,10 +20,9 @@
 	
     <div class="header">
       <h1><?= anchor('/', $blog_title, 'title="'.$blog_title.'"')?></h1> 
-	  <div class="navigation right">
-        <a href="#">Example Page</a> | <a href="#">Contact</a> 
+	  <div class="navigation right">        
 		<? if (!strstr(uri_string(),"admin") )
-		     echo "<a class=\"lg\" href=\"".base_url()."admin\">| Admin </a>" ?>
+		     echo "<a class=\"lg\" href=\"".base_url()."admin\">Admin </a>" ?>| <a class="legend" href="#">Legend</a>
       </div>
       <h2><?=$tagline?></h2>
     </div>
@@ -36,7 +35,16 @@
         <?="Copyright &copy; 2011 <b>".$first_name." ".$last_name."</b>. All Rights Reserved"?> | Powered by <a href="https://github.com/laurencedawson/codeigniter-blog">codeigniter-blog</a>      
     </div>  
 	<div class="key_spacer"></div>
-    
+	<div class="cover">
+		<div class="controls">
+			<h2><?=$blog_title?> - Keyboard Shortcuts</h2>
+			<img src="<?=base_url()."img/keyboard.png"?>"/><br/>
+			<span class="pad"><strong>V</strong> - view post</span>
+			<span class="pad"><strong>J</strong> - next post</span>
+			<span><strong>K</strong> - previous post</span>
+		</div>
+	</div>
+	    
   </div>
 
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
