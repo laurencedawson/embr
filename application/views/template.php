@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <? if (!strstr(uri_string(),"admin") ) $this->session->set_userdata('redirect', current_url() ) ?>  
+  <? if ( !strstr(uri_string(),"admin") && !strstr(uri_string(),"blog/archive/") ) $this->session->set_userdata('redirect', current_url() ) ?>  
 
   <div class="header_slide">
     <h3><?= anchor('/', $blog_title, 'title="'.$blog_title.'"')?></h3>
@@ -34,11 +34,12 @@
     <div class="footer">
         <?="Copyright &copy; 2011 <b>".$first_name." ".$last_name."</b>. All Rights Reserved"?> | Powered by <a href="https://github.com/laurencedawson/codeigniter-blog">codeigniter-blog</a>      
     </div>  
+	<div class="key_spacer"></div>
     
   </div>
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+<!--  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>-->
   <script type="text/javascript" src="<?=base_url()."js/index.js"?>"></script>  
   
   <? if (strlen($google_analytics) > 0) { ?><script>

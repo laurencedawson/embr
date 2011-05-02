@@ -110,17 +110,6 @@ p a{
   margin-top:0px
 }
 
-/* Same as blog post but with no text only an image */
-.image_post{
-  clear:both;
-  margin-bottom: 20px;
-  border: solid 1px #CCC;
-  border-radius: 5px;
-  background-image: url('/img/load.gif');
-  background-repeat:no-repeat;
-  background-position:center;
-}
-
 img{
   border-radius: 5px;
   text-decoration:none;
@@ -293,4 +282,8 @@ img{
 	width:100%;
 	height:10px;
 	clear:both;
+}
+
+.selected{
+  box-shadow: 0px 0px 5px #999
 }

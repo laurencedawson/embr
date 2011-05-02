@@ -12,7 +12,7 @@
 		$width = $obj[0];				
 		$ratio = 576 / $width = $obj[0];
 		$height = ($obj[1]*$ratio) - 2;		
-		echo "<div class=\"image_post index\" style=\"height:".$height."px\" >";	
+		echo "<div class=\"post index\" style=\"height:".$height."px; padding:0px\" >";	
 			echo "<a href=\"".base_url().strtolower(url_title($post["title"]))."\"><img src=\"".base_url()."img/uploads/".$post["image"]."\" width=\"574\" height=\"".$height."\"/></a>";			   
 	}else{		
 		echo "<div class=\"post index\">";		
