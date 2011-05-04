@@ -5,5 +5,6 @@
   $config['next_tag_close'] = '</div>';
   $config['prev_tag_open'] = '<div class="prev">';
   $config['prev_tag_close'] = '</div>';
+  $config['last_link'] = FALSE;
   $config['display_pages'] = FALSE; 
   $config['per_page'] = 5;

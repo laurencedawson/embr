@@ -2,10 +2,17 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  
+  <meta name="viewport" content="width=636" />
   <title><?=$title?></title>
   <!-- TODO add meta tags -->
   <meta name="author" content="<?=$first_name." ".$last_name?>">
-  <link rel="stylesheet" href="<?=base_url()."themes/".$style."/style.css"?>">
+  <link rel="stylesheet" href="<?=base_url()."themes/".$style."/style.css"?>"/>
+  <link href="<?=base_url()."themes/mobile/style.css"?>" 
+	media="screen and (max-device-width: 480px), screen and (-webkit-min-device-pixel-ratio: 2)" rel="stylesheet" type="text/css" /> 
+
+
+
+
   <link href="<?=base_url()."rss"?>" rel="alternate" type="application/rss+xml" title="<?= $blog_title ?>" />
   <link type="text/plain" rel="author" href="<?=base_url()."humans.txt"?>" />
 </head>
@@ -21,9 +28,9 @@
 	
     <div class="header">
       <h1><?= anchor('/', $blog_title, 'title="'.$blog_title.'"')?></h1> 
-	  <div class="navigation right">        
+	  <div class="navigation right">
 		<? if (!strstr(uri_string(),"admin") )
-		     echo "<a class=\"lg\" href=\"".base_url()."admin\">Admin </a>" ?>| <a class="legend" href="#">Legend</a>
+		     echo "<a class=\"lg\" href=\"".base_url()."admin\">Admin </a>" ?> <a class="legend" href="#">Legend</a>
       </div>
       <h2><?=$tagline?></h2>
     </div>
@@ -33,7 +40,9 @@
     <?= $comments ?>     
 
     <div class="footer">
-        <?="Copyright &copy; 2011 <b>".$first_name." ".$last_name."</b>. All Rights Reserved"?> | Powered by <a href="https://github.com/laurencedawson/codeigniter-blog">codeigniter-blog</a>      
+		<div class="embr"><p>Powered by <a href="https://github.com/laurencedawson/codeigniter-blog"><img src="<?=base_url()?>img/embr.png"/></a></p></div>
+        <p><?="Copyright &copy; 2011 <b>".$first_name." ".$last_name."</b>. All Rights Reserved."?></p>
+
     </div>  
 	<div class="key_spacer"></div>
 	<div class="cover">
@@ -48,8 +57,7 @@
 	    
   </div>
 
-  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.min.js"></script>
   <script type="text/javascript" src="<?=base_url()."js/index.js"?>"></script>  
   
   <? if (strlen($google_analytics) > 0) { ?><script>

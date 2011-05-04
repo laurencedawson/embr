@@ -1,3 +1,5 @@
+<? if( $disqus ){ ?>
+
 <div id="disqus_thread"></div>
 <script type="text/javascript">
   var disqus_shortname = '<?= $disqus ?>';
@@ -10,3 +12,5 @@
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
+
+<? } ?>

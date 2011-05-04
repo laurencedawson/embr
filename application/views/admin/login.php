@@ -4,7 +4,7 @@
 	  echo "</div>";
     } ?>
 
-<div class="post"> 
+<div class="post" style="margin-bottom:10px"> 
   <?php 
     echo form_open('admin/authenticate');
     

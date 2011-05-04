@@ -117,7 +117,7 @@ $(".lg").click(function(){
       //Grab the admin link
 	  var l = $(this).attr('href')+"/index/min";
       //Set the admin button text to hide
-      $(this).text("| Hide ");
+      $(this).text(" Hide ");
       //Grab the admin panel and append to the header div
       $.get(l,function(data){
         var d=$(data);
