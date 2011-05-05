@@ -124,6 +124,11 @@ img{
   border: 0;
 }
 
+.post img{
+  box-shadow: 0px 0px 3px #999;
+  border: 1px solid #eee
+}
+
 
 /* Post Next and Previous Elements */
 .blogNav{
@@ -351,8 +356,15 @@ img{
 }
 
 
+/* disqus hacks */
 #disqus_thread{
 	/*display: none;
 	visibility:hidden;*/
 	border-top: 1px solid #ddd;
+	margin:0;
 }
+
+#dsq-subscribe, #dsq-sort-by, .dsq-trackback-url{
+	display:none
+}
+
