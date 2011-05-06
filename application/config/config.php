@@ -12,9 +12,11 @@
 |
 | If this is not set then CodeIgniter will guess the protocol, domain and
 | path to your installation.
+| http://codeigniter.com/wiki/Automatic_configbase_url/
 |
 */
-$config['base_url']	= "http://blog.laurencedawson.com/";
+$config['base_url'] = "http://".$_SERVER['HTTP_HOST'];
+$config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);  
 
 /*
 |--------------------------------------------------------------------------
