@@ -1,12 +1,32 @@
 <?php
 class Blog extends CI_Controller {
 
+  public function __construct()
+  {
+    parent::__construct();
+	//Cache output
+    $this->output->cache(3600);
+
+	//Check if the database needs setting up
+    $this->load->model('setup_model');
+    if( !$this->setup_model->checkDatabase() ){
+	  //If so add the tables to the database 'blog'
+	  $this->db = $this->load->database('blog', TRUE);
+      $this->setup_model->addTables();
+ 	}else
+	  //Load the database model as usual
+      $this->db = $this->load->database('blog', TRUE);
+  }
+
   /**
     * The default entry point for blog
     * @param int $page
     */
-  function index( $page = '0' )
-  {	    
+  function index( $page = '0', $message = null )
+  {	
+	//Cache output
+	$this->output->cache(3600);
+	
     // Setup pagination    
     $config['base_url'] = base_url().'blog/archive';
     $config['total_rows'] = $this->db->count_all('blog');
@@ -21,7 +41,7 @@ class Blog extends CI_Controller {
     // Write to the template and render
     $this->template->write('title', 'Blog');
     $this->template->write_view('contents', 'blog/index', $data);
-    $this->template->render();  	
+    $this->template->render();
   }
 	
   /**

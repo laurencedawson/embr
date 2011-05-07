@@ -34,7 +34,6 @@
       </div>
       <h2><?=$tagline?></h2>
     </div>
-
     <?= $contents ?>
     <?= $tags ?>
     <?= $comments ?>     

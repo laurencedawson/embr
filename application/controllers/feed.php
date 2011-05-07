@@ -1,5 +1,11 @@
 <?php
 class Feed extends CI_Controller {
+  
+  public function __construct()
+  {
+    parent::__construct();
+    $this->db = $this->load->database('blog', TRUE);
+  }
 
   /**
     * The default entry point for feed

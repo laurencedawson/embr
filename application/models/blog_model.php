@@ -1,6 +1,6 @@
 <?php
 class blog_model extends CI_Model {
-  
+	
   /**
     * Returns all blog posts
     * @param int $limit
