@@ -26,7 +26,7 @@ Development Installation
 
 4. Merge the contents of /codeigniter-blog with the base of your active CI installation
 
-5. Create a new database and import 'tables.sql'; update your database details in application/config/database
+5. Add your database login details to application/config/database
 
 6. Edit the values in appication/config/blog.php (sign up with [DISQUS](http://disqus.com/admin/register/) if you haven't already registered your site)
 
@@ -39,7 +39,7 @@ Automated Installation
 
 2. Edit the values in appication/config/blog.php (sign up with [DISQUS](http://disqus.com/admin/register/) if you haven't already registered your site)
 
-3. Create a new database and import 'tables.sql' (or 'example.sql'); update your database details in application/config/database
+3. Add your database login details to application/config/database
 
 Around the web
 -------
