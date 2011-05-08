@@ -19,6 +19,7 @@ Clone and run the installer:
 
 	git clone git@github.com:laurencedawson/embr.git
 
+
 	sh install.sh
 
 Add your database login details to application/config/database and finally edit the values in appication/config/blog.php.
