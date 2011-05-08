@@ -24,7 +24,6 @@ unzip Template_1.4.1.zip -x config/* docs/* views/*
 rm Template_1.4.1.zip
 
 #change directory
-cd application
 cd config
 
 # ask for the username 
