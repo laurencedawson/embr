@@ -1,6 +1,4 @@
-# EMBR
-
-## About
+# About embr
 
 Embr is a lightweight blog built using the CodeIgniter framework. As it's very early days the list of features is very minimal but currently supports: Basic posts, post indexing and recent posts. Commenting provided by Disqus. Currently there is no graphical CMS for post creation, deletion etc - SQL for now.
 
