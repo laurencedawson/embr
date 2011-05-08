@@ -22,5 +22,25 @@ curl -OL http://williamsconcepts.com/ci/codeigniter/libraries/template/Template_
 unzip Template_1.4.1.zip -x config/* docs/* views/*
 # remove the template folder
 rm Template_1.4.1.zip
+
+#change directory
+cd application
+cd config
+
+# ask for the username 
+echo "Enter your database username:"
+# get the username 
+echo $line
+# set the username in the database file
+perl -pi -e 's/USERNAME/'$line'/g' 'database.php'
+
+# ask for the password 
+echo "Enter your database username:"
+# get the password
+echo $line
+# set the password in the database file
+perl -pi -e 's/PASSWORD/'$line'/g' 'database.php'
+
 # all done
 echo "embr is ready to roll";
+ 
