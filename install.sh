@@ -29,14 +29,14 @@ cd config
 # ask for the username 
 echo "Enter your database username:"
 # get the username 
-echo $line
+read line
 # set the username in the database file
 perl -pi -e 's/USERNAME/'$line'/g' 'database.php'
 
 # ask for the password 
 echo "Enter your database username:"
 # get the password
-echo $line
+read line
 # set the password in the database file
 perl -pi -e 's/PASSWORD/'$line'/g' 'database.php'
 
