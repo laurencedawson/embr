@@ -21,5 +21,3 @@ Clone the repository:
 Run the install script:
 
 	cd embr && sh install.sh
-
-Add your database login details to application/config/database and finally edit the values in appication/config/blog.php.
