@@ -45,7 +45,9 @@ read line
 # set the password in the database file
 perl -pi -e 's/PASSWORD/'$line'/g' 'database.php'
 
-
+# set the cache as writable
+cd ..
+chmod 777 cache
 
 # all done
-echo "\nembr is ready to go, have fun!";
+echo "\nembr is ready to go, have fun!\n";

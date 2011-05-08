@@ -1,11 +1,12 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 $config['blog_title'] = "Example Blog";
-$config['tagline'] = "Insert witty tagline here.";
-$config['first_name'] = "Laurence";
-$config['last_name'] = "Dawson";
-$config['contact_email'] = "contact@laurencedawson.com";
+$config['tagline'] = "Just another embr blog.";
+$config['first_name'] = "example_first";
+$config['last_name'] = "example_second";
+$config['contact_email'] = "example@example.com";
 $config['style'] = "helvetica";
-$config['disqus'] = "laurencedawson";
+$config['disqus'] = "example_disqus";
+
 $config['not_found'] = "bite.png";
-$config['site_description'] = "Generic site description.";
+$config['site_description'] = "Just another embr blog.";
