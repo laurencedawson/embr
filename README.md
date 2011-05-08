@@ -17,17 +17,15 @@ Requires
 Installation
 -------
 
-1. Clone codeigniter-blog
+Clone codeigniter-blog
 
 	git clone git://github.com/laurencedawson/embr.git
 
-2. Run the installer and follow the prompts
+Run the installer and follow the prompts
 
 	sh install.sh
 
-3. Add your database login details to application/config/database
-
-4. Edit the values in appication/config/blog.php (sign up with [DISQUS](http://disqus.com/admin/register/) if you haven't already registered your site)
+Add your database login details to application/config/database and finally edit the values in appication/config/blog.php (sign up with [DISQUS](http://disqus.com/admin/register/) if you haven't already registered your site).
 
 Around the web
 -------
