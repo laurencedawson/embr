@@ -23,8 +23,13 @@ unzip Template_1.4.1.zip -x config/* docs/* views/*
 # remove the template folder
 rm Template_1.4.1.zip
 
-#change directory
+# change directory
 cd config
+# clear the screen
+clear
+
+# print welcome info
+echo "\n\nWelcome to embr!\n\n"
 
 # ask for the username 
 echo "Enter your database username:"
@@ -34,7 +39,7 @@ read line
 perl -pi -e 's/USERNAME/'$line'/g' 'database.php'
 
 # ask for the password 
-echo "Enter your database username:"
+echo "\n\nEnter your database username:"
 # get the password
 read line
 # set the password in the database file
