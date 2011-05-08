@@ -12,34 +12,19 @@ Requires
 
 * [CI Template Library](http://williamsconcepts.com/ci/codeigniter/libraries/template/)
 
-Development Installation
+Installation
 -------
 
-1. Deploy Codeigniter 2.0.2 to your site
-
-2. Install [CI Template Library](http://williamsconcepts.com/ci/codeigniter/libraries/template/) - instructions can be viewed online [here](http://williamsconcepts.com/ci/codeigniter/libraries/template/start.html).
-
-3. Clone codeigniter-blog
+1. Clone codeigniter-blog
 
 		git clone git://github.com/laurencedawson/codeigniter-blog.git
 
-
-4. Merge the contents of /codeigniter-blog with the base of your active CI installation
-
-5. Add your database login details to application/config/database
-
-6. Edit the values in appication/config/blog.php (sign up with [DISQUS](http://disqus.com/admin/register/) if you haven't already registered your site)
-
-Automated Installation
--------
-1. Execute this mammoth script:
-
-		curl -OL https://github.com/philsturgeon/codeigniter-reactor/tarball/master && tar -zxvf master && mv philsturgeon-codeigniter-reactor-*/* . && rm master && rm -r phil* && curl -OL https://github.com/laurencedawson/codeigniter-blog/tarball/master && tar -zxvf master && rm master && cd laurencedawson-codeigniter-blog-* && ditto application ../application && rm -r application && mv * .. && mv .htaccess .. && cd .. && rm -r laurencedawson-codeigniter-blog-* && cd application && curl -OL http://williamsconcepts.com/ci/codeigniter/libraries/template/Template_1.4.1.zip && unzip Template_1.4.1.zip -x config/template.php views/template.php && rm Template_1.4.1.zip
-
-
-2. Edit the values in appication/config/blog.php (sign up with [DISQUS](http://disqus.com/admin/register/) if you haven't already registered your site)
+2. 
+		sh install.sh
 
 3. Add your database login details to application/config/database
+
+4. Edit the values in appication/config/blog.php (sign up with [DISQUS](http://disqus.com/admin/register/) if you haven't already registered your site)
 
 Around the web
 -------
