@@ -15,12 +15,13 @@ Requires
 Installation
 -------
 
-1. Clone codeigniter-blog
+Clone codeigniter-blog
 
-		git clone git://github.com/laurencedawson/codeigniter-blog.git
+	git clone git://github.com/laurencedawson/codeigniter-blog.git
 
-2. 
-		sh install.sh
+Run the installer and follow the prompts
+
+	sh install.sh
 
 3. Add your database login details to application/config/database
 
