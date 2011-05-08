@@ -1,6 +1,6 @@
 About
 -------
-Lightweight blog built using the CodeIgniter framework. As it's very early days the list of features is very minimal but currently supports: Basic posts, post indexing and recent posts. Commenting provided by Disqus. Currently there is no graphical CMS for post creation, deletion etc - SQL for now.
+Embr is a lightweight blog built using the CodeIgniter framework. As it's very early days the list of features is very minimal but currently supports: Basic posts, post indexing and recent posts. Commenting provided by Disqus. Currently there is no graphical CMS for post creation, deletion etc - SQL for now.
 
 Example
 -------
@@ -12,14 +12,16 @@ Requires
 
 * [CI Template Library](http://williamsconcepts.com/ci/codeigniter/libraries/template/)
 
+* curl (for installation)
+
 Installation
 -------
 
-Clone codeigniter-blog
+1. Clone codeigniter-blog
 
-	git clone git://github.com/laurencedawson/codeigniter-blog.git
+	git clone git://github.com/laurencedawson/embr.git
 
-Run the installer and follow the prompts
+2. Run the installer and follow the prompts
 
 	sh install.sh
 
