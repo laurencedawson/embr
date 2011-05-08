@@ -4,15 +4,13 @@ Embr is a lightweight blog built using the CodeIgniter framework. As it's very e
 
 Example
 -------
-A working example can be viewed [here](http://blog.laurencedawson.com/).
+A working text blog can be viewed [here](http://blog.laurencedawson.com/) and image blog [here](http://images.laurencedawson.com/).
 
 Requires
 -------
 * [Codeigniter 2.0.2](http://codeigniter.com/download_files/reactor/CodeIgniter_2.0.2.zip)
 
 * [CI Template Library](http://williamsconcepts.com/ci/codeigniter/libraries/template/)
-
-* curl (for installation)
 
 Installation
 -------
@@ -26,20 +24,3 @@ Run the installer and follow the prompts:
 	sh install.sh
 
 Add your database login details to application/config/database and finally edit the values in appication/config/blog.php.
-
-Around the web
--------
-* [reddit.com/r/PHP](http://www.reddit.com/r/PHP/comments/gjgco/a_simple_blog_using_codeigniter/)
-
-* [Forrst](http://forrst.com/posts/codeigniter_blog_A_simple_blog_built_with_Codei-LHj)
-
-* [Blogupstairs post](http://blogupstairs.com/framework/codeigniter/how-to-create-lightweight-blog-built-using-the-codeigniter-framework/)
-      
-Features Comming Soon
--------
-
-* Graphical CMS
-      
-* META tags
-      
-* Facebook Graph Tags
