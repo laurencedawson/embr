@@ -15,11 +15,9 @@ Requires
 Installation
 -------
 
-Clone embr:
+Clone and run the installer:
 
 	git clone git@github.com:laurencedawson/embr.git
-
-Run the installer and follow the prompts:
 
 	sh install.sh
 
