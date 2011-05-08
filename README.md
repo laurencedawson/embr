@@ -16,7 +16,7 @@ A working text blog can be viewed [here](http://blog.laurencedawson.com/) and im
 
 Clone the repository:
 
-	git clone git@github.com:laurencedawson/embr.git
+	git clone git://github.com/laurencedawson/embr.git
 
 Run the install script:
 
