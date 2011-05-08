@@ -2,8 +2,8 @@
 
 $config['blog_title'] = "Example Blog";
 $config['tagline'] = "Insert witty tagline here.";
-$config['first_name'] = "example_first";
-$config['last_name'] = "example_second";
+$config['first_name'] = "John";
+$config['last_name'] = "Doe";
 $config['contact_email'] = "example@example.com";
 $config['style'] = "helvetica";
 $config['disqus'] = "example_disqus";
