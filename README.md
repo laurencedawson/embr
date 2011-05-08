@@ -15,10 +15,11 @@ Requires
 Installation
 -------
 
-Clone and run the installer:
+Clone the repository:
 
 	git clone git@github.com:laurencedawson/embr.git
 
+Run the instll script:
 
 	sh install.sh
 
