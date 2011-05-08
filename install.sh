@@ -39,12 +39,13 @@ read line
 perl -pi -e 's/USERNAME/'$line'/g' 'database.php'
 
 # ask for the password 
-echo "\n\nEnter your database username:"
+echo "\nEnter your database password:"
 # get the password
 read line
 # set the password in the database file
 perl -pi -e 's/PASSWORD/'$line'/g' 'database.php'
 
+
+
 # all done
-echo "embr is ready to roll";
- 
+echo "\nembr is ready to go, have fun!";
