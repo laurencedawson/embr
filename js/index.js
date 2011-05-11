@@ -113,7 +113,7 @@ $(".lg").click(function(){
     //If not cached, grab the admin panel
     if( !lg ){
 	  //Incase of slow connections show the loading icon
-      $('.header').append("<div class=\"loading\"><img src=\"/img/load.gif\"/></div>");	
+      $('.header').append("<div class=\"loading\"><img src=\"img/load.gif\"/></div>");	
       //Grab the admin link
 	  var l = $(this).attr('href')+"/index/min";
       //Set the admin button text to hide
@@ -155,7 +155,7 @@ $(window).scroll(function(){
       if( t==null ){
         endreached = true;
       }else{
-        $('.posts').append("<div class=\"loading\"><h2><img src=\"/img/load.gif\"/><br/>Loading</h2></div>");
+        $('.posts').append("<div class=\"loading\"><h2><img src=\"img/load.gif\"/><br/>Loading</h2></div>");
         //Remove the old pagination links
         $(".next").remove();
         $(".prev").remove();

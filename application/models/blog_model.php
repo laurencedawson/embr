@@ -2,7 +2,7 @@
 class blog_model extends CI_Model {
 	
   /**
-    * Returns all blog posts
+    * Returns all published blog posts
     * @param int $limit
     * @param int $offset    
     * @return array Returns all blog posts
@@ -11,7 +11,7 @@ class blog_model extends CI_Model {
   {
     $this->db->order_by( "id", "desc" );
     $this->db->limit( $limit, $offset );
-    $query = $this->db->get( 'blog' );
+    $query = $this->db->get_where( 'blog', array('published' => '1') );
     return $query->result_array();
   }
 
@@ -183,6 +183,22 @@ class blog_model extends CI_Model {
     $this->db->select( 'title, datet' );
     $query = $this->db->get( 'blog' );
     return $query->result_array();
+  }
+
+  /**
+    * Creates a new blog post
+    * @param A post object containing the title and content
+    */
+  function create( $post ){
+//    print_r( $post );
+
+    $data = array(
+        'title' => $post['title'],
+        'content' => $post['content'],
+		'comments' => $post['comments'] ? 1 : 0,
+		'published' => $post['published'] ? 1 : 0 );
+    $this->db->insert('blog', $data);
+
   }
 
 }

@@ -349,14 +349,14 @@ img{
 
 
 .image_padding{
-	padding: 20px;
+	padding: 20px
 }
 .image_box{
 	width:100%;
 }
 
 
-/* disqus hacks */
+/* disqus hacks */http://www.squarespace.com/
 #disqus_thread{
 	/*display: none;
 	visibility:hidden;*/
@@ -368,3 +368,85 @@ img{
 	display:none
 }
 
+
+
+
+
+
+
+.title_box{
+  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 512px;
+  border: 0;
+font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: solid 1px #CCC;
+  background-color: white;  
+  border-radius: 5px;
+  margin-top:5px
+}
+
+.content_box{
+  padding: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 528px;
+  border: 0;
+  margin-right:10px;	
+  border: solid 1px #CCC;
+  background-color: white;  
+  border-radius: 5px;
+
+}
+
+
+/* Submit button in the login panel */
+.submit:hover{
+  
+  background-color: #008C00;
+  border: solid 1px #008C00;  
+  color: #fff
+}
+
+
+.cancel{
+  border-radius: 5px;
+  width: 138px;
+  padding: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #edd;
+  border: solid 1px #CCC;
+  font-weight: bold;
+  color: #555
+}
+
+.cancel:hover{
+  border-radius: 5px;
+  width: 138px;
+  padding: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #cc0000;
+  border: solid 1px #cc0000;
+  font-weight: bold;
+  color: #fff
+}
+
+
+.source{
+  text-align: right;
+
+  margin:auto;
+
+  background-color: white;  
+  border-radius: 5px;
+  padding: 0;
+	font-size:10px;
+  padding-top: 5px
+}
+
+.source img{
+  border: 0
+}

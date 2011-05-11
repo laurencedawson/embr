@@ -30,7 +30,7 @@
       <h1><?= anchor('/', $blog_title, 'title="'.$blog_title.'"')?></h1> 
 	  <div class="navigation right">
 		<? if (!strstr(uri_string(),"admin") )
-		     echo "<a class=\"lg\" href=\"".base_url()."admin\">Admin </a>" ?> <a class="legend" href="#">Legend</a>
+		     echo "<a class=\"lg\" href=\"".base_url()."admin\">Admin </a><a class=\"legend\" href=\"\">Legend</a>" ?>
       </div>
       <h2><?=$tagline?></h2>
     </div>

@@ -9,7 +9,11 @@
 				
 	}else if(strlen($post["image"])){
          echo "<div class=\"post index image_padding\" >";
-         echo "<a href=\"".base_url().strtolower(url_title($post["title"]))."\"><img class=\"image_box\" src=\"".base_url()."img/uploads/".$post["image"]."\" /></a>";
+         echo "<a href=\"".base_url().strtolower(url_title($post["title"]))."\"><img class=\"image_box\" src=\"".(strstr($post["image"],"http") ? $post["image"] : base_url()."img/uploads/".$post["image"])."\" /></a>";
+  		 echo "<div class=\"source left\">Reblogged 2 hours ago from: <a href=\"http://facebook.com\">Facebook.com</a></div>";
+		 if( $post['source'] )
+         echo "<div class=\"source\">Source: <a href=\"". $post['source']."\">". $post['source']."</a></div>";
+
 	}else{		
 		echo "<div class=\"post index\">";		
     	echo "<h2><a href=\"".base_url().strtolower(url_title($post["title"]))."\">".$post["title"]."</a></h2>";

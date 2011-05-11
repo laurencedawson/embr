@@ -131,4 +131,28 @@ class Admin extends CI_Controller{
     $this->template->render();
   }
 
+
+  function create()
+  {
+    //Check if the user is logged in  
+    if (!$this->session->userdata('loggedin'))
+      redirect('admin/login');	
+
+    //Check the user pressed submit
+	$my_action = $this->input->post("submit");
+    if ($my_action == "Post") {
+
+        //Create a new post
+        $post['title'] = $this->input->post('title');
+        $post['content'] = $this->typography->auto_typography( $this->input->post('content') );
+        $post['comments'] = $this->input->post('comments');
+        $post['published'] = $this->input->post('published');
+		$this->blog_model->create( $post );
+	    redirect( '/' );
+    }
+    //Otherwise redirect to the last page they were on
+    else
+	  redirect( $this->session->userdata('redirect') );
+  }
+
 }

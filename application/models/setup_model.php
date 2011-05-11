@@ -67,6 +67,15 @@ class setup_model extends CI_Model{
         ),
         'summary' => array(
 	      'type' =>'TEXT'
+	    ),
+	    'comments' => array(
+          'type' =>'INT'
+        ),
+	    'published' => array(
+          'type' =>'INT'
+        ),
+		'source' => array(
+	      'type' =>'TEXT'
 	    )
 	  );
 	  $this->dbforge->add_field($fields);
@@ -147,7 +156,9 @@ class setup_model extends CI_Model{
 	/* Add an example post */
 	$data = array(        
         'title' => "Test Post",
-        'content' => "Nam vel nisi leo, ac luctus eros. Aenean lacinia, augue et suscipit vehicula, neque nulla feugiat elit, ut condimentum neque mi eget metus. In ut imperdiet eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam congue arcu id dolor luctus varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius ultrices dolor, vel pharetra dolor auctor in. Aenean egestas turpis a lorem tincidunt placerat. Fusce pharetra, enim nec vestibulum dictum, nisl dui luctus nisl, non commodo risus libero ac mi. Fusce non tortor vitae libero molestie tempor. Etiam sed nibh erat. Donec viverra neque sed nisi lobortis." );
+        'content' => "Nam vel nisi leo, ac luctus eros. Aenean lacinia, augue et suscipit vehicula, neque nulla feugiat elit, ut condimentum neque mi eget metus. In ut imperdiet eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam congue arcu id dolor luctus varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius ultrices dolor, vel pharetra dolor auctor in. Aenean egestas turpis a lorem tincidunt placerat. Fusce pharetra, enim nec vestibulum dictum, nisl dui luctus nisl, non commodo risus libero ac mi. Fusce non tortor vitae libero molestie tempor. Etiam sed nibh erat. Donec viverra neque sed nisi lobortis.",
+        'comments' => '1',
+        'published' => '1' );
     $this->db->insert('blog', $data);
 }
 

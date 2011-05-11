@@ -1,4 +1,4 @@
-<? if( $disqus ){ ?>
+<? if( $disqus && $post['content']['comments'] ){ ?>
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
