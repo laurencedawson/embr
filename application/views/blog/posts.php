@@ -17,7 +17,7 @@
 	echo "<div class=\"post image_padding\" style=\"margin-bottom:15px\">";
          echo "<a href=\"".$post['content']['image']."\"><img class=\"image_box\" src=\"".(strstr($post['content']['image'],"http") ? $post['content']['image'] : base_url()."img/uploads/".$post['content']['image'])."\" /></a>"; 
   
-  echo "<div class=\"source left\">Reblogged 2 hours ago from: <a href=\"http://facebook.com\">Facebook.com</a></div>";
+  echo "<div class=\"source left\">Reblogged 2 hours ago from: <a href=\"http://another_blog.com\">another_blog</a></div>";
   if( $post['content']['source'] )
     echo "<div class=\"source\">Source: <a href=\"". $post['content']['source']."\">". $post['content']['source']."</a></div>";
 
@@ -32,6 +32,10 @@
   } ?>
 </div>
 
+
+<div class="reblog"><span class="hidden_url"><?=base64_encode($_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"])?></span></div>
+
+
 <!--
 <div style="padding-left: 20px; font-size:10px;">
 	<img src="http://en.gravatar.com/userimage/11373106/e3d4bacd281098018c5646f739787391.png?size=16" style="margin-right: 5px"/> reblogged this from tgold<br/>
@@ -39,5 +43,3 @@
 </div>-->
 
 </div>
-
-<!--<img src="img/reblog.png" class="left"/>-->

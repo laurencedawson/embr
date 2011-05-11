@@ -40,10 +40,12 @@
 $route['default_controller'] = 'blog';
 $route['tag/(:any)'] = 'blog/tag/$1';
 $route['category/(:any)'] = 'blog/category/$1';
-$route['^((?!reading|about|blog|tag|university|contact|feed|rss|error|archive|admin)\S*)'] = "blog/posts/$1";
+$route['^((?!reading|about|blog|tag|university|contact|feed|rss|error|archive|admin|reblog)\S*)'] = "blog/posts/$1";
 $route['feed.xml$'] = "feed";
 $route['rss.xml$'] = "feed";
 $route['rss'] = "feed";
+$route['reblog/(:any)'] = "admin/reblog/$1";
+$route['reblog'] = "admin/reblog";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

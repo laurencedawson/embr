@@ -16,6 +16,7 @@ class Blog extends CI_Controller {
  	}else
 	  //Load the database model as usual
       $this->db = $this->load->database('blog', TRUE);
+	
   }
 
   /**

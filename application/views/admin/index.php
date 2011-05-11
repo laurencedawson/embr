@@ -8,3 +8,9 @@
     </ul>
   <div class="clearer"></div>
 </div>
+
+<script type="text/javascript">
+if (window.localStorage) {
+  localStorage.setItem('embr_blog', "http://localhost/embr");
+}
+</script>

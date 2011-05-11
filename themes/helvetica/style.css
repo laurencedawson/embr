@@ -450,3 +450,17 @@ font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
 .source img{
   border: 0
 }
+
+.reblog{
+background-image: url('http://localhost/embr/img/reblog.png');
+width: 64px;
+height: 20px;
+	position: fixed;
+	top: 5px;
+	right: 5px;
+		visibility:hidden
+}
+
+.hidden_url{
+	display: none;
+}

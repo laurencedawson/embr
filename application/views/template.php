@@ -11,8 +11,6 @@
 	media="screen and (max-device-width: 480px), screen and (-webkit-min-device-pixel-ratio: 2)" rel="stylesheet" type="text/css" /> 
 
 
-
-
   <link href="<?=base_url()."rss"?>" rel="alternate" type="application/rss+xml" title="<?= $blog_title ?>" />
   <link type="text/plain" rel="author" href="<?=base_url()."humans.txt"?>" />
 </head>
@@ -30,7 +28,7 @@
       <h1><?= anchor('/', $blog_title, 'title="'.$blog_title.'"')?></h1> 
 	  <div class="navigation right">
 		<? if (!strstr(uri_string(),"admin") )
-		     echo "<a class=\"lg\" href=\"".base_url()."admin\">Admin </a><a class=\"legend\" href=\"\">Legend</a>" ?>
+		     echo "<a class=\"lg\" href=\"".base_url()."admin\">Admin </a><a class=\"legend\" href=\"#\">Legend</a>" ?>
       </div>
       <h2><?=$tagline?></h2>
     </div>
@@ -56,8 +54,10 @@
 	    
   </div>
 
+  <!-- May be slower but needed for functions in $contents -->
   <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.min.js"></script>
-  <script type="text/javascript" src="<?=base_url()."js/index.js"?>"></script>  
+  <script type="text/javascript" src="<?=base_url()."js/index.js"?>"></script>
+
   
   <? if (strlen($google_analytics) > 0) { ?><script>
     var _gaq=[["_setAccount","<?= $google_analytics ?>"],["_trackPageview"]];

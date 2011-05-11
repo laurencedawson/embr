@@ -128,7 +128,7 @@ $config['subclass_prefix'] = 'MY_';
 | DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
 |
 */
-$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
+$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-=';
 
 
 /*
@@ -266,7 +266,7 @@ $config['sess_time_to_update']	= 300;
 | 'cookie_path'   =  Typically will be a forward slash
 |
 */
-$config['cookie_prefix']	= '';
+$config['cookie_prefix']	= 'embr_';
 $config['cookie_domain']	= '';
 $config['cookie_path']		= '/';
 

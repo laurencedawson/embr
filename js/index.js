@@ -26,7 +26,18 @@ $(document).ready(function(){
   $(".next").hide(); $(".prev").hide();
   //Set the index page linker
   linker();
+  //Reblog code
+  if (window.localStorage) 
+    if (localStorage.getItem('embr_blog')) 
+	  $('body').find('.reblog').css({'visibility' : 'visible'});	  	
 });
+
+$(".reblog").click(function(){
+
+window.location = localStorage.getItem('embr_blog')+"/admin/reblog/"+$(this).find(".hidden_url").text();
+
+});
+
 
 $(".cover").click(function(){
   $('body').find('.cover').css({'visibility' : 'hidden'});
@@ -35,8 +46,6 @@ $(".cover").click(function(){
 $(".legend").click(function(){
   $('body').find('.cover').css({'visibility' : 'visible'});
 });
-
-
 
 
 /*

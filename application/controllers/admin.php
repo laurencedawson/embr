@@ -155,4 +155,22 @@ class Admin extends CI_Controller{
 	  redirect( $this->session->userdata('redirect') );
   }
 
+  function reblog( $url = null ){
+	//Check if the user is logged in  
+    if (!$this->session->userdata('loggedin'))
+      redirect('admin/login');
+	
+	// Pass the users info through
+    $data = $this->data_model->getSiteData();
+
+	//Save the url
+	$data['reblog_url'] = prep_url(base64_decode($url));
+	
+    $this->template->write('title', 'Reblog');
+    $this->template->write_view('contents', 'admin/new', $data);
+    $this->template->render();
+
+
+  }
+
 }
