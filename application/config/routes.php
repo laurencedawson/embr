@@ -38,14 +38,21 @@
 |
 */
 $route['default_controller'] = 'blog';
+$route['^((?!customize|update|tools|create|about|blog|tag|contact|feed|rss|error|edit|delete|archive|admin|reblog)\S*)'] = "blog/posts/$1";
 $route['tag/(:any)'] = 'blog/tag/$1';
 $route['category/(:any)'] = 'blog/category/$1';
-$route['^((?!reading|about|blog|tag|university|contact|feed|rss|error|archive|admin|reblog)\S*)'] = "blog/posts/$1";
 $route['feed.xml$'] = "feed";
 $route['rss.xml$'] = "feed";
 $route['rss'] = "feed";
+$route['delete/(:any)'] = "admin/delete/$1";
+$route['edit/(:any)'] = "admin/edit/$1";
 $route['reblog/(:any)'] = "admin/reblog/$1";
 $route['reblog'] = "admin/reblog";
+$route['customize'] = "admin/customize";
+$route['new_post'] = "admin/new_post";
+$route['update'] = "admin/update";
+$route['create'] = "admin/create";
+$route['logout'] = "admin/logout";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
