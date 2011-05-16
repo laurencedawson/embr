@@ -43,7 +43,9 @@ $(document).ready(function(){
 	  $(".lg").attr("href",base_url+"logout");
 	  //Used to set the users reblog URL
 	  if (window.localStorage)
-	    localStorage.setItem($("div.header h1 a").text(), base_url);
+	    localStorage.setItem("embr_blog", base_url);
+	}else{	  
+	  $(".reblog").show();
 	}
   });
 });
@@ -54,7 +56,10 @@ $('.embr').hover(
 );
 
 $(".reblog").click(function(){
-  window.location = localStorage.getItem('embr_blog')+"/admin/reblog/"+$(this).find(".hidden_url").text();
+  alert("Coming Soon...");
+  //if( window.localStorage && localStorage.getItem('embr_blog') ){
+  //  window.location = localStorage.getItem('embr_blog')+"/admin/reblog/"+$(this).find(".hidden_url").text();	
+  //}
 });
 
 $(".cover").click(function(){

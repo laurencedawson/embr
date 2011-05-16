@@ -7,7 +7,7 @@
   <? if( $facebook_connect )
         echo $facebook_connect;
       else
-		echo "<meta property=\"og:title\" content=\"$title\" />";
+		echo "<meta property=\"og:title\" content=\"$blog_title\" />";
         echo "<meta property=\"og:url\" content=\"".base_url()."\" />";
 		echo "<meta property=\"og:description\" content=\"".$site_description."\" />";
 		echo "<meta property=\"og:type\" content=\"blog\" />"?>
