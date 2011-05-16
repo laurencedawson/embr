@@ -1,19 +1,16 @@
 /*
-    Test if an element is visible
-*/
-function visible(e){return (($(e).offset().top+$(e).height()>=$(window).scrollTop()) && ($(e).offset().top<=$(window).scrollTop()+$(window).height()));}
-
-/*
      Set links for posts on index pages (if div clicked follow the link)
 */
 function linker(){
   $(".index").click(function(){
 	//Cache the url, slide up the top bar
 	var url=$(this).find('h2 a').attr('href');
-	$(".header_slide").slideUp("fast",function(){
-		//Foollow the url
-		window.location = url
-	;});
+	if( typeof url != "undefined"){
+	    window.location = url
+    }else{
+	  url=$(this).find('a').attr('href');
+      window.location = url
+    }
   });
 }
 
@@ -21,7 +18,9 @@ function linker(){
 	Standard document ready
 	Hides pagination if js enabled
 */
+var base_url;
 $(document).ready(function(){
+	
   //Hide pagination controls
   $(".next").hide(); $(".prev").hide();
   //Set the index page linker
@@ -29,15 +28,34 @@ $(document).ready(function(){
   //Reblog code
   if (window.localStorage) 
     if (localStorage.getItem('embr_blog')) 
-	  $('body').find('.reblog').css({'visibility' : 'visible'});	  	
+	  $('body').find('.reblog').css({'visibility' : 'visible'});
+  //Focus on the title of any form
+  $(".form_title").focus();
+  //Sets the base url
+  base_url = $("div.header h1 a").attr('href');
+
+  //Displays the admin buttons if logged in
+  l = base_url+"tools/logged_in";
+  $.getJSON(l,function(json){
+	if(json.logged_in){
+	  $(".toolbox").show();
+      $(".lg").text("Logout");
+	  $(".lg").attr("href",base_url+"logout");
+	  //Used to set the users reblog URL
+	  if (window.localStorage)
+	    localStorage.setItem($("div.header h1 a").text(), base_url);
+	}
+  });
 });
+
+$('.embr').hover(
+    function() { $(this).animate({opacity: 1.0}, 500 ); },
+    function() { $(this).animate({opacity: 0.2}, 500 ); }
+);
 
 $(".reblog").click(function(){
-
-window.location = localStorage.getItem('embr_blog')+"/admin/reblog/"+$(this).find(".hidden_url").text();
-
+  window.location = localStorage.getItem('embr_blog')+"/admin/reblog/"+$(this).find(".hidden_url").text();
 });
-
 
 $(".cover").click(function(){
   $('body').find('.cover').css({'visibility' : 'hidden'});
@@ -45,6 +63,47 @@ $(".cover").click(function(){
 
 $(".legend").click(function(){
   $('body').find('.cover').css({'visibility' : 'visible'});
+  return false;
+});
+
+$(".delete").click(function(){
+  var answer = confirm("Are you sure you want to delete this post?")
+  return answer ? true : false;
+});
+
+var state2 = 0;
+$(".extra").click(function(){
+	console.log(state2);
+  if( state2 ){
+    $('body').find('.extra_options_pane').fadeOut('fast');
+    state2 = 0;
+    $(this).text("More Options");
+  } else {
+    $('body').find('.extra_options_pane').fadeIn('fast');
+    state2 = 1;
+    $(this).text("Less Options");
+  }	
+  return false;
+});
+
+var state = 1;
+$(".aip").click(function(){
+  if( state ){
+    $('body').find('.text_area_wrapper').fadeOut('fast', function() {
+      $(".aip").text("Switch to Text Post");
+      $('body').find('.post_image_box').fadeIn();
+      $('body').find('.post_label').text("Image Post URL");
+      state=state?0:1;
+    });
+  }else{
+	$('body').find('.post_image_box').fadeOut('fast', function() {
+      $(".aip").text("Switch to Image Post");
+      $('body').find('.text_area_wrapper').fadeIn();
+      $('body').find('.post_label').text("Text Post");
+      state=state?0:1;
+    });
+  }
+  return false;
 });
 
 
@@ -89,15 +148,12 @@ $(window).keypress(function(e){
 		$(window).scrollTop( t.offsetTop-20 );
 	  }else{
 		//Handles case to display header
-        $('.posts').find('.post').get(index).className = last;
+		if( typeof last != "undefined")
+          $('.posts').find('.post').get(index).className = last;
 	 	$(window).scrollTop( 0 );
 		index=-1;
 	  }
 	}
-	//Handle the view operation
-	else if( String.fromCharCode(e.which)=='v' )
-		window.location = 
-			$('.posts').find('.post h2 a').get(index-1).href;
 });
 
 /*
@@ -106,6 +162,7 @@ $(window).keypress(function(e){
 var lg; //Used as hide / show switch
 var d =false; //Used as a caching switch
 $(".lg").click(function(){
+	
   //If cached, toggle the hide and show operations
   if( d ){
     if( !lg ){
@@ -121,22 +178,26 @@ $(".lg").click(function(){
   }else{
     //If not cached, grab the admin panel
     if( !lg ){
-	  //Incase of slow connections show the loading icon
-      $('.header').append("<div class=\"loading\"><img src=\"img/load.gif\"/></div>");	
-      //Grab the admin link
-	  var l = $(this).attr('href')+"/index/min";
-      //Set the admin button text to hide
-      $(this).text(" Hide ");
-      //Grab the admin panel and append to the header div
-      $.get(l,function(data){
-        var d=$(data);
-        var items=d.find('.post');
-        $('.loading').remove();
-        $('.header').append( items );
-      });
-	  //Set the cached & showing variables as true
-	  lg = true;
-	  d = true;
+	  if( $(this).text()=="Logout" )
+	    window.location = $(this).attr('href');
+	  else{
+  	    //Incase of slow connections show the loading icon
+        $('.header').append("<div class=\"loading\"><img src=\"img/load.gif\"/></div>");	
+        //Grab the admin link
+	    var l = $(this).attr('href')+"/index/min";
+        //Set the admin button text to hide
+        $(this).text(" Hide ");
+        //Grab the admin panel and append to the header div
+        $.get(l,function(data){
+          var d=$(data);
+          var items=d.find('.post');
+          $('.loading').remove();
+          $('.header').append( items );
+        });
+	    //Set the cached & showing variables as true
+	    lg = true;
+	    d = true;
+	  }
 	}
   } return false;	
 });
@@ -147,12 +208,6 @@ $(".lg").click(function(){
 var loading = false; //If the page if loading
 var endreached = false; //If we have reached the end
 $(window).scroll(function(){
-  //Refresh linker
-  linker();
-
-  //Check if header is visible - disabled for now due to the introduction of keyboard shortcuts
-//  if(!visible($(".header"))) $(".header_slide").slideDown("slow"); else $(".header_slide").slideUp("slow");  
-
   //Cancel if we have reached the end or are currently loading
   if(loading || endreached) return;
   //Check if user has scrolled to a point + buffer
@@ -182,6 +237,9 @@ $(window).scroll(function(){
             endreached=true;
             $('.posts').append("<div class=\"loading\"><h2>You've reached the end!</h2></div>"); 
           }
+          //Refresh linker
+		  linker();
+		  //Finish loading
           loading = false;
         });
       }

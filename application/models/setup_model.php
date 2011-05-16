@@ -14,7 +14,6 @@ class setup_model extends CI_Model{
 	  return false;
     }else
       return true;
-
   }
 
   /*
@@ -62,9 +61,6 @@ class setup_model extends CI_Model{
 	    'image' => array(
 	      'type' =>'TEXT'
 	    ),
-	    'youtube' => array(
-	      'type' =>'TEXT'
-        ),
         'summary' => array(
 	      'type' =>'TEXT'
 	    ),
@@ -160,6 +156,6 @@ class setup_model extends CI_Model{
         'comments' => '1',
         'published' => '1' );
     $this->db->insert('blog', $data);
-}
+  }
 
 }

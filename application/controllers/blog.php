@@ -4,8 +4,6 @@ class Blog extends CI_Controller {
   public function __construct()
   {
     parent::__construct();
-	//Cache output
-    $this->output->cache(3600);
 
 	//Check if the database needs setting up
     $this->load->model('setup_model');
@@ -17,6 +15,11 @@ class Blog extends CI_Controller {
 	  //Load the database model as usual
       $this->db = $this->load->database('blog', TRUE);
 	
+	//Load the template library
+	$this->load->library('template');
+	
+	//Load the url and form helpers
+	$this->load->helper('form');
   }
 
   /**
@@ -24,9 +27,14 @@ class Blog extends CI_Controller {
     * @param int $page
     */
   function index( $page = '0', $message = null )
-  {	
+  {
 	//Cache output
-	$this->output->cache(3600);
+	$this->output->cache( 5 );
+	
+	//Load the typography library
+	$this->load->library('typography');
+	//Load the pagination library
+	$this->load->library('pagination');
 	
     // Setup pagination    
     $config['base_url'] = base_url().'blog/archive';
@@ -43,6 +51,7 @@ class Blog extends CI_Controller {
     $this->template->write('title', 'Blog');
     $this->template->write_view('contents', 'blog/index', $data);
     $this->template->render();
+
   }
 	
   /**
@@ -60,14 +69,20 @@ class Blog extends CI_Controller {
   /**
     * View an individual post
     * @param int $id
+    * @param bool $xml
     */
-  function posts( $id = null )
+  function posts( $id = null, $xml = null )
   {    
+    $this->output->cache(3600);
+
     if( $id == null)
       show_404();
     
     // Pass the users info through
     $data = $this->data_model->getSiteData();
+
+	//Load the typography library
+	$this->load->library('typography');
     
     // Get the current post
     $post = $this->blog_model->getPost( str_replace("-"," ",$id ) );
@@ -75,14 +90,21 @@ class Blog extends CI_Controller {
     if( !isset( $post['content'] ) )
       show_404();
     
-    // Put the contents of the post into the data array
+	// Put the contents of the post into the data array
     $data['post'] = $post;
-    
-    // Write to the view
-    $this->template->write_view( 'tags', 'blog/widgets/tags', $data );
-    $this->template->write_view( 'comments', 'blog/comments', $data );
-    $this->template->write_view( 'contents', 'blog/posts', $data );
-    $this->template->render();
+
+    //Write the post as XML
+	if( $xml )
+      $this->load->view('blog/xml_posts', $data);
+    else{    
+      // Write to the view
+	  $this->template->write('title', $data['post']['content']['title'] );
+	  $this->template->write_view('facebook_connect', 'blog/widgets/facebook', $data);
+      $this->template->write_view( 'tags', 'blog/widgets/tags', $data );
+      $this->template->write_view( 'comments', 'blog/comments', $data );
+      $this->template->write_view( 'contents', 'blog/posts', $data );
+      $this->template->render();
+    }
   }
 
   /**
@@ -97,6 +119,11 @@ class Blog extends CI_Controller {
     
     // Pass the users info through
     $data = $this->data_model->getSiteData();
+
+	//Load the typography library
+	$this->load->library('typography');
+	//Load the pagination library
+	$this->load->library('pagination');
     
     // Load the related posts
     $data['tag'] = $tag;
@@ -130,6 +157,11 @@ class Blog extends CI_Controller {
     
     // Pass the users info through
     $data = $this->data_model->getSiteData();
+
+	//Load the typography library
+	$this->load->library('typography');
+	//Load the pagination library
+	$this->load->library('pagination');
     
     // Load the related posts
     $data['category'] = $cat;

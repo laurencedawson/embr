@@ -189,17 +189,47 @@ class blog_model extends CI_Model {
     * Creates a new blog post
     * @param A post object containing the title and content
     */
-  function create( $post ){
-//    print_r( $post );
-
+  function create( $post )
+  {
     $data = array(
         'title' => $post['title'],
         'content' => $post['content'],
+	    'source' => $post['source'],
+        'image' => $post['image'],
 		'comments' => $post['comments'] ? 1 : 0,
 		'published' => $post['published'] ? 1 : 0 );
     $this->db->insert('blog', $data);
-
   }
 
+  /**
+    * Updates a blog post
+    * @param A post object containing the title and content
+    */
+  function update( $post )
+  {	
+	$id = $this->getID( $post['hidden_title'] );
+    if( isset( $id->id ) ){
+        $data = array(
+	      'title' => $post['title'],
+	      'content' => $post['content'],
+	      'source' => $post['source'],
+	      'image' => $post['image'],
+          'comments' => $post['comments'] ? 1 : 0,
+          'published' => $post['published'] ? 1 : 0 );  
+        $this->db->where('id', $id->id);
+		$this->db->update('blog', $data);
+    }
+  }
+
+  /**
+    * Delete a blog post
+    * @string $title
+    */
+  function delete( $title )
+  {
+    $id = $this->getID( $title );
+    if( isset( $id->id ) )
+      $this->db->delete('blog', array('id' => $id->id));
+  }
 }
 ?>

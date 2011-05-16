@@ -87,9 +87,7 @@ class user_model extends CI_Model
       $this->db->where('user_id', $id);
       $this->db->set('locked','1',false);
       $this->db->update('attempts');
-    }
-
-    return 0;
+    } return 0;
   }
     
 }

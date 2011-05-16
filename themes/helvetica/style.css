@@ -45,7 +45,8 @@ h3{
 }
 
 p{
-  line-height: 1.5
+  color: #777;
+  line-height: 170%;
 }
 
 p a{
@@ -116,7 +117,7 @@ p a{
 }
 
 .post h2{
-  margin-top:0px
+  margin-top:0px;
 }
 
 img{
@@ -146,19 +147,26 @@ img{
   border-bottom: 0;
   font-size:12px;
   color:#999;
-  border-bottom: 1px #ddd solid
+  border-bottom: 1px #ddd solid;
+  padding-bottom: 5px;
+  border-radius: 5px
 }
 
 .info a{
   border: 0
 }
 
-
 /* Post Tags */
 .tags{
   clear: both;
   border-top: 1px #ddd solid;
+clear:both;
+margin:auto;
+padding-top:10px;
+border-radius: 5px;
+font-size: 10px;
 }
+
 
 
 /* Post Footer */
@@ -177,6 +185,7 @@ img{
 .embr{
   padding:0;
   float:right;
+  opacity: 0.20;
 }
 
 .embr p, .embr p a{
@@ -260,18 +269,22 @@ img{
 /* Each button in the admin cms is an 'activity' */
 .activity{
   border-radius: 5px;
-  width: 95px;
-  padding: 4px;
-  font-weight: bold;
+
+  
+  font-size: 10px;
   display: block;
   float: left;	
   text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
   color:#fff;
-  background-color: #555
+  background-color: rgba(0,0,0,0.5);
 }
 
 .activity a:hover, .activity a{
+	margin:0;
+	padding:2px;
+    width: 178px;
 	color:#fff;
+	display: block;	
 }
 
 .activity:hover{
@@ -356,7 +369,7 @@ img{
 }
 
 
-/* disqus hacks */http://www.squarespace.com/
+/* disqus hacks */
 #disqus_thread{
 	/*display: none;
 	visibility:hidden;*/
@@ -374,30 +387,43 @@ img{
 
 
 
-.title_box{
+.title_box, .post_image_box, .post_source_box, .post_tags_box, .post_categories_box{
   padding: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
   width: 512px;
   border: 0;
-font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+font: 22px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
   border: solid 1px #CCC;
   background-color: white;  
   border-radius: 5px;
-  margin-top:5px
+  margin-top:10px;
+color:#555;
+}
+
+.post_image_box, .post_source_box, .post_tags_box,post_categories_box{
+	font: 12px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.post_categories_box,.post_tags_box{
+	width: 235px;
 }
 
 .content_box{
-  padding: 4px;
+/*  padding: 4px;
   padding-top: 10px;
-  padding-bottom: 10px;
-  width: 528px;
+  padding-bottom: 10px;*/
+padding: 10px;
+  width: 512px;
   border: 0;
   margin-right:10px;	
   border: solid 1px #CCC;
   background-color: white;  
   border-radius: 5px;
-
+	font: 12px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:#555;
+	margin-bottom:0;
+	padding-bottom:0;
 }
 
 
@@ -451,16 +477,82 @@ font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
   border: 0
 }
 
+.tools{
+	height: 20px;
+		position: absolute;
+		top: 4px;
+		right: 4px;
+
+}
+
 .reblog{
+float: right;
 background-image: url('http://localhost/embr/img/reblog.png');
 width: 64px;
 height: 20px;
-	position: fixed;
-	top: 5px;
-	right: 5px;
-		visibility:hidden
+display:none;
+margin-left: 4px;
 }
+
+.toolbox{
+margin-left: 4px;	
+float:right;
+display:none;
+}
+
 
 .hidden_url{
 	display: none;
+}
+
+.nicEdit-selected {
+  border: 0px solid #0000ff !important;
+}
+ 
+.nicEdit-panel {
+
+
+
+}
+
+.nicEdit-panelContain{
+
+  margin-top:10px;	
+border:0;
+
+
+}
+ 
+.nicEdit-button {
+
+}
+
+.nicEdit-main{
+	background-color:#fff;
+	outline:none;
+	color:#666;
+	padding: 10px;
+  margin: 10px;
+}
+
+textarea, input{ outline:none;}
+
+.post_label{
+  font-weight: bold;
+}
+
+.text_area_wrapper{
+	width: 532px;
+}
+
+/* Adds a little spacer */
+.bump{
+	margin-top:20px;
+}
+
+
+
+/* Used for the slideout options pane */
+.extra_options_pane{
+display: none;
 }

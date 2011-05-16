@@ -10,3 +10,5 @@ $config['disqus'] = "laurencedawson";
 $config['google_analytics'] = "UA-22557362-1";
 $config['not_found'] = "bite.png";
 $config['site_description'] = "Just another embr blog.";
+$config['debug'] = FALSE;
+$config['legend'] = TRUE;

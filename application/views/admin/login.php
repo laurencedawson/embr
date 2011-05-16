@@ -1,8 +1,8 @@
-<?  if($msg&&$msg!="min"){
-      echo "<div class=\"post\">";
-      echo "<h3>".$msg."</h3>";
-	  echo "</div>";
-    } ?>
+<?if($msg&&$msg!="min"){
+  echo "<div class=\"post\">";
+  echo "<h3>".$msg."</h3>";
+  echo "</div>";
+} ?>
 
 <div class="post" style="margin-bottom:10px"> 
   <?php 

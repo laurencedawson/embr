@@ -65,7 +65,8 @@ $template['default']['regions'] = array(
    'tags',
    'comments',
    'recent',
-   'related'
+   'related',
+   'facebook_connect'
 );
 $template['default']['parser'] = 'parser';
 $template['default']['parser_method'] = 'parse';
