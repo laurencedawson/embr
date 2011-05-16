@@ -289,12 +289,12 @@ class Admin extends CI_Controller{
       //Update the posts
       $this->blog_model->update( $post );
 
-      //Redirect to the last visited page
+      //Redirect to the post
 	  redirect( strtolower(str_replace(" ","-",$this->input->post('title'))) );
     }
     
-    else //Otherwise redirect to the last page they were on
-	  redirect( $_SERVER['HTTP_REFERER'] );
+    else //Otherwise redirect to post
+	  redirect( strtolower(str_replace(" ","-",$this->input->post('title'))) );
   }
 
 
