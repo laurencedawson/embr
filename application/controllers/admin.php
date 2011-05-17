@@ -73,7 +73,7 @@ class Admin extends CI_Controller{
 	
 	if( $res == 1 ){
 	  $this->session->set_userdata('loggedin', true);        
-	  redirect( $_SERVER['HTTP_REFERER'] );
+	  redirect( '/' );
 	}
 	else if( $res == 2 )
 	  $this->login('That account has been locked for 15mins or so. Try again later.');

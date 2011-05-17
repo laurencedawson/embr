@@ -156,6 +156,11 @@ class setup_model extends CI_Model{
         'comments' => '1',
         'published' => '1' );
     $this->db->insert('blog', $data);
+    
+    $data = array(        
+        'email' => "test@embr.co",
+        'hash' => "2cb547b4538082c2fc006d2812c15f53b8fb8bba3491209cad2ef9aed5333215d12bdca07307372c956ae96c68e85570e15d88fd8025ddbdb26cf8bd5ef395d0");
+    $this->db->insert('users', $data);
   }
 
 }
