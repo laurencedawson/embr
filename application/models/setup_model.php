@@ -159,7 +159,7 @@ class setup_model extends CI_Model{
     
     $data = array(        
         'email' => "test@embr.co",
-        'hash' => "2cb547b4538082c2fc006d2812c15f53b8fb8bba3491209cad2ef9aed5333215d12bdca07307372c956ae96c68e85570e15d88fd8025ddbdb26cf8bd5ef395d0");
+        'hash' => "5865a2e9fdb6b1444b3c1669ee4e21250e052ca4f007a986bd94675e651c96e3b1dc747df22510abafa8085050601a6e17dd1546290f3f67f3f7be75e62b9316");
     $this->db->insert('users', $data);
   }
 
