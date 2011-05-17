@@ -242,13 +242,10 @@ class Admin extends CI_Controller{
 	    //http://codeigniter.com/user_guide/libraries/form_validation.html#repopulatingform
 	    $data['post_title'] = $this->input->post('title');
 	    
-	    //Removes the trailing <br>
-        $length = strlen( "&lt;br&gt;" );
-        $start  = $length * -1;
-        $test = $this->input->post('content');
-        if( strlen( $test ) >= 4 && substr( $test,strlen($test)-$length ) == "&lt;br&gt;" )
-          $test = substr( $test, 0, strlen($test)-$length );          
-        	    
+	    //Replace all "&lt;br&gt;" with <br>
+        $test = $this->input->post('content');	    
+        $test = str_replace ( "&lt;br&gt;", "<br>", $test );
+
 	    $data['post_content'] = $test;
 	    $data['post_image'] = $this->input->post('image');
 	    $data['source'] = $this->input->post('source');	
