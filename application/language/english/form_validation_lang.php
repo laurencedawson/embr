@@ -1,6 +1,6 @@
 <?php
 
-$lang['alpha_dash_space']    = "The %s field may only contain alpha-numeric characters, underscores, and dashes/spaces.";
+$lang['alpha_dash_space']    = "The %s field may only contain alpha-numeric characters and spaces.";
 $lang['isnt']    = "For an Text Post, you must input some content.";
 $lang['valid_url']    = "The url must start with 'http://' or contain no spaces.";
 

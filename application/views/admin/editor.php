@@ -29,7 +29,7 @@
 	echo "<div class=\"right pad\"><a class=\"extra\" href=\"#\">More Options</a></div>";
 	echo form_label('<b>Text Post</b><br/>', 'label', array( 'class' => 'post_label') );
     echo "<div class=\"text_area_wrapper\">";	
-    echo form_textarea(array('id'=>'textarea','class'=>'content_box','name' =>'content','rows'=>'6','value'=>(isset($post['content']['content'])?$post['content']['content']:'')));
+    echo form_textarea(array('id'=>'textarea','class'=>'content_box','name' =>'content','rows'=>'6','value'=>(isset($post_content)?$post_content:(isset($post['content']['content'])?$post['content']['content']:''))));
     echo "</div>";
     echo form_input(array('style'=>'display: none','class'=>'post_image_box','name'=>'image', 'value'=>(isset($post_image)?$post_image:(isset($post['content']['image'])?$post['content']['image']:''))));
     echo "</div>";

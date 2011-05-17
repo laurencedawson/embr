@@ -9,8 +9,9 @@ class MY_Form_validation extends CI_Form_validation {
    * @return    bool
    */    
   function alpha_dash_space($str)
-  {
-	return ( ! preg_match("/^([-a-z0-9_-\s])+$/i", $str)) ? FALSE : TRUE;
+  {	
+	return ( ! preg_match("/^([a-z0-9\s])+$/i", $str)) ? FALSE : TRUE;
+	
   }
 
   /*

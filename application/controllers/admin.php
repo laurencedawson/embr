@@ -241,6 +241,15 @@ class Admin extends CI_Controller{
 	    //Manually setting values as set_value doesn't seem to be working
 	    //http://codeigniter.com/user_guide/libraries/form_validation.html#repopulatingform
 	    $data['post_title'] = $this->input->post('title');
+	    
+	    //Removes the trailing <br>
+        $length = strlen( "&lt;br&gt;" );
+        $start  = $length * -1;
+        $test = $this->input->post('content');
+        if( strlen( $test ) >= 4 && substr( $test,strlen($test)-$length ) == "&lt;br&gt;" )
+          $test = substr( $test, 0, strlen($test)-$length );          
+        	    
+	    $data['post_content'] = $test;
 	    $data['post_image'] = $this->input->post('image');
 	    $data['source'] = $this->input->post('source');	
 	    $data['post_comments'] = $this->input->post('comments')=='accept' ? TRUE : FALSE;
