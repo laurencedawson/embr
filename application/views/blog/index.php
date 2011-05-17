@@ -1,6 +1,6 @@
 <div class="tools">
-  <div class="toolbox"><a href="<?=base_url()?>customize"><img src="http://localhost/embr/img/customize.png"></a></div>
-  <div class="toolbox"><a href="<?=base_url()?>new_post"><img src="http://localhost/embr/img/new.png"></a></div>
+  <div class="toolbox"><a href="<?=base_url()?>customize"><img src="<?=base_url()?>/img/customize.png"></a></div>
+  <div class="toolbox"><a href="<?=base_url()?>new_post"><img src="<?=base_url()?>/img/new.png"></a></div>
 </div>
 
 <div class="posts">
