@@ -28,13 +28,13 @@ class Blog extends CI_Controller {
     */
   function index( $page = '0', $message = null )
   {
-    //Cache output
-    $this->output->cache( 5 );
-
-    //Load the typography library
-    $this->load->library('typography');
-    //Load the pagination library
-    $this->load->library('pagination');
+	//Cache output
+	$this->output->cache( 5 );
+	
+	//Load the typography library
+	$this->load->library('typography');
+	//Load the pagination library
+	$this->load->library('pagination');
 	
     // Setup pagination    
     $config['base_url'] = base_url().'blog/archive';
@@ -48,7 +48,7 @@ class Blog extends CI_Controller {
     $data['posts'] = $this->blog_model->getPosts( 5, $page );
     
     // Write to the template and render
-    $this->template->write('title', $data['blog_title']);
+    $this->template->write('title', 'Blog');
     $this->template->write_view('contents', 'blog/index', $data);
     $this->template->render();
 
@@ -69,11 +69,11 @@ class Blog extends CI_Controller {
   /**
     * View an individual post
     * @param int $id
-    * @param bool $xml
+    * @param string $reblog
     */
-  function posts( $id = null, $xml = null )
+  function posts( $id = null, $reblog = null )
   {    
-    $this->output->cache( 5 );
+    $this->output->cache(3600);
 
     if( $id == null)
       show_404();
@@ -94,8 +94,10 @@ class Blog extends CI_Controller {
     $data['post'] = $post;
 
     //Write the post as XML
-	if( $xml )
+	if( $reblog == "xml" )
       $this->load->view('blog/xml_posts', $data);
+    else if ( $reblog == "json" )
+      $this->load->view('blog/json_posts', $data);
     else{    
       // Write to the view
 	  $this->template->write('title', $data['post']['content']['title'] );
@@ -114,7 +116,7 @@ class Blog extends CI_Controller {
   function tag( $tag = null, $page = 0 )
   {	
     // Set the cache duration
-    $this->output->cache( 5 );
+    $this->output->cache(3600);
     
     // Pass the users info through
     $data = $this->data_model->getSiteData();
@@ -152,7 +154,7 @@ class Blog extends CI_Controller {
   function category( $cat = null, $page = 0 )
   {		
     // Set the cache duration
-    $this->output->cache( 5 );
+    $this->output->cache(3600);
     
     // Pass the users info through
     $data = $this->data_model->getSiteData();

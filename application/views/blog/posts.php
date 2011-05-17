@@ -1,7 +1,16 @@
-<div class="tools">	
-  <div class="reblog"><span class="hidden_url"><?=base64_encode($_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"])?></span></div>
-  <div class="toolbox delete"><a href="<?=base_url()?>delete/<?=strtolower( str_replace(" ","-",$post['content']['title']) )?>"><img src="<?=base_url()?>/img/delete.png"></a></div>
-  <div class="toolbox"><a href="<?=base_url()?>edit/<?=strtolower( str_replace(" ","-",$post['content']['title']) )?>"><img src="<?=base_url()?>/img/edit.png"></a></div>
+<div class="tools">
+  <div class="reblog">
+    <ul class="toolbox_wrapper">
+     <li class="toolbox_element">Reblog<span class="hidden_url"><?=base64_encode($_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"])?></span></li>
+    </ul>
+  </div>
+  
+  <div class="toolbox">
+    <ul class="toolbox_wrapper">
+     <li class="toolbox_element delete"><a href="<?=base_url()?>delete/<?=strtolower( str_replace(" ","-",$post['content']['title']) )?>">Delete</a></li>
+     <li class="toolbox_element"><a href="<?=base_url()?>edit/<?=strtolower( str_replace(" ","-",$post['content']['title']) )?>">Edit</a></li>
+    </ul>
+  </div>
 </div>
 
 <div class="blog_post">

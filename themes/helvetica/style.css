@@ -487,18 +487,37 @@ padding: 10px;
 
 .reblog{
 float: right;
-background-image: url('../../img/reblog.png');
-width: 64px;
-height: 20px;
 display:none;
 margin-left: 4px;
 }
 
 .toolbox{
+  display: none
+}
+
+.toolbox_element{
 margin-left: 4px;	
 float:right;
-display:none;
+display:block;
+padding: 1px;
+padding-left: 10px;
+padding-right: 10px;
+border-radius: 3px;
+text-align: center;
+font-size: 10px;
+display: block;
+color:#fff;
+background-color: rgba(0,0,0,0.5);
 }
+
+.toolbox_element a{
+  color: #fff
+}
+
+.toolbox_wrapper{
+  margin:0;
+}
+
 
 
 .hidden_url{
