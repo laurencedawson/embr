@@ -36,7 +36,7 @@ class user_model extends CI_Model
     if( sizeof( $query ) && $query->locked){
 
       $datetime1 = new DateTime('now');
-	  $datetime2 = new DateTime( $query->last_lock );
+	  $datetime2 = new DateTime( $query->datet );
 	  $interval = $datetime1->diff($datetime2);
 
       //Also if a day, month or year has gone by reset the account
@@ -87,7 +87,9 @@ class user_model extends CI_Model
       $this->db->where('user_id', $id);
       $this->db->set('locked','1',false);
       $this->db->update('attempts');
-    } return 0;
+    }
+
+    return 0;
   }
     
 }
