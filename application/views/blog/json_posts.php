@@ -1,0 +1,1 @@
+<?echo json_encode( array('blog_title' => $blog_title, 'post_title' => $post['content']['title'], 'post_content' => $post['content']['content'], 'post_url' => base_url().strtolower( str_replace(" ","-",$post['content']['title']) )) )?>
