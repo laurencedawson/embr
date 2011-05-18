@@ -1,10 +1,10 @@
 # About embr
 
-Embr is a lightweight blog built using the CodeIgniter framework. As it's very early days the list of features is very minimal but currently supports: Basic posts, post indexing and recent posts. Commenting provided by Disqus. Currently there is no graphical CMS for post creation, deletion etc - SQL for now.
+Embr is a blog engine built using the CodeIgniter framework designed to be lightweight and fast. Currently embr supports text and image posts, provides a simple CMS, Disquss commenting, infinite-scrolling, keyboard navigation, Facebook opengraph tags and finally is in the final stages of allowing custom themes and "reblogging" of posts.
 
 ## Example
 
-A working text blog can be viewed [here](http://blog.laurencedawson.com/) and image blog [here](http://images.laurencedawson.com/).
+A working text blog can be viewed [here](http://blog.laurencedawson.com/).
 
 ## Requires
 
@@ -21,3 +21,7 @@ Clone the repository:
 Run the install script:
 
 	cd embr && sh install.sh
+
+Blog settings can be changed by editing the file:
+
+	application/config/blog.php
