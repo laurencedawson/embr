@@ -1,3 +1,5 @@
+html{overflow-y: scroll}
+
 body{
   font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #666;
