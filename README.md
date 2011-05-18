@@ -25,3 +25,10 @@ Run the install script:
 Blog settings can be changed by editing the file:
 
 	application/config/blog.php
+
+## In Development
+
+- Post "reblogging" across self hosted embr blogs
+
+- Custom theme creation and CSS simplification
+
