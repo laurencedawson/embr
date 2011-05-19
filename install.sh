@@ -50,9 +50,7 @@ cd ..
 chmod 777 cache
 
 # tell the user the default account details
-echo "\nThe default email login is: test@embr.co\n";
-echo "\nThe default password is: qwerty\n";
-
+echo "\nThe default email and pass are: test@embr.co\tqwerty\n";
 
 # all done
 echo "\nembr is ready to go, have fun!\n";
