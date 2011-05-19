@@ -7,9 +7,9 @@ class setup_model extends CI_Model{
     */
   function checkDatabase(){
     $this->load->dbutil();
-    if (!$this->dbutil->database_exists('ablog')){
+    if (!$this->dbutil->database_exists('blog')){
       $this->load->dbforge();
-      $this->dbforge->create_database('ablog');      
+      $this->dbforge->create_database('blog');      
 	  return false;
     }else
       return true;
