@@ -38,24 +38,26 @@ $(document).ready(function(){
   l = base_url+"tools/logged_in";
   $.getJSON(l,function(json){
 	if(json.logged_in){
-	  $(".toolbox").show();
+	  $(".toolbox_element").show();
+	  $(".reblog_element").hide();
       $(".lg").text("Logout");
 	  $(".lg").attr("href",base_url+"logout");
 	  //Used to set the users reblog URL
 	  if (window.localStorage)
 	    localStorage.setItem("embr_blog", base_url);
 	}else{	  
-	  $(".reblog").show();
+	  $(".reblog_element").show();
 	}
   });
 });
 
 $('.embr').hover(
-    function() { $(this).animate({opacity: 1.0}, 500 ); },
+	//Cheers to @saulhardman
+    function() { $(this).stop(true,true).animate({opacity: 1.0}, 500 ); },
     function() { $(this).animate({opacity: 0.2}, 500 ); }
 );
 
-$(".reblog").click(function(){
+$(".reblog_element").click(function(){
   alert("Coming Soon...");
   //if( window.localStorage && localStorage.getItem('embr_blog') ){
   //  window.location = localStorage.getItem('embr_blog')+"/admin/reblog/"+$(this).find(".hidden_url").text();	
@@ -78,7 +80,6 @@ $(".delete").click(function(){
 
 var state2 = 0;
 $(".extra").click(function(){
-	console.log(state2);
   if( state2 ){
     $('body').find('.extra_options_pane').fadeOut('fast');
     state2 = 0;
@@ -96,12 +97,12 @@ $(".aip").click(function(){
   if( state ){
     $('body').find('.text_area_wrapper').fadeOut('fast', function() {
       $(".aip").text("Switch to Text Post");
-      $('body').find('.post_image_box').fadeIn();
+      $('body').find('.editor_image_input').fadeIn();
       $('body').find('.post_label').text("Image Post URL");
       state=state?0:1;
     });
   }else{
-	$('body').find('.post_image_box').fadeOut('fast', function() {
+	$('body').find('.editor_image_input').fadeOut('fast', function() {
       $(".aip").text("Switch to Image Post");
       $('body').find('.text_area_wrapper').fadeIn();
       $('body').find('.post_label').text("Text Post");

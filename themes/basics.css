@@ -1,0 +1,166 @@
+/*
+ * 
+ *  CSS 'Constants' - Do not change
+ *
+ */
+
+.right {
+  float:right
+}
+
+
+.left {
+ float:left
+}
+
+
+.bump{
+	margin-top:20px
+}
+
+
+.pad{
+  margin-right: 15px
+}
+
+
+.clearer{
+	width:100%;
+	height:10px;
+	clear:both
+}
+
+
+/* embr footer branding */
+.embr{
+  padding:0;
+  float:right;
+  opacity: 0.20;
+}
+
+.embr p, .embr p a{
+	margin:0;
+	padding-top:0px;
+	border-bottom: 0
+}
+
+
+/*
+ * 
+ * Keyboard shortcuts legend
+ *
+ */
+
+.cover {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.85);
+	visibility:hidden
+}
+
+
+.controls {
+	width: 576px;
+	margin:auto;
+	color:#fff;
+	text-align: center;
+	margin-top: 140px;
+	opacity:1.0
+}
+
+
+.controls h2 {
+  text-shadow: 0 0 0;
+  color:#fff;
+  font-weight: bold
+}
+
+
+.key {
+  margin-right: 25px
+}
+
+
+/*
+ *
+ *  DISQUS styling
+ *
+ */
+
+#disqus_thread {
+  border-top: 1px solid #ccc;
+  margin:0
+}
+
+#dsq-subscribe, #dsq-sort-by, .dsq-trackback-url {
+  display:none
+}
+
+
+/*
+ *
+ *  niceEdit styling
+ *
+ */
+
+.nicEdit-selected {
+  border: 0px solid #0000ff !important
+}
+
+.nicEdit-panelContain {
+  margin-top:10px;	
+  border:0
+}
+
+.nicEdit-main {
+  background-color:#fff;
+  outline:none;
+  color:#666;
+  padding: 10px;
+  margin: 10px
+}
+
+.text_area_wrapper {
+  width: 532px;
+}
+
+
+/*
+ *
+ * Tumblr style controls in the top right hand corner
+ *
+ */
+
+.toolbox{
+  height: 20px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.toolbox_element{
+  float: right;
+  display:none;
+  margin-left: 4px;
+  padding: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 10px;
+  list-style: none;
+  color:#fff;
+  background-color: rgba(0,0,0,0.5)
+}
+
+.toolbox_element a{
+  color: #fff
+}
+
+/* Used to hide the reblog url in */
+.hidden_url{
+	display: none;
+}

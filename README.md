@@ -32,3 +32,6 @@ Blog settings can be changed by editing the file:
 
 - Custom theme creation and CSS simplification
 
+## Contact
+
+Laurence Dawson [email](contact@laurencedawson.com), [twitter](twitter.com/#!/loljdawson)

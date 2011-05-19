@@ -1,5 +1,5 @@
 <?echo validation_errors() ? "<div class=\"post\">".validation_errors()."</div>":''?>
-<div class="post image_padding">  
+<div class="post">  
 <?//Open the post editor; if the form detects content, open in edit mode
   echo isset($update)?form_open('update','',array('hidden_title'=>$post['content']['title'])):form_open('create');
 
@@ -12,11 +12,11 @@
 
   //Add the title label and input, fill in any previous values
   echo form_label('<b>Title</b> <i>(optional)</i><br/>');
-  echo form_input(array('class'=>'title_box form_title','name'=>'title','value'=>(isset($post_title)?$post_title:(isset($post['content']['title'])?$post['content']['title']:''))));
+  echo form_input(array('class'=>'editor_element','name'=>'title','value'=>(isset($post_title)?$post_title:(isset($post['content']['title'])?$post['content']['title']:''))));
 	  
   //If editing an image post, only show the image post, fill in any previous values
   if(isset($post['content']['image']))	
-    echo "<div class=\"bump\">".form_label('<b>Image Post URL</b><br/>').form_input( array('class'=>'post_image_box','name'=>'image','value'=>(isset($post_image) ? $post_image : (isset($post['content']['image']) ? $post['content']['image']:''))))."</div>";
+    echo "<div class=\"bump\">".form_label('<b>Image Post URL</b><br/>').form_input( array('class'=>'editor_element editor_image_input','name'=>'image','value'=>(isset($post_image) ? $post_image : (isset($post['content']['image']) ? $post['content']['image']:''))))."</div>";
 	
   //If editing text post, only show the text post
   else if(isset($post['content']['content']))
@@ -31,25 +31,26 @@
     echo "<div class=\"text_area_wrapper\">";	
     echo form_textarea(array('id'=>'textarea','class'=>'content_box','name' =>'content','rows'=>'6','value'=>(isset($post_content)?$post_content:(isset($post['content']['content'])?$post['content']['content']:''))));
     echo "</div>";
-    echo form_input(array('style'=>'display: none','class'=>'post_image_box','name'=>'image', 'value'=>(isset($post_image)?$post_image:(isset($post['content']['image'])?$post['content']['image']:''))));
+    echo form_input(array('style'=>'display: none','class'=>'editor_element editor_image_input','name'=>'image', 'value'=>(isset($post_image)?$post_image:(isset($post['content']['image'])?$post['content']['image']:''))));
     echo "</div>";
   }
 
   //Source, Categories and tags
   echo "<div class=\"extra_options_pane bump\">";
-echo form_label('<b>Post Source URL</b> <i>(optional)</i><br/>').form_input( array('class'=>'post_source_box','name'=>'source','value'=>(isset($post_source) ? $post_source : (isset($post['content']['source']) ? $post['content']['source']:''))));
+echo form_label('<b>Post Source URL</b> <i>(optional)</i><br/>').form_input( array('class'=>'editor_element editor_source_input','name'=>'source','value'=>(isset($post_source) ? $post_source : (isset($post['content']['source']) ? $post['content']['source']:''))));
   echo "<div class=\"bump\">";
   echo "<div class=\"right\">";
   echo form_label('<b>Post Category</b><br/>');
-  echo form_input( array('class'=>'post_tags_box','name'=>'tags','value'=>(isset($post_category) ? $post_category : (isset($post['content']['category']) ? $post['content']['category']:''))));
+  echo form_input( array('class'=>'editor_element editor_category_input','name'=>'category','value'=>(isset($post_category) ? $post_category : (isset($post['content']['category']) ? $post['content']['category']:''))));
   echo "</div>";
   echo form_label('<b>Post Tags</b><br/>');
-  echo form_input( array('class'=>'post_tags_box','name'=>'tags','value'=>(isset($post_category) ? $post_category : (isset($post['content']['category']) ? $post['content']['category']:''))));
+  echo form_input( array('class'=>'editor_element editor_tags_input','name'=>'tags','value'=>(isset($post_category) ? $post_category : (isset($post['content']['category']) ? $post['content']['category']:''))));
   echo "</div></div>";
 
   //Show the submit and cancel options
   echo "<input type=\"submit\" name=\"submit\" value=\"Post\" class=\"submit bump\" />";
   echo "<input type=\"submit\" name=\"cancel\" value=\"Cancel\" class=\"cancel right bump\" />";
+  echo "<br/><br/>";
   
   //Close the form
   echo form_close();

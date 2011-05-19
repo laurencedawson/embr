@@ -1,28 +1,47 @@
-html{overflow-y: scroll}
+/* 
+ *
+ * Helvetica Theme for Embr
+ * Author: Laurence Dawson
+ * Date: May 2011
+ * Version 1.0
+ *
+ */
 
-body{
+html {
+  overflow-y: scroll
+}
+
+
+body {
+  height: 100%;
   font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #666;
   background-color: #eee;
-  height: 100%;
   margin: 0;
   padding: 0
 }
 
-/* Typographic elements */
 
-a{
+/*
+ * 
+ * Basic Typographic and image elements 
+ *
+ */
+
+a {
   color: #999;
   text-decoration:none
 }
 
-a:hover{
+a:hover {
   color: #cc0000
 }
 
-h3, h2, h1{
+
+h3, h2, h1 {
   font-weight: 400
 }
+
 
 h1, h1 a{
   color: #000;
@@ -31,231 +50,200 @@ h1, h1 a{
   font-weight: bold
 }
 
-h3,h2,h3 a,h2 a, h1, h1 a{
+
+h3, h2, h3 a, h2 a, h1, h1 a {
   text-shadow: 0 -1px 0 rgba(0,0,0,0.15),0 1px 0 rgba(255,255,255,0.8)
 }
 
-h3,h2,h3 a,h2 a{
+
+h3, h2, h3 a, h2 a {
   border-bottom: 0px #eee solid;
   margin-bottom: 5px;
   color: #555
 }
 
-h3{
+
+h3 {
   margin-top: 10px;
   margin-bottom: 20px
 }
 
-p{
+
+p {
   color: #777;
-  line-height: 170%;
+  line-height: 170%
 }
 
-p a{
+p a {
   border-bottom: 1px #999 dashed
 }
 
-.quote{
-  border-left: 5px #ccc solid;
-  padding-left: 30px
+
+img {
+  text-decoration: none;
+  border: 0
+}
+
+li, ul, ol {
+  margin: 0;
+  padding: 0
+}
+
+textarea, input {
+  outline:none
+}
+
+label {
+  font-weight: bold
 }
 
 
+/*
+ * 
+ * Main page elements
+ *
+ */
 
 /* Main container  */
-#container{
+#container {
   margin: auto;
   margin-top: 20px;
   width: 576px
 }
 
-/* Page header */
-.header{
-  padding-bottom:10px;
-}
 
-.header h2{
-  margin-top:0px;
+/* Page header */
+.header {
   margin-bottom:20px
 }
 
-
-/* Float shorthand */
-.right{float:right}
-.left{float:left}
-
-
-/* Post index page hover */
-.index:hover{
-  box-shadow: 0px 0px 5px #999
+.header h2 {
+  margin-top:0px
 }
 
 
 /* The top navigation links */
-.navigation{
+.navigation {
   text-shadow: 0 -1px 0 rgba(0,0,0,0.15),0 1px 0 rgba(255,255,255,0.8);
   font-weight: bold;
   padding-top:5px;
   font-size:12px;
-  color:#555;
+  color:#555
 }
 
-.navigation a{
+.navigation a {
   color:#555;
-  margin-left: 10px;
+  margin-left: 10px
 }
 
 
 /* Blog Post */
-.post{
+.post {
   clear:both;
   margin:auto;
   margin-bottom: 30px;
   border: solid 1px #CCC;
   background-color: white;  
   border-radius: 5px;
-  padding: 18px;
+  padding: 20px;
   padding-bottom:10px
 }
 
-.post h2{
-  margin-top:0px;
-}
-
-img{
-  text-decoration:none;
-  border: 0;
-}
-
-.post img{
-
-  border: 1px solid #ccc
+.post h2 {
+  margin-top:0px
 }
 
 
-/* Post Next and Previous Elements */
-.blogNav{
-  color: #ddd;
-  margin-top: -10px;
-  margin-bottom: 10px;
-  font-size: 12px
+/* Image post */
+.image_box{
+  box-shadow: 0px 0px 1px #999;
+  width:100%;
+}
+
+
+/* The source box under a post */
+.source {
+  text-align: right;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0;
+  padding-top: 5px;
+  font-size:10px
+}
+
+
+/* Post index page hover & keyboard navigation highlight */
+.index:hover, .selected {
+  box-shadow: 0px 0px 5px #999
 }
 
 
 /* Blog post information */
-.info{
-  margin-top:0px;
-  margin-bottom:10px;
-  border-bottom: 0;
+.info {
   font-size:12px;
   color:#999;
-  border-bottom: 1px #ddd solid;
   padding-bottom: 5px;
-  border-radius: 5px
+  margin-top:0px;
+  margin-bottom:10px;
+  border-bottom: 1px #ccc solid
 }
 
 .info a{
   border: 0
 }
 
-/* Post Tags */
-.tags{
-  clear: both;
-  border-top: 1px #ddd solid;
-clear:both;
-margin:auto;
-padding-top:10px;
-border-radius: 5px;
-font-size: 10px;
-}
 
+/* Post Tags */
+.tags {
+  clear: both;
+  margin:auto;
+  border-top: 1px #ccc solid;
+  padding-top:10px;
+  font-size: 10px
+}
 
 
 /* Post Footer */
-.footer{
+.footer {
   clear: both;
   padding-top:10px;
   margin-bottom: 10px;
-  margin-top:20px;
+  margin-top:20px
 }
 
-.footer p{
+.footer p {
   padding-top:19px;
-}
-
-/* embr */
-.embr{
-  padding:0;
-  float:right;
-  opacity: 0.20;
-}
-
-.embr p, .embr p a{
-	margin:0;
-	padding-top:0px;
-	border-bottom: 0
 }
 
 
 /* Pagination loading element */
-.loading{
+.loading {
   text-align:center 
 }
 
 
-/* Page not found image */
-.not_found{
-  background-color: white;
-  border: solid 1px #CCC;
-  border-radius: 5px;
-  padding: 10px
-}
-
-
-/* Top sliding bar */
-.header_slide{
-  position: fixed;
-  margin:0;
-  width: 100%;
-  display:none;
-  top:0; left:0;
-  background-image:-webkit-gradient(linear,0 0,0 100%,from(#333),to(#111));
-  background-image:-moz-linear-gradient(#333,#111);
-  box-shadow:0 1px 3px rgba(0,0,0,.25);
-  opacity:0.75
-}
-
-.header_slide h3, .header_slide h3 a{
-  color: #eee;
-  text-shadow: 0px 2px 3px #444;
-  margin-top:8px;
-  margin-bottom:10px;
-  margin-left:10px;
-  font-weight: bold;
-}
-
+/*
+ * 
+ * CMS Elements
+ *
+ */
 
 /* Text input boxes in the login panel */
-.login{
-  float: left;
-  font-weight: bold
-}
-
-.login_box{
+.login_box {
   padding: 4px;
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 180px;
   border: 0;
   margin-right:10px;	
   border: solid 1px #CCC;
   background-color: white;  
-  border-radius: 5px
+  border-radius: 5px;
+  width: 178px
 }
 
 
 /* Submit button in the login panel*/
-.submit{
+.submit {
   border-radius: 5px;
   width: 138px;
   padding: 4px;
@@ -267,178 +255,15 @@ font-size: 10px;
   color: #555
 }
 
-
-/* Each button in the admin cms is an 'activity' */
-.activity{
-  border-radius: 5px;
-
-  
-  font-size: 10px;
-  display: block;
-  float: left;	
-  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-  color:#fff;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.activity a:hover, .activity a{
-	margin:0;
-	padding:2px;
-    width: 178px;
-	color:#fff;
-	display: block;	
-}
-
-.activity:hover{
-  background-color: #cc0000
-}
-
-
-/* A wrapper for the admin activities*/
-.admin{
-  padding:0;
-  margin:0;
-  padding-top: 5px;
-  padding-bottom:10px;
-  background-color:#eee;
-  border:0;
-}
-
-.admin ul{
-  padding: 0;
-  margin: 0;
-}
-
-.admin ul, .admin li{
-  list-style: none;
-  text-align: center;
-  font-size:11px;
-}
-
-
-/* Pad the activities */
-.pad{
-  margin-right: 15px;
-}
-
-
-/* Clears all of the floating admin activity buttons */
-.clearer{
-	width:100%;
-	height:10px;
-	clear:both;
-}
-
-.selected{
-  box-shadow: 0px 0px 5px #999
-}
-
-.cover{
-	position:fixed;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	background-color:rgba(0,0,0,0.85);
-	visibility:hidden
-}
-
-.controls{
-	width: 576px;
-	margin:auto;
-	color:#fff;
-	text-align: center;
-	margin-top: 140px;
-	opacity:1.0;
-}
-
-.controls h2{
- text-shadow: 0 0 0;
-  color:#fff;
-  font-weight: bold
-}
-
-.key{
-	margin-right: 25px;
-}
-
-
-.image_padding{
-	padding: 20px
-}
-.image_box{
-	width:100%;
-}
-
-
-/* disqus hacks */
-#disqus_thread{
-	/*display: none;
-	visibility:hidden;*/
-	border-top: 1px solid #ddd;
-	margin:0;
-}
-
-#dsq-subscribe, #dsq-sort-by, .dsq-trackback-url{
-	display:none
-}
-
-
-
-
-
-
-
-.title_box, .post_image_box, .post_source_box, .post_tags_box, .post_categories_box{
-  padding: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 512px;
-  border: 0;
-font: 22px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  border: solid 1px #CCC;
-  background-color: white;  
-  border-radius: 5px;
-  margin-top:10px;
-color:#555;
-}
-
-.post_image_box, .post_source_box, .post_tags_box,post_categories_box{
-	font: 12px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.post_categories_box,.post_tags_box{
-	width: 235px;
-}
-
-.content_box{
-/*  padding: 4px;
-  padding-top: 10px;
-  padding-bottom: 10px;*/
-padding: 10px;
-  width: 512px;
-  border: 0;
-  margin-right:10px;	
-  border: solid 1px #CCC;
-  background-color: white;  
-  border-radius: 5px;
-	font: 12px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color:#555;
-	margin-bottom:0;
-	padding-bottom:0;
-}
-
-
-/* Submit button in the login panel */
-.submit:hover{
-  
+.submit:hover{  
   background-color: #008C00;
   border: solid 1px #008C00;  
   color: #fff
 }
 
 
-.cancel{
+/* Cancel button in forms */
+.cancel {
   border-radius: 5px;
   width: 138px;
   padding: 4px;
@@ -450,7 +275,7 @@ padding: 10px;
   color: #555
 }
 
-.cancel:hover{
+.cancel:hover {
   border-radius: 5px;
   width: 138px;
   padding: 4px;
@@ -463,117 +288,70 @@ padding: 10px;
 }
 
 
-.source{
-  text-align: right;
+/* Activity button incase the user has disabled JS */
+.activity li {
+  text-align: center;
+  border-radius: 5px;
+  font-size: 10px;
+  display: block;
+  float: left;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  background-color: rgba(0,0,0,0.5);
+  color:#fff;
+  width: 168px
+}
 
-  margin:auto;
+.activity li a:hover, .activity li a {
+  margin:0px;
+  padding:2px;
+  color:#fff;
+  display: block
+}
 
+
+/* Contains post tags, category and source*/
+.extra_options_pane{
+	display:none;
+}
+
+
+/* Textarea for a text posts content */
+.content_box{
+  padding: 10px;
+  width: 512px;
+  border: 0;
+  margin-right:10px;	
+  border: solid 1px #CCC;
   background-color: white;  
   border-radius: 5px;
-  padding: 0;
-	font-size:10px;
-  padding-top: 5px
-}
-
-.source img{
-  border: 0
-}
-
-.tools{
-	height: 20px;
-		position: absolute;
-		top: 4px;
-		right: 4px;
-
-}
-
-.reblog{
-float: right;
-display:none;
-margin-left: 4px;
-}
-
-.toolbox{
-  display: none
-}
-
-.toolbox_element{
-margin-left: 4px;	
-float:right;
-display:block;
-padding: 1px;
-padding-left: 10px;
-padding-right: 10px;
-border-radius: 3px;
-text-align: center;
-font-size: 10px;
-display: block;
-color:#fff;
-background-color: rgba(0,0,0,0.5);
-}
-
-.toolbox_element a{
-  color: #fff
-}
-
-.toolbox_wrapper{
-  margin:0;
+  font: 12px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #555;
+  margin-bottom:0;
+  padding-bottom:0
 }
 
 
-
-.hidden_url{
-	display: none;
-}
-
-.nicEdit-selected {
-  border: 0px solid #0000ff !important;
-}
- 
-.nicEdit-panel {
-
-
-
-}
-
-.nicEdit-panelContain{
-
-  margin-top:10px;	
-border:0;
-
-
-}
- 
-.nicEdit-button {
-
-}
-
-.nicEdit-main{
-	background-color:#fff;
-	outline:none;
-	color:#666;
-	padding: 10px;
-  margin: 10px;
-}
-
-textarea, input{ outline:none;}
-
-.post_label{
-  font-weight: bold;
-}
-
-.text_area_wrapper{
-	width: 532px;
-}
-
-/* Adds a little spacer */
-.bump{
-	margin-top:20px;
+/* Default style for an element on the editor */
+.editor_element{
+  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 512px;
+  border: 0;
+  font: 22px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #555;
+  border: solid 1px #CCC;
+  background-color: white;  
+  border-radius: 5px;
+  margin-top:10px
 }
 
 
+/* Styles for the image, tags, source and category inputs */
+.editor_image_input, .editor_source_input, .editor_tags_input, .editor_category_input {
+  font: 12px/20px "Helvetica Neue", Helvetica, Arial, sans-serif
+}
 
-/* Used for the slideout options pane */
-.extra_options_pane{
-display: none;
+.editor_tags_input, .editor_category_input{
+  width: 235px
 }

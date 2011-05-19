@@ -13,6 +13,7 @@
 		echo "<meta property=\"og:type\" content=\"blog\" />"?>
   <meta name="author" content="<?=$first_name." ".$last_name?>">
   <link rel="stylesheet" href="<?=base_url()."themes/".$style."/style.css"?>"/>
+  <link rel="stylesheet" href="<?=base_url()."themes/basics.css"?>"/>
   <link href="<?=base_url()."themes/mobile/style.css"?>" media="screen and (max-device-width: 480px), screen and (-webkit-min-device-pixel-ratio: 2)" rel="stylesheet" type="text/css" /> 
   <link href="<?=base_url()."rss"?>" rel="alternate" type="application/rss+xml" title="<?= $blog_title ?>" />
   <link type="text/plain" rel="author" href="<?=base_url()."humans.txt"?>" />
@@ -20,6 +21,8 @@
 
 <body>
   <?=$debug?$this->benchmark->elapsed_time():''?>
+  
+   <a href="http://github.com/you"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/bec6c51521dcc8148146135149fe06a9cc737577/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a> 
 
   <div id="container">
 
@@ -55,7 +58,7 @@
   </div>
 
   <script type="text/javascript" src="///code.jquery.com/jquery-1.6.1.min.js"></script>
-  <script http-equiv="content-script-type" type="text/javascript" src="<?=base_url()."js/embr.min.js"?>"></script>  
+  <script http-equiv="content-script-type" type="text/javascript" src="<?=base_url()."js/embr.js"?>"></script>  
   <? if(strlen($google_analytics)){ ?><script>
     var _gaq=[["_setAccount","<?= $google_analytics ?>"],["_trackPageview"]];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
