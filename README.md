@@ -30,7 +30,6 @@ Blog settings can be changed by editing the file:
 
 - Post "reblogging" across self hosted embr blogs
 
-- Custom theme creation and CSS simplification
 
 ## Contact
 
