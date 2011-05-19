@@ -49,6 +49,8 @@ perl -pi -e 's/PASSWORD/'$line'/g' 'database.php'
 echo "\nEnter your login email:"
 # get the username 
 read line
+# replace all @ with \\@
+line=$(echo $line|sed 's/@/\\@/g')
 # set the username in the blog file
 perl -pi -e 's/ADMINEMAIL/'$line'/g' 'blog.php'
 
