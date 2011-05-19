@@ -34,4 +34,4 @@ Blog settings can be changed by editing the file:
 
 ## Contact
 
-Laurence Dawson [email](contact@laurencedawson.com), [twitter](twitter.com/#!/loljdawson)
+Laurence Dawson [email](mailto:contact@laurencedawson.com), [twitter](twitter.com/#!/loljdawson)
