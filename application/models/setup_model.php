@@ -6,11 +6,10 @@ class setup_model extends CI_Model{
     * @return bool status
     */
   function checkDatabase(){
-	
     $this->load->dbutil();
-    if (!$this->dbutil->database_exists('blog')){
+    if (!$this->dbutil->database_exists('ablog')){
       $this->load->dbforge();
-      $this->dbforge->create_database('blog');      
+      $this->dbforge->create_database('ablog');      
 	  return false;
     }else
       return true;
@@ -157,9 +156,11 @@ class setup_model extends CI_Model{
         'published' => '1' );
     $this->db->insert('blog', $data);
     
+    /* Create the admin user based on the inital values passed in from the installer */
+    $hash = hash('sha512', $this->config->item('admin_email').$this->config->item('admin_pass').$this->config->item('encryption_key') );
     $data = array(        
-        'email' => "test@embr.co",
-        'hash' => "5865a2e9fdb6b1444b3c1669ee4e21250e052ca4f007a986bd94675e651c96e3b1dc747df22510abafa8085050601a6e17dd1546290f3f67f3f7be75e62b9316");
+        'email' => $this->config->item('admin_email'),
+        'hash' => "$hash");
     $this->db->insert('users', $data);
   }
 

@@ -12,3 +12,6 @@ $config['not_found'] = "bite.png";
 $config['site_description'] = "Just another embr blog.";
 $config['debug'] = FALSE;
 $config['legend'] = TRUE;
+$config['admin_email'] = 'ADMINEMAIL';
+$config['admin_pass'] = 'ADMINPASS';
+

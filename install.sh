@@ -31,26 +31,38 @@ clear
 # print welcome info
 echo "\n\nWelcome to embr!\n\n"
 
-# ask for the username 
+# ask for the database username 
 echo "Enter your database username:"
 # get the username 
 read line
 # set the username in the database file
 perl -pi -e 's/USERNAME/'$line'/g' 'database.php'
 
-# ask for the password 
+# ask for the database password
 echo "\nEnter your database password:"
 # get the password
 read line
 # set the password in the database file
 perl -pi -e 's/PASSWORD/'$line'/g' 'database.php'
 
+# ask for the login email 
+echo "\nEnter your login email:"
+# get the username 
+read line
+# set the username in the blog file
+perl -pi -e 's/ADMINEMAIL/'$line'/g' 'blog.php'
+
+# ask for the login password
+echo "\nEnter your login password:"
+# get the password
+read line
+# set the password in the database file
+perl -pi -e 's/ADMINPASS/'$line'/g' 'blog.php'
+
+
 # set the cache as writable
 cd ..
 chmod 777 cache
-
-# tell the user the default account details
-echo "\nThe default email and pass are: test@embr.co\tqwerty\n";
 
 # all done
 echo "\nembr is ready to go, have fun!\n";
