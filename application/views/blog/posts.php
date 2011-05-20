@@ -1,8 +1,8 @@
 <div class="tools">
     <ul class="toolbox">
-     <li class="toolbox_element delete"><a href="<?=base_url()?>delete/<?=strtolower( str_replace(" ","-",$post['content']['title']) )?>">Delete</a></li>
-     <li class="toolbox_element"><a href="<?=base_url()?>edit/<?=strtolower( str_replace(" ","-",$post['content']['title']) )?>">Edit</a></li>
-     <li class="toolbox_element reblog_element">Reblog<span class="hidden_url"><?=base64_encode($_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"])?></span></li>
+     <li class="toolbox_element delete delete"><a href="<?=base_url()?>delete/<?=strtolower( str_replace(" ","-",$post['content']['title']) )?>">Delete</a></li>
+     <li class="toolbox_element edit"><a href="<?=base_url()?>edit/<?=strtolower( str_replace(" ","-",$post['content']['title']) )?>">Edit</a></li>
+     <li class="toolbox_element reblog_element retweet"><strong>Reblog</strong><span class="hidden_url"><?=base64_encode($_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"])?></span></li>
     </ul>
 </div>
 
@@ -22,11 +22,13 @@
   else{
     echo "<div class=\"post\">";
     echo "<h2>".$post['content']['title']."</h2>";
+    echo "<div class=\"post_inner\">";
     if( $post['content']['category'] )
       echo "<p class=\"info\">Posted by ".$first_name." on ".date("l dS F\, Y",strtotime ($post['content']['datet']))." in <a href=\"".base_url()."category/".strtolower( str_replace(" ","-",$post['content']['category']) )."\">".$post['content']['category']."</a></p>";
     else
       echo "<p class=\"info\">Posted by ".$first_name." on ".date("l dS F\, Y",strtotime ($post['content']['datet']))."</p>";
     echo $this->typography->auto_typography( $post['content']['content'] );
+    echo "</div>";
 
 	if( count( $post['tags'] ) || $post['content']['source'] ){
       echo "<div class=\"tags\">";

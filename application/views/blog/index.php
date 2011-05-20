@@ -1,6 +1,8 @@
 <ul class="toolbox">
-  <li class="toolbox_element"><a href="<?=base_url()?>customize">Customize</a></li>
-  <li class="toolbox_element"><a href="<?=base_url()?>new_post">New Post</a></li>
+  <li class="toolbox_element tools"><a href="<?=base_url()?>customize">Customize</a></li>
+  <li class="toolbox_element add-alt"><a href="<?=base_url()?>new_post">New Post</a></li>
+<li class="toolbox_element promo_element profile"><a href="https://github.com/laurencedawson/embr">Get <strong>Embr</strong></a></li>
+
 </ul>
 
 <div class="posts">
@@ -14,10 +16,12 @@ foreach($posts as $post){
    }else{
     echo "<div class=\"post index\">";
     echo "<h2><a href=\"".base_url().strtolower(url_title($post["title"]))."\">".$post["title"]."</a></h2>";
+    echo "<div class=\"post_inner\">";
     echo "<p class=\"info\">Posted by $first_name on ".date("l dS F\, Y",strtotime ($post["datet"]))."</p>";
-    echo "<p>";
     $body = explode("<br><br>",$post["content"]);
-    echo "".$this->typography->auto_typography($body[0])." ".$post['summary']."</p>";
+    echo "".$this->typography->auto_typography($body[0])." ".$post['summary'];
+    echo "</div>";
+
     if( $post['source'] ){
       echo "<div class=\"tags\">";
       echo "<div class=\"right\">Source: <a href=\"". $post['source']."\">". $post['source']."</a></div>";

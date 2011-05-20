@@ -16,7 +16,7 @@ body {
   height: 100%;
   font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #666;
-  background-color: #eee;
+  background-color: #3b627e;
   margin: 0;
   padding: 0
 }
@@ -34,7 +34,7 @@ a {
 }
 
 a:hover {
-  color: #cc0000
+  color: #3b627e
 }
 
 
@@ -43,18 +43,14 @@ h3, h2, h1 {
 }
 
 
-h1, h1 a{
-  color: #000;
+h1, h1 a, h1 a:hover{
+  color: #fff;
   padding-top: 10px;
-  margin-bottom: 10px;
-  font-weight: bold
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 50px;
+  text-shadow: 0 3px 3px rgba(0,0,0,0.5)
 }
-
-
-h3, h2, h3 a, h2 a, h1, h1 a {
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.15),0 1px 0 rgba(255,255,255,0.8)
-}
-
 
 h3, h2, h3 a, h2 a {
   border-bottom: 0px #eee solid;
@@ -70,8 +66,7 @@ h3 {
 
 
 p {
-  color: #777;
-  line-height: 170%
+  color: #777
 }
 
 p a {
@@ -87,7 +82,8 @@ img {
 li, ul, ol {
   margin: 0;
   padding: 0;
-  list-style: none
+  list-style: none;
+  position:relative
 }
 
 textarea, input {
@@ -115,25 +111,24 @@ label {
 
 /* Page header */
 .header {
-  margin-bottom:20px
 }
 
 .header h2 {
-  margin-top:0px
+  display:none;
 }
 
 
 /* The top navigation links */
 .navigation {
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.15),0 1px 0 rgba(255,255,255,0.8);
+  text-shadow: 0 2px 2px rgba(0,0,0,0.5);
   font-weight: bold;
-  padding-top:5px;
+  margin-top:-45px;
   font-size:12px;
-  color:#555
+  color:#fff
 }
 
 .navigation a {
-  color:#555;
+  color:#fff;
   margin-left: 10px
 }
 
@@ -145,13 +140,21 @@ label {
   margin-bottom: 30px;
   border: solid 1px #CCC;
   background-color: white;  
-  border-radius: 5px;
-  padding: 20px;
-  padding-bottom:10px
+  padding: 20px
 }
 
 .post h2 {
-  margin-top:0px
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;	
+  margin:0;
+  padding:0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+.post_inner{
+  margin-bottom: 40px;
+  position: relative
 }
 
 
@@ -175,18 +178,24 @@ label {
 
 /* Post index page hover & keyboard navigation highlight */
 .index:hover, .selected {
-  box-shadow: 0px 0px 5px #999
+  box-shadow: 0px 5px 5px rgba(0,0,0,0.3)
 }
 
 
 /* Blog post information */
 .info {
-  font-size:12px;
-  color:#999;
-  padding-bottom: 5px;
-  margin-top:0px;
-  margin-bottom:10px;
-  border-bottom: 1px #ccc solid
+  font-size:11px;
+  color:#666;
+  background-color: #eee;
+  padding:2px;
+  position: absolute;
+  bottom:-40px;
+  width: 540px;
+  margin:0;
+  border-radius: 5px;
+  margin-left:-10px;
+  margin-right: -10px;
+  padding-left: 10px;
 }
 
 .info a{
@@ -196,11 +205,16 @@ label {
 
 /* Post Tags */
 .tags {
-  clear: both;
-  margin:auto;
-  border-top: 1px #ccc solid;
-  padding-top:10px;
-  font-size: 10px
+  font-size:11px;
+  color:#666;
+  background-color: #eee;
+  padding:2px;
+  width: 540px;
+  border-radius: 5px;
+  margin-left:-10px;
+  margin-right: -10px;
+  padding-right: 10px;
+  margin-top:50px;
 }
 
 
@@ -210,6 +224,11 @@ label {
   padding-top:10px;
   margin-bottom: 10px;
   margin-top:20px
+}
+
+.footer p{
+  text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+  color:#fff
 }
 
 
@@ -353,11 +372,175 @@ label {
   width: 235px
 }
 
-
 /* The image shown in the embr branding */
 .embr_link a{
-  background-image: url("../../img/embr.png");
+  background-image: url("../../img/embr_light.png");
   width: 53px;
   height: 46px;
   display: block;
+}
+
+
+
+/*
+ *
+ * Tumblr style CSS3 Icons 
+ * PURE CSS GUI ICONS
+ * by Nicolas Gallagher - http://nicolasgallagher.com/pure-css-gui-icons/
+ *
+ */
+
+.delete a,.edit a, .tools a, .add-alt a,.profile a {
+  padding-left:18px;
+}
+
+li:before, 
+li:after,
+li a:before, 
+li a:after {
+    content:"";
+    position:absolute;
+    top:50%;
+}
+
+li a:before, 
+li a:after {
+    margin:-8px 0 0;
+    background:#fff;
+}
+
+.profile a:before {
+  margin-left:2px;
+  background: #fff;
+  left:4px;
+  width:16px;
+  height:5px;
+  margin-top:1px;
+  -webkit-border-top-right-radius:5px;
+  -webkit-border-top-left-radius:5px;
+  -moz-border-radius:5px 5px 0 0;
+  border-radius:5px 5px 0 0
+}
+
+.profile a:after {
+  margin-left:2px;
+  left:9px;
+  width:6px;
+  height:10px;
+  margin-top:-7px;
+  -webkit-border-top-right-radius:5px;
+  -webkit-border-top-left-radius:5px;
+  -webkit-border-bottom-right-radius:5px 10px;
+  -webkit-border-bottom-left-radius:5px 10px;
+  -moz-border-radius:5px 5px 5px 5px / 5px 5px 10px 10px;
+  border-radius:5px 5px 5px 5px / 5px 5px 10px 10px
+}
+
+.profile a:hover:after,
+.profile a:focus:after,
+.profile a:active:after {
+    background:#fff
+}
+
+.add-alt a:before {
+  margin-left:5px;
+  left:6px; 
+  width:5px; 
+  height:15px; 
+  margin-top:-7px;
+  background:#fff;
+}
+
+.add-alt a:after {
+  margin-left:5px;
+  left:1px; 
+  width:15px; 
+  height:5px; 
+  margin-top:-2px; 
+  background:#fff
+}
+
+.tools:after {
+  margin-left:5px;	
+  left:13px;
+  width:3px;
+  height:5px;
+  margin-top:-8px;
+  background: #222;
+  -webkit-transform:rotate(45deg);
+  -moz-transform:rotate(45deg);
+  -o-transform:rotate(45deg);
+  transform:rotate(45deg)
+}
+
+.tools a:before {
+  margin-left:5px;	
+  left:6px; 
+  width:4px; 
+  height:15px; 
+  margin-top:-7px;
+  background:#fff;
+  -webkit-transform:rotate(45deg);
+  -moz-transform:rotate(45deg);
+  -o-transform:rotate(45deg);
+  transform:rotate(45deg)
+}
+
+.tools a:after {
+  margin-left:5px;	
+  left:8px;
+  width:9px;
+  height:9px;
+  background:#fff;
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px; 
+  border-radius:8px
+}
+
+.edit a:before {
+  left:3px;
+  width:5px;
+  height:5px;
+  margin-top:2px;
+  background:#fff;
+  -webkit-transform:skew(-10deg, -10deg);
+  -moz-transform:skew(-10deg, -10deg);
+  -o-transform:skew(-10deg, -10deg);
+  transform:skew(-10deg, -10deg)
+}
+
+.edit a:after {
+  left:3px;
+  width:13px;
+  height:6px;
+  border-left:1px solid #222;
+  margin-top:-3px;
+  -webkit-transform:rotate(-45deg); 
+  -moz-transform:rotate(-45deg);
+  -o-transform:rotate(-45deg);
+  transform:rotate(-45deg)
+}
+
+.delete a:before {
+  left:6px; 
+  width:5px; 
+  height:15px; 
+  margin-top:-7px;
+  background:#fff;
+  -webkit-transform:rotate(45deg);
+  -moz-transform:rotate(45deg);
+  -o-transform:rotate(45deg);
+  transform:rotate(45deg)
+}
+
+.delete a:after {
+  left:1px; 
+  width:15px; 
+  height:5px; 
+  margin-top:-2px; 
+  background:#fff;
+  -webkit-transform:rotate(45deg);
+  -moz-transform:rotate(45deg);
+  -o-transform:rotate(45deg);
+  transform:rotate(45deg)
 }

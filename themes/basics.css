@@ -32,16 +32,10 @@
 
 
 /* embr footer branding */
-.embr{
-  padding:0;
+.embr {
+  margin-top:-10px;
   float:right;
-  opacity: 0.20;
-}
-
-.embr p, .embr p a{
-	margin:0;
-	padding-top:0px;
-	border-bottom: 0
+  opacity: 0.2
 }
 
 

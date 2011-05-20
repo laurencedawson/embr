@@ -40,6 +40,7 @@ $(document).ready(function(){
 	if(json.logged_in){
 	  $(".toolbox_element").show();
 	  $(".reblog_element").hide();
+	  $(".promo_element").hide();	
       $(".lg").text("Logout");
 	  $(".lg").attr("href",base_url+"logout");
 	  //Used to set the users reblog URL
@@ -47,6 +48,7 @@ $(document).ready(function(){
 	    localStorage.setItem("embr_blog", base_url);
 	}else{	  
 	  $(".reblog_element").show();
+	  $(".promo_element").show();	
 	}
   });
 });
