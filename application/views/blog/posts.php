@@ -21,12 +21,12 @@
   //Otherwise assume the post is a text post
   else{
     echo "<div class=\"post\">";
-    echo "<h2>".$post['content']['title']."</h2>";
     echo "<div class=\"post_inner\">";
+    echo "<h2>".$post['content']['title']."</h2>";
     if( $post['content']['category'] )
-      echo "<p class=\"info\">Posted by ".$first_name." on ".date("l dS F\, Y",strtotime ($post['content']['datet']))." in <a href=\"".base_url()."category/".strtolower( str_replace(" ","-",$post['content']['category']) )."\">".$post['content']['category']."</a></p>";
+      echo "<div class=\"info\"><p>Posted by ".$first_name." on ".date("l dS F\, Y",strtotime ($post['content']['datet']))." in <a href=\"".base_url()."category/".strtolower( str_replace(" ","-",$post['content']['category']) )."\">".$post['content']['category']."</a></p></div>";
     else
-      echo "<p class=\"info\">Posted by ".$first_name." on ".date("l dS F\, Y",strtotime ($post['content']['datet']))."</p>";
+      echo "<div class=\"info\"><p>Posted by ".$first_name." on ".date("l dS F\, Y",strtotime ($post['content']['datet']))."</p></div>";
     echo $this->typography->auto_typography( $post['content']['content'] );
     echo "</div>";
 

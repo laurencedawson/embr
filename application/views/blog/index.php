@@ -15,9 +15,9 @@ foreach($posts as $post){
       echo "<div class=\"image_source\">Source: <a href=\"". $post['source']."\">". $post['source']."</a></div>";
    }else{
     echo "<div class=\"post index\">";
+    echo "<div class=\"post_inner\">";    
     echo "<h2><a href=\"".base_url().strtolower(url_title($post["title"]))."\">".$post["title"]."</a></h2>";
-    echo "<div class=\"post_inner\">";
-    echo "<p class=\"info\">Posted by $first_name on ".date("l dS F\, Y",strtotime ($post["datet"]))."</p>";
+    echo "<div class=\"info\"><p>Posted by $first_name on ".date("l dS F\, Y",strtotime ($post["datet"]))."</p></div>";
     $body = explode("<br><br>",$post["content"]);
     echo "".$this->typography->auto_typography($body[0])." ".$post['summary'];
     echo "</div>";

@@ -1,6 +1,6 @@
 /* 
  *
- * Helvetica Theme for Embr
+ * Tumblr-esque Theme for Embr
  * Author: Laurence Dawson
  * Date: May 2011
  * Version 1.0
@@ -46,10 +46,10 @@ h3, h2, h1 {
 h1, h1 a, h1 a:hover{
   color: #fff;
   padding-top: 10px;
-  margin-bottom: 40px;
   font-weight: bold;
   font-size: 50px;
-  text-shadow: 0 3px 3px rgba(0,0,0,0.5)
+  text-shadow: 0 3px 3px rgba(0,0,0,0.5);
+  padding-bottom: 10px
 }
 
 h3, h2, h3 a, h2 a {
@@ -110,10 +110,6 @@ label {
 
 
 /* Page header */
-.header {
-  padding-bottom: 10px
-}
-
 .header h2 {
   display:none;
 }
@@ -121,9 +117,10 @@ label {
 
 /* The top navigation links */
 .navigation {
+  float: right;
   text-shadow: 0 2px 2px rgba(0,0,0,0.5);
   font-weight: bold;
-  margin-top:-45px;
+  margin-top:-48px;
   font-size:12px;
   color:#fff
 }
@@ -212,6 +209,10 @@ label {
   margin-left:-10px;
   margin-right: -10px;
   padding-left: 10px;
+}
+
+.info p{
+	margin:0;
 }
 
 .info a{

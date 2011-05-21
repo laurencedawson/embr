@@ -12,6 +12,7 @@ function linker(){
       window.location = url
     }
   });
+
 }
 
 /*
@@ -51,6 +52,7 @@ $(document).ready(function(){
 	  $(".promo_element").show();	
 	}
   });
+  
 });
 
 $('.embr').hover(
@@ -243,7 +245,7 @@ $(window).scroll(function(){
           //See if there are any more pages
           if(v.length==0){
             endreached=true;
-            $('.posts').append("<div class=\"loading\"><h2>You've reached the end!</h2></div>"); 
+            $('.posts').append("<div class=\"loading\"><h2>You've reached the end</h2></div>"); 
           }
           //Refresh linker
 		  linker();

@@ -1,6 +1,6 @@
 /* 
  *
- * Helvetica Theme for Embr
+ * Minimalist Theme for Embr
  * Author: Laurence Dawson
  * Date: May 2011
  * Version 1.0
@@ -14,9 +14,9 @@ html {
 
 body {
   height: 100%;
-  font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 11px/20px Georgia, "Times New Roman", Times, serif;
   color: #666;
-  background-color: #eee;
+  background-color: #fff;
   margin: 0;
   padding: 0
 }
@@ -34,7 +34,7 @@ a {
 }
 
 a:hover {
-  color: #cc0000
+  color: #bca474
 }
 
 
@@ -42,17 +42,24 @@ h3, h2, h1 {
   font-weight: 400
 }
 
-
-h1, h1 a{
-  color: #000;
-  padding-top: 10px;
-  margin-bottom: 10px;
-  font-weight: bold
+h1 {
+  text-transform: Uppercase;
+  border-bottom: 1px #000 solid;
+  padding-bottom: 20px;
+  margin-bottom: 0px;
 }
 
+h1, h1 a{
+  font-family: Cufon;
+  color: #000;
+  margin-top: 25px;
+  font-size: 50px;
+  text-align: center;
+  font-weight: normal;
+}
 
-h3, h2, h3 a, h2 a, h1, h1 a {
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.15),0 1px 0 rgba(255,255,255,0.8)
+h1 a: hover{
+ color:#bca474
 }
 
 
@@ -70,8 +77,7 @@ h3 {
 
 
 p {
-  color: #777;
-  line-height: 170%
+  color: #777
 }
 
 p a {
@@ -108,31 +114,33 @@ label {
 /* Main container  */
 #container {
   margin: auto;
-  margin-top: 20px;
-  width: 576px
+  width: 536px
 }
 
 
 /* Page header */
-.header {
-  margin-bottom:20px
-}
-
 .header h2 {
   margin-top:0px;
-  margin-bottom: 30px
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 13px;
+  font-size: 13px;
+  color: #222;
+  text-transform: Uppercase;
+  border-bottom: 1px solid #222
 }
 
 
 /* The top navigation links */
 .navigation {
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.15),0 1px 0 rgba(255,255,255,0.8);
-  font-weight: bold;
-  padding-top:5px;
-  font-size:12px;
-  color:#555;
-  float: right;
-  margin-top: -50px;
+  margin-top:0px;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 11px;
+  font-size: 13px;
+  margin-bottom: 40px;
+  text-transform: Uppercase;
+  border-bottom: 2px solid #222;
 }
 
 .navigation a {
@@ -145,22 +153,32 @@ label {
 .post {
   clear:both;
   margin:auto;
-  margin-bottom: 30px;
-  border: solid 1px #CCC;
-  background-color: white;  
-  border-radius: 5px;
-  padding: 20px;
-  padding-bottom:10px
+  margin-bottom: 50px;
+  background-color: white;
 }
 
-.post h2 {
-  margin-top:0px
+.post p {
+  line-height: 180%;
+}
+
+.post h2, .post h2 a {
+  font-size: 31px;
+  color: #222;
+  font-family: Cufon;
+  padding-top:30px;
+  text-transform: Uppercase;
+  text-align: center;
+}
+
+.post_inner{
+  position: relative;
+  border-bottom: 1px solid #000;
+  padding-bottom: 20px;
 }
 
 
 /* Image post */
 .image_box{
-  box-shadow: 0px 0px 1px #999;
   width:100%;
 }
 
@@ -171,30 +189,35 @@ label {
   background-color: white;
   border-radius: 5px;
   padding: 0;
-  padding-top: 5px;
   font-size:10px
 }
 
 
-/* Post index page hover & keyboard navigation highlight */
-.index:hover, .selected {
-  box-shadow: 0px 0px 5px #999
-}
-
-
 /* Blog post information */
-.info {
+.info{
+  text-transform: Uppercase;
+  width: 536px;
+  text-align: center;	
   font-size:12px;
-  color:#999;
-  padding-bottom: 5px;
-  margin-top:0px;
-  margin-bottom:10px;
-  border-bottom: 1px #ccc solid
+  top:0px;
+  margin: 0px;
+  padding-bottom:-100px;
+  position: absolute;
+  font-size: 10px;
+  border-top: 1px solid #bca474;	
+
 }
 
 .info p{
-	margin:0;
+  top:-10px;
+  color: #bca474;
+  background-color: #fff;
+  position: relative;
+  display: inline;
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
 
 .info a{
   border: 0
@@ -216,13 +239,20 @@ label {
   clear: both;
   padding-top:10px;
   margin-bottom: 10px;
-  margin-top:20px
+  margin-top:50px;
 }
 
 
 /* Pagination loading element */
 .loading {
-  text-align:center 
+  text-transform: Uppercase;
+  font-family: Cufon;
+  text-align: center;
+  font-weight: normal
+}
+
+.loading h2{
+  color: #000;
 }
 
 
@@ -367,4 +397,8 @@ label {
   width: 53px;
   height: 46px;
   display: block;
+}
+
+.toolbox{
+  font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
