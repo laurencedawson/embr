@@ -12,8 +12,8 @@
 		echo "<meta property=\"og:description\" content=\"".$site_description."\" />";
 		echo "<meta property=\"og:type\" content=\"blog\" />"?>
   <meta name="author" content="<?=$first_name." ".$last_name?>">
-  <link rel="stylesheet" href="<?=base_url()."themes/".$style."/style.css"?>"/>
   <link rel="stylesheet" href="<?=base_url()."themes/basics.css"?>"/>
+  <link rel="stylesheet" href="<?=base_url()."themes/".$style."/style.css"?>"/>
   <link href="<?=base_url()."themes/mobile/style.css"?>" media="screen and (max-device-width: 480px), screen and (-webkit-min-device-pixel-ratio: 2)" rel="stylesheet" type="text/css" /> 
   <link href="<?=base_url()."rss"?>" rel="alternate" type="application/rss+xml" title="<?= $blog_title ?>" />
   <link type="text/plain" rel="author" href="<?=base_url()."humans.txt"?>" />

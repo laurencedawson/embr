@@ -15,7 +15,7 @@
   
     //If the post has a source, display it
     if( $post['content']['source'] )
-      echo "<div class=\"source\">Source: <a href=\"". $post['content']['source']."\">". $post['content']['source']."</a></div>";
+      echo "<div class=\"image_source\">Source: <a href=\"". $post['content']['source']."\">". $post['content']['source']."</a></div>";
   }
 
   //Otherwise assume the post is a text post

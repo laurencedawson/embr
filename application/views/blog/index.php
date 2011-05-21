@@ -12,7 +12,7 @@ foreach($posts as $post){
     echo "<div class=\"post index\" >";
     echo "<a href=\"".base_url().strtolower(url_title($post["title"]))."\"><img class=\"image_box\" src=\"".(strstr($post["image"],"http") ? $post["image"] : base_url()."img/uploads/".$post["image"])."\" /></a>";
     if( $post['source'] )
-      echo "<div class=\"source\">Source: <a href=\"". $post['source']."\">". $post['source']."</a></div>";
+      echo "<div class=\"image_source\">Source: <a href=\"". $post['source']."\">". $post['source']."</a></div>";
    }else{
     echo "<div class=\"post index\">";
     echo "<h2><a href=\"".base_url().strtolower(url_title($post["title"]))."\">".$post["title"]."</a></h2>";
