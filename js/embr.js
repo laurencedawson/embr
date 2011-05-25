@@ -20,12 +20,33 @@ function linker(){
 	Hides pagination if js enabled
 */
 var base_url;
+var $wall = $('.posts');
+var loading = false; //If the page if loading
 $(document).ready(function(){
+	
+	// Add loader.
+	loading = true;
+	var $loader = "<img src=\"img/load.gif\" id=\"loader\">";
+	$('.posts').prepend($loader);
+	
+	$('.image_box', $wall).imagesLoaded(function(){
+		
+		$('#loader').remove();
+		$('.post_date span').fitTextToParent({adjust:0.95});
+		$wall.masonry({
+			columnWidth: 320, 
+			itemSelector: '.post'
+		}, function(){
+			$('.posts .post').animate({'opacity': 1}, 1000);
+			loading = false;
+		});
+	
+	});
 	
   //Hide pagination controls
   $(".next").hide(); $(".prev").hide();
   //Set the index page linker
-  linker();
+  //linker();
   //Reblog code
   if (window.localStorage) 
     if (localStorage.getItem('embr_blog')) 
@@ -49,17 +70,65 @@ $(document).ready(function(){
 	    localStorage.setItem("embr_blog", base_url);
 	}else{	  
 	  $(".reblog_element").show();
-	  $(".promo_element").show();	
+	  $(".promo_element").show();
 	}
   });
   
+  $('a.post_link').scrollToParent({parent:'.post'});
+  
 });
 
-$('.embr').hover(
+
+// AJAX load post instead of linking.
+var post_loading = false;
+$close_link = "<a href=\"#\" class=\"close\"></a>";
+$('a.post_link').live('click', function(e){
+	
+	e.preventDefault();
+	if(!post_loading && $('#post_viewer').is(':empty')){
+		post_loading = true;
+		var t = $(this).attr('href');
+		var top = $(this).parents('.post').position().top;
+		var left = $(this).parents('.post').position().left;
+		if(left > $('#post_viewer').width()){
+			left = 320;
+		}/*else if(left > 310 && left < $('#post_viewer').width()){
+			left = 155;
+		}*/else{
+			left = 0;
+		}
+		
+		$.get(t,function(data){
+	    var d=$(data);
+	    var item=d.find('.blog_post');
+	    
+	    if($(item).hasClass('image')){
+	    	$(item).prepend($close_link);
+	    }else{
+	    	$('.post_inner', item).prepend($close_link);
+	    }
+	    
+	    //$('.loading').remove();
+	    $('#post_viewer').append($(item)).css({'top': top, 'left': left});
+	    $('.blog_post .post_date span').fitTextToParent({adjust:0.95});
+	    $('.post.index').animate({'opacity': .5}, 250);
+	    $('a.close').click(function(e){
+	    	e.preventDefault();
+	    	$('#post_viewer').empty();
+	    	$('.post.index').animate({'opacity': 1}, 250);
+	    	$(this).remove();
+	    });
+	    post_loading = false;
+		});
+	}
+
+});
+
+/*$('.embr').hover(
 	//Cheers to @saulhardman
     function() { $(this).stop(true,true).animate({opacity: 1.0}, 500 ); },
     function() { $(this).animate({opacity: 0.2}, 500 ); }
-);
+);*/
 
 $(".reblog_element").click(function(){
   alert("Coming Soon...");
@@ -211,13 +280,12 @@ $(".lg").click(function(){
 	}
   } return false;	
 });
-    
+
 /*
 	Endless scoll
 */
-var loading = false; //If the page if loading
 var endreached = false; //If we have reached the end
-$(window).scroll(function(){
+$(document).scroll(function(){
   //Cancel if we have reached the end or are currently loading
   if(loading || endreached) return;
   //Check if user has scrolled to a point + buffer
@@ -229,26 +297,46 @@ $(window).scroll(function(){
       if( t==null ){
         endreached = true;
       }else{
-        $('.posts').append("<div class=\"loading\"><h2><img src=\"img/load.gif\"/><br/>Loading</h2></div>");
         //Remove the old pagination links
         $(".next").remove();
         $(".prev").remove();
+        
+        
+        
         //Get the next set of posts
         $.get(t,function(data){
           var d=$(data);
           var items=d.find('.post');
-          $('.loading').remove();
-          //Add the next posts
-          $('.posts').append(items);
+          // Add loader.
+          var $loader = "<img src=\"img/load.gif\" id=\"loader\">";
+          $wall.append($loader).masonry({appendContent: $loader});
+          // Hide and add new posts.
+          $(items).addClass('new');
+          $wall.append($(items));
+          $('.new .image_box', $wall).imagesLoaded(function(){
+          	$('#loader').remove();
+          	$('.new .post_date span').fitTextToParent({adjust:0.95});
+          	$wall.masonry({appendedContent:$(items)}, function(){
+          		if($('#post_viewer').is(':empty')){
+          			$(items).animate({'opacity':1}, 1000, function(){$(this).removeClass('new')});
+          		}else{
+          			$(items).animate({'opacity':.5}, 1000, function(){$(this).removeClass('new')});
+          		}
+          		loading = false;
+          	});
+          });
+          
+          
+          
           var v=d.find('.next');
           $('.posts').append(v);
           //See if there are any more pages
           if(v.length==0){
             endreached=true;
-            $('.posts').append("<div class=\"loading\"><h2>You've reached the end</h2></div>"); 
+            //$('.posts').append("<div class=\"loading\"><h2>You've reached the end</h2></div>"); 
           }
           //Refresh linker
-		  linker();
+		  //linker();
 		  //Finish loading
           loading = false;
         });

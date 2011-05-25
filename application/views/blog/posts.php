@@ -6,13 +6,15 @@
     </ul>
 </div>
 
-<div class="blog_post">
+<div class="post blog_post <?php if(strlen($post['content']['image'])) echo "image"; ?>">
 <?php
+	$time = strtotime ($post['content']["datet"]);
+
   //Check for an image, if present create an image post
   if(strlen($post['content']['image'])){
-    echo "<div class=\"post\" style=\"margin-bottom:15px\">";
     echo "<a href=\"".$post['content']['image']."\"><img class=\"image_box\" src=\"".(strstr($post['content']['image'],"http") ? $post['content']['image'] : base_url()."img/uploads/".$post['content']['image'])."\" /></a>";
-  
+  	echo "<div class=\"post_date\"><span class=\"day\">".date("D",$time)."</span><span class=\"date\">".date("j",$time)."</span><span class=\"month\">".date("M",$time)."</span><span class=\"year\">".date("Y",$time)."</span></div>";
+  	
     //If the post has a source, display it
     if( $post['content']['source'] )
       echo "<div class=\"image_source\">Source: <a href=\"". $post['content']['source']."\">". $post['content']['source']."</a></div>";
@@ -20,13 +22,13 @@
 
   //Otherwise assume the post is a text post
   else{
-    echo "<div class=\"post\">";
     echo "<div class=\"post_inner\">";
+    echo "<div class=\"post_date\"><span class=\"day\">".date("D",$time)."</span><span class=\"date\">".date("j",$time)."</span><span class=\"month\">".date("M",$time)."</span><span class=\"year\">".date("Y",$time)."</span></div>";
     echo "<h2>".$post['content']['title']."</h2>";
     if( $post['content']['category'] )
-      echo "<div class=\"info\"><p>Posted by ".$first_name." on ".date("l dS F\, Y",strtotime ($post['content']['datet']))." in <a href=\"".base_url()."category/".strtolower( str_replace(" ","-",$post['content']['category']) )."\">".$post['content']['category']."</a></p></div>";
+      echo "<span class=\"author\">Posted by $first_name</span> on ".date("l dS F\, Y",strtotime ($post['content']['datet']))." in <a href=\"".base_url()."category/".strtolower( str_replace(" ","-",$post['content']['category']) )."\">".$post['content']['category']."</a></p></div>";
     else
-      echo "<div class=\"info\"><p>Posted by ".$first_name." on ".date("l dS F\, Y",strtotime ($post['content']['datet']))."</p></div>";
+        echo "<span class=\"author\">Posted by $first_name</span>";
     echo $this->typography->auto_typography( $post['content']['content'] );
     echo "</div>";
 
@@ -49,5 +51,4 @@
   }
 ?>
 
-</div>
 </div>

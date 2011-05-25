@@ -1,0 +1,541 @@
+/* 
+ *
+ * Collect theme for embr
+ * Author: Saul Hardman
+ * Date: May 2011
+ * Version 1.0
+ *
+ */
+
+html {
+  overflow-y: scroll
+}
+
+
+body {
+  height: 100%;
+  font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgb(80, 80, 80);
+  background: rgb(235, 235, 235);
+  margin: 0;
+  padding: 0;
+  letter-spacing: normal;
+}
+
+::-moz-selection{ background: rgba(244, 196, 48, .5); text-shadow: none; }
+::selection { background: rgba(244, 196, 48, .5); text-shadow: none; } 
+
+/*
+ * 
+ * Basic Typographic and image elements 
+ *
+ */
+
+a {
+  color: rgb(100, 100, 100);
+  text-decoration:none;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+  padding: 0;
+  margin: 0;
+}
+
+a:hover {
+  color: rgb(244, 196, 48);
+}
+
+
+h3, h2, h1 {
+  font-weight: 400
+}
+
+
+h1, h1 a{
+  color: rgb(255, 255,255);
+  padding: 10px 0 0;
+  margin: 0 0 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+h3, h2, h3 a, h2 a {
+  margin-bottom: 5px;
+  color: rgb(20, 20, 20)
+}
+
+
+h3 {
+  margin-top: 10px;
+  margin-bottom: 20px
+}
+
+
+p {
+  line-height: 170%
+}
+
+p a {
+  border-bottom: 1px #999 dashed
+}
+
+
+img {
+  text-decoration: none;
+  border: 0
+}
+
+li, ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+textarea, input {
+  outline:none
+}
+
+label {
+  font-weight: bold
+}
+
+
+/*
+ * 
+ * Main page elements
+ *
+ */
+
+/* Main container  */
+#container {
+  margin: 20px auto 0;
+  width: 960px;
+}
+
+
+/* Page header */
+.header {
+  margin-bottom:20px
+}
+
+.header h1{
+	font-size: 400%;
+	line-height: 80%;
+}
+
+.header h2#tagline {
+  display: none;
+}
+
+
+/* The top navigation links */
+.navigation {
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.15),0 1px 0 rgba(255,255,255,0.8);
+  padding: 5px 10px 0 0;
+  font-size: 12px;
+  float: right;
+  margin-top: -30px;
+  color: rgb(20, 20, 20);
+  letter-spacing: 1px;
+}
+
+.navigation a {
+  margin-left: 10px
+}
+
+
+/* Post viewer */
+#post_viewer{
+	width: 630px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #fff;
+	background: rgb(255, 255, 255);
+	z-index: 1;
+}
+
+#post_viewer .post{
+	margin: 0;
+}
+
+a.close{
+	background: rgb(20, 20, 20) url('../../img/close.png') 0 0 no-repeat;
+	width: 20px;
+	height: 20px;
+	-webkit-transition: background .25s;
+	-moz-transition: background .25s;
+	-o-transition: background .25s;
+	transition: background .25s;
+}
+
+a.close:hover{
+	background-color: rgb(200, 200, 200);
+}
+
+.blog_post .close{
+	float: right;
+}
+
+.image .close{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+/* Post container */
+.posts{
+	width: 960px;
+	position: relative;
+}
+
+/* Blog Post */
+.post{
+  background: #fff;
+  background: rgb(255, 255, 255);
+  position: relative;
+  margin: 0 10px 10px 0;
+}
+
+.post .post_inner h2{
+	line-height: normal;
+}
+
+.post .post_inner p{
+	
+}
+
+.index.post{
+  width: 310px;
+  opacity: 0;
+}
+
+.no-js .index.post{
+	opacity: 1;
+}
+
+.index.post .post_inner{
+	padding: 20px 20px 5px;
+}
+
+.index.post .post_inner h2{
+  margin-top:0px;
+  font-weight: 600;
+}
+
+.blog_post.post{
+	width: 630px;
+}
+
+.blog_post.post .post_inner{
+	padding: 20px 20px 10px;
+}
+
+.blog_post.post .post_inner h2{
+  margin-top:0px;
+  font-weight: 600;
+  font-size: 300%;
+}
+
+.blog_post.post .post_inner p{
+	font-size: 110%;
+}
+
+.post_date{
+  line-height: normal;
+  text-transform: uppercase;
+  display: block;
+  padding: 10px;
+  width: 40px;
+  text-align: center;
+}
+
+
+/* Blog post date */
+.post_date{
+  background: #000;
+  background: rgb(20, 20, 20);
+  color: #fff;
+  color: rgb(255, 255, 255);
+  line-height: normal;
+  text-transform: uppercase;
+  display: block;
+  padding: 10px;
+  width: 40px;
+  text-align: center;
+}
+
+.index.post .post_date{
+	float: right;
+	margin: -20px -20px 10px 10px;
+}
+
+.blog_post.post .post_date{
+	float: left;
+	margin: -20px 0 0 -90px;
+	width: 50px;
+}
+
+.post_date span{
+	display: inline-block;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: normal;
+}
+
+.post_date .day{
+	line-height: 95%;
+}
+
+.post_date .date{
+	line-height: 95%;
+}
+
+.post_date .month{
+	
+}
+
+.post_date .year{
+	line-height: 95%;
+}
+
+
+/* Blog post author */
+.author{
+	display: block;
+	font-style: italic;
+	color: rgb(200, 200, 200);
+}
+
+
+/* Image post */
+.image{
+	background: transparent;
+}
+
+.image_box{
+  width:100%;
+  display: block;
+}
+
+.image.index.post .post_date{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.image.blog_post.post .post_date{
+  position: absolute;
+  top: 0;
+  left: -70px;
+  margin: 0;
+}
+
+
+/* The source box under a post */
+.source {
+  text-align: right;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0;
+  padding-top: 5px;
+  font-size:10px
+}
+
+
+/* Post index page hover & keyboard navigation highlight 
+.post.index:hover, .selected {
+  box-shadow: 0px 0px 5px #999
+}
+*/
+
+
+/* Blog post information */
+.info {
+  font-size:12px;
+  color:#999;
+  padding-bottom: 5px;
+  margin-top:0px;
+  margin-bottom:10px;
+  border-bottom: 1px #ccc solid
+}
+
+.info p{
+	margin:0;
+}
+
+.info a{
+  border: 0
+}
+
+
+/* Post Tags */
+.tags {
+  clear: both;
+  margin:auto;
+  border-top: 1px #ccc solid;
+  padding-top:10px;
+  font-size: 10px
+}
+
+
+/* Post Footer */
+.footer {
+  clear: both;
+  padding-top:10px;
+  margin-bottom: 10px;
+  margin-top:20px
+}
+
+
+/* Pagination loading element */
+.loading {
+  display: none;
+}
+
+
+/*
+ * 
+ * CMS Elements
+ *
+ */
+
+/* Text input boxes in the login panel */
+.login_box {
+  padding: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0;
+  margin-right:10px;	
+  border: solid 1px #CCC;
+  background-color: white;  
+  border-radius: 5px;
+  width: 178px
+}
+
+
+/* Submit button in the login panel*/
+.submit {
+  border-radius: 5px;
+  width: 138px;
+  padding: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #ded;
+  border: solid 1px #CCC;
+  font-weight: bold;
+  color: #555
+}
+
+.submit:hover{  
+  background-color: #008C00;
+  border: solid 1px #008C00;  
+  color: #fff
+}
+
+
+/* Cancel button in forms */
+.cancel {
+  border-radius: 5px;
+  width: 138px;
+  padding: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #edd;
+  border: solid 1px #CCC;
+  font-weight: bold;
+  color: #555
+}
+
+.cancel:hover {
+  border-radius: 5px;
+  width: 138px;
+  padding: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #cc0000;
+  border: solid 1px #cc0000;
+  font-weight: bold;
+  color: #fff
+}
+
+
+/* Activity button incase the user has disabled JS */
+.activity li {
+  text-align: center;
+  border-radius: 5px;
+  font-size: 10px;
+  display: block;
+  float: left;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  background-color: rgba(0,0,0,0.5);
+  color:#fff;
+  width: 168px
+}
+
+.activity li a:hover, .activity li a {
+  margin:0px;
+  padding:2px;
+  color:#fff;
+  display: block
+}
+
+
+/* Contains post tags, category and source*/
+.extra_options_pane{
+	display:none;
+}
+
+
+/* Textarea for a text posts content */
+.content_box{
+  padding: 10px;
+  width: 898px;
+  border: 0;
+  margin-right:10px;	
+  border: solid 1px #CCC;
+  background-color: white;  
+  border-radius: 5px;
+  font: 12px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #555;
+  margin-bottom:0;
+  padding-bottom:0
+}
+
+
+/* Post entry editor */
+.post.editor{
+	width: 576px;
+}
+
+
+/* Post entry form */
+form{
+	padding: 20px 20px 10px;
+}
+
+/* Default style for an element on the editor */
+.editor_element{
+  padding: 10px;
+  width: 512px;
+  border: 0;
+  font: 22px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #555;
+  border: solid 1px #CCC;
+  background-color: white;  
+  border-radius: 5px;
+  margin-top:10px
+}
+
+
+/* Styles for the image, tags, source and category inputs */
+.editor_image_input, .editor_source_input, .editor_tags_input, .editor_category_input{
+  font: 12px/20px "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+.editor_tags_input, .editor_category_input{
+  width: 235px
+}
