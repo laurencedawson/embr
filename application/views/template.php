@@ -25,15 +25,15 @@
 
   <div id="container">
 
-    <div class="header">
+    <header class="header">
       <h1><?= anchor('/', $blog_title, 'title="'.$blog_title.'"')?></h1> 
-      <h2><?=$tagline?></h2>
-	  <div class="navigation">
+      <h2 id="tagline"><?=$tagline?></h2>
+	  <nav class="navigation">
 		<? if( !strstr(uri_string(),"admin/login") && !strstr(uri_string(),"admin/authenticate") )
 		     echo "<a class=\"lg\" href=\"".base_url()."admin\">Admin </a>"?><?=($legend?"<a class=\"legend\" href=\"#\">Legend</a> ":'').anchor('/rss', 'RSS', 'title="RSS"')?>
-      </div>
+      </nav>
 
-    </div>
+    </header>
 
     <?= $contents ?>
     <?= $tags ?>
@@ -58,7 +58,8 @@
   </div>
 
   <script type="text/javascript" src="///code.jquery.com/jquery-1.6.1.min.js"></script>
-  <script http-equiv="content-script-type" type="text/javascript" src="<?=base_url()."js/embr.js"?>"></script>  
+  <script http-equiv="content-script-type" type="text/javascript" src="<?=base_url()."js/plugins.js"?>"></script>
+  <script http-equiv="content-script-type" type="text/javascript" src="<?=base_url()."js/embr.js"?>"></script>
   <? $loc = "themes/".$style."/additional.php"; if (is_file($loc)) include $loc ?>
   <? if(strlen($google_analytics)){ ?><script>
     var _gaq=[["_setAccount","<?= $google_analytics ?>"],["_trackPageview"]];

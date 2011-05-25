@@ -1,5 +1,5 @@
 <?echo validation_errors() ? "<div class=\"post\">".validation_errors()."</div>":''?>
-<div class="post">  
+<div class="post editor">  
 <?//Open the post editor; if the form detects content, open in edit mode
   echo isset($update)?form_open('update','',array('hidden_title'=>$post['content']['title'])):form_open('create');
 

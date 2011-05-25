@@ -5,19 +5,26 @@
 
 </ul>
 
+
 <div class="posts">
+<div id="post_viewer"></div>
 <? 
 foreach($posts as $post){
+	$time = strtotime ($post["datet"]);
   if(strlen($post["image"])){
-    echo "<div class=\"post index\" >";
-    echo "<a href=\"".base_url().strtolower(url_title($post["title"]))."\"><img class=\"image_box\" src=\"".(strstr($post["image"],"http") ? $post["image"] : base_url()."img/uploads/".$post["image"])."\" /></a>";
+    echo "<div class=\"post image index\" >";
+    echo "<a href=\"".base_url().strtolower(url_title($post["title"]))."\" class=\"post_link\"><img class=\"image_box\" src=\"".(strstr($post["image"],"http") ? $post["image"] : base_url()."img/uploads/".$post["image"])."\" />";
+    echo "<div class=\"post_date\"><span class=\"day\">".date("D",$time)."</span><span class=\"date\">".date("j",$time)."</span><span class=\"month\">".date("M",$time)."</span><span class=\"year\">".date("Y",$time)."</span></div></a>";
     if( $post['source'] )
-      echo "<div class=\"image_source\">Source: <a href=\"". $post['source']."\">". $post['source']."</a></div>";
+      echo "<div class=\"image_source\">Source: <a href=\"". $post['source']."\"". $post['source']."</a></div>";
    }else{
     echo "<div class=\"post index\">";
-    echo "<div class=\"post_inner\">";    
-    echo "<h2><a href=\"".base_url().strtolower(url_title($post["title"]))."\">".$post["title"]."</a></h2>";
-    echo "<div class=\"info\"><p>Posted by $first_name on ".date("l dS F\, Y",strtotime ($post["datet"]))."</p></div>";
+    echo "<div class=\"post_inner\">";
+    echo "<div class=\"post_date\"><span class=\"day\">".date("D",$time)."</span><span class=\"date\">".date("j",$time)."</span><span class=\"month\">".date("M",$time)."</span><span class=\"year\">".date("Y",$time)."</span></div>";
+    echo "<header>";
+    echo "<h2><a href=\"".base_url().strtolower(url_title($post["title"]))."\" class=\"post_link\">".$post["title"]."</a></h2>";
+    echo "<span class=\"author\">Posted by $first_name</span>";
+    echo "</header>";
     $body = explode("<br><br>",$post["content"]);
     echo "".$this->typography->auto_typography($body[0])." ".$post['summary'];
     echo "</div>";

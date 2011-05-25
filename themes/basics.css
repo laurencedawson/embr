@@ -30,12 +30,31 @@
 	clear:both
 }
 
+.clearfix:before, .clearfix:after {  content: "\0020"; display: block; height: 0; visibility: hidden;	 } 
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
 
 /* embr footer branding */
-.embr {
+.embr{
   margin-top:-10px;
   float:right;
-  opacity: 0.2
+  padding: 0 10px 0 0;
+  opacity: 1;
+}
+.embr_link a{
+  background-image: url("../img/embr.png");
+  width: 53px;
+  height: 46px;
+  display: block;
+  opacity: .2;
+  -webkit-transition: opacity .25s;
+  -moz-transition: opacity .25s;
+  -o-transition: opacity .25s;
+  transition: opacity .25s;
+}
+
+.embr_link a:hover{
+	opacity: 1;
 }
 
 
