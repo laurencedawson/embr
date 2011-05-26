@@ -1,9 +1,12 @@
+// AJAX loader (blog_post) variables.
+var post_loading = false;
+
 /*
 	Standard document ready
 	Hides pagination if js enabled
 */
 var base_url;
-var $wall = $('.posts');
+var $posts = $('.posts');
 var loading = false; //If the page if loading
 $(document).ready(function(){
 	
@@ -12,22 +15,74 @@ $(document).ready(function(){
 	var $loader = "<img src=\"img/load.gif\" id=\"loader\">";
 	$('.posts').prepend($loader);
 	
-	$('.image_box', $wall).imagesLoaded(function(){
+	$('.image_box', $posts).imagesLoaded(function(){
 		
 		$('#loader').remove();
 		$('.post_date span').fitTextToParent({adjust:0.95});
-		$wall.masonry({
+		$posts.masonry({
 			columnWidth: 320, 
-			itemSelector: '.post'
+			itemSelector: '.post.index'
 		}, function(){
-			$('.posts .post').animate({'opacity': 1}, 1000);
+			if(window.location.hash != ''){
+				var o = .5;
+			}else{
+				var o = 1;
+			}
+			$('.posts .post').animate({'opacity': o}, 1000);
 			loading = false;
+			if(window.location.hash != ''){
+			  	
+			  	// AJAX load post.
+			  	post_loading = true;
+			  	$close_link = "<a href=\"#\" class=\"close\"></a>";
+			  	
+					var h = window.location.hash;
+					var t = base_url+h.substring(1);
+					var c = 'a[href="'+t+'"]';
+					
+					var top = $(c).parents('.post').position().top;
+					var left = $(c).parents('.post').position().left;
+					if(left > $('#post_viewer').width()){
+						left = 320;
+					}/*else if(left > 310 && left < $('#post_viewer').width()){
+						left = 155;
+					}*/else{
+						left = 0;
+					}
+					
+					$(c).parents('.post').scrollToTop();
+			
+					$.get(t,function(data){
+				    var d=$(data);
+				    var item=d.find('.blog_post');
+				    
+				    if($(item).hasClass('image')){
+				    	$(item).prepend($close_link);
+				    }else{
+				    	$('.post_inner', item).prepend($close_link);
+				    }
+				    
+				    $('#post_viewer').append($(item)).css({'top': top, 'left': left});
+				    $('.blog_post .post_date span').fitTextToParent({adjust:0.95});
+				    $('a.close').click(function(e){
+				    	e.preventDefault();
+				    	$('#post_viewer').empty();
+				    	$('.post.index').animate({'opacity': 1}, 250);
+				    	$(this).remove();
+				    });
+				    post_loading = false;
+					});
+			  
+			  }
 		});
 	
 	});
 	
   //Hide pagination controls
-  $(".next").hide(); $(".prev").hide();
+  $(".next").hide();
+  $(".prev").hide();
+  //Set the index page linker
+  //linker();
   //Reblog code
   if (window.localStorage) 
     if (localStorage.getItem('embr_blog')) 
@@ -35,7 +90,7 @@ $(document).ready(function(){
   //Focus on the title of any form
   $(".form_title").focus();
   //Sets the base url
-  base_url = $("header.header h1 a").attr('href');
+  base_url = $(".header h1 a").attr('href');
 
   //Displays the admin buttons if logged in
   l = base_url+"tools/logged_in";
@@ -55,13 +110,10 @@ $(document).ready(function(){
 	}
   });
   
-  $('a.post_link').scrollToParent({parent:'.post'});
-  
 });
 
 
 // AJAX load post instead of linking.
-var post_loading = false;
 $close_link = "<a href=\"#\" class=\"close\"></a>";
 $('a.post_link').live('click', function(e){
 	
@@ -69,6 +121,8 @@ $('a.post_link').live('click', function(e){
 	if(!post_loading && $('#post_viewer').is(':empty')){
 		post_loading = true;
 		var t = $(this).attr('href');
+		var h = t.substring(t.lastIndexOf('/')+1);
+		window.location.hash = h;
 		var top = $(this).parents('.post').position().top;
 		var left = $(this).parents('.post').position().left;
 		if(left > $('#post_viewer').width()){
@@ -79,6 +133,8 @@ $('a.post_link').live('click', function(e){
 			left = 0;
 		}
 		
+		$(this).parents('.post').scrollToTop();
+
 		$.get(t,function(data){
 	    var d=$(data);
 	    var item=d.find('.blog_post');
@@ -105,6 +161,54 @@ $('a.post_link').live('click', function(e){
 
 });
 
+
+// AJAX load post instead of linking.
+$close_link = "<a href=\"#\" class=\"close\"></a>";
+$('a.post_link').live('click', function(e){
+	
+	e.preventDefault();
+	if(!post_loading && $('#post_viewer').is(':empty')){
+		post_loading = true;
+		var t = $(this).attr('href');
+		var h = t.substring(t.lastIndexOf('/')+1);
+		window.location.hash = h;
+		var top = $(this).parents('.post').position().top;
+		var left = $(this).parents('.post').position().left;
+		if(left > $('#post_viewer').width()){
+			left = 320;
+		}/*else if(left > 310 && left < $('#post_viewer').width()){
+			left = 155;
+		}*/else{
+			left = 0;
+		}
+		
+		$(this).parents('.post').scrollToTop();
+
+		$.get(t,function(data){
+	    var d=$(data);
+	    var item=d.find('.blog_post');
+	    
+	    if($(item).hasClass('image')){
+	    	$(item).prepend($close_link);
+	    }else{
+	    	$('.post_inner', item).prepend($close_link);
+	    }
+	    
+	    //$('.loading').remove();
+	    $('#post_viewer').append($(item)).css({'top': top, 'left': left});
+	    $('.blog_post .post_date span').fitTextToParent({adjust:0.95});
+	    $('.post.index').animate({'opacity': .5}, 250);
+	    $('a.close').click(function(e){
+	    	e.preventDefault();
+	    	$('#post_viewer').empty();
+	    	$('.post.index').animate({'opacity': 1}, 250);
+	    	$(this).remove();
+	    });
+	    post_loading = false;
+		});
+	}
+
+});
 /*
 	AJAX login and Admin panel
 */
@@ -179,14 +283,14 @@ $(document).scroll(function(){
           var items=d.find('.post');
           // Add loader.
           var $loader = "<img src=\"img/load.gif\" id=\"loader\">";
-          $wall.append($loader).masonry({appendContent: $loader});
-          // Hide and add new posts.
+          $posts.append($loader).masonry({appendContent: $loader});
+          // Add new posts.
           $(items).addClass('new');
-          $wall.append($(items));
-          $('.new .image_box', $wall).imagesLoaded(function(){
+          $posts.append($(items));
+          $('.new .image_box', $posts).imagesLoaded(function(){
           	$('#loader').remove();
           	$('.new .post_date span').fitTextToParent({adjust:0.95});
-          	$wall.masonry({appendedContent:$(items)}, function(){
+          	$posts.masonry({appendedContent:$(items), itemSelector: '.post'}, function(){
           		if($('#post_viewer').is(':empty')){
           			$(items).animate({'opacity':1}, 1000, function(){$(this).removeClass('new')});
           		}else{

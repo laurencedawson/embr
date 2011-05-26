@@ -1,6 +1,3 @@
-/*
-	Reblog a post
-*/
 $(".reblog_element").click(function(){
   alert("Coming Soon...");
 });
