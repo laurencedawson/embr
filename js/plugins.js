@@ -37,7 +37,7 @@
 		};
     
     /*!
-    * FitTextToParent.js 1.0
+    * fitTextToParent.js 1.0
     *
     * Copyright 2011, Saul Hardman http://iamsaul.co.uk
     * Released under the WTFPL license 
@@ -78,24 +78,28 @@
     
     })( jQuery );
     
+    /*!
+    * scrollToTop.js 1.0
+    *
+    * Copyright 2011, Saul Hardman http://iamsaul.co.uk
+    * Released under the WTFPL license 
+    * http://sam.zoy.org/wtfpl/
+    *
+    * Date: Thu May 24 13:25:00 2011 -0000
+    */
+    
     (function( $ ){
         	
-      	$.fn.scrollToParent = function(options) {
+      	$.fn.scrollToTop = function(options) {
   
       			var defaults = {
-      			  parent: '',
       			  speed: 500
       			};
       			var options = $.extend({}, defaults, options);
   					
-  					this.live('click', function(){
-  						
-  						var $this = $(this);
-  						var $parent = $this.parents(options.parent);
-  						var parentTop = $parent.offset().top - 10;
-  						$('html, body').animate({'scrollTop': parentTop}, options.speed);
-  					
-  					});
+						var $this = $(this);
+						var top = $this.offset().top - 10;
+						$('html, body').animate({'scrollTop': top}, options.speed);
       
       	};
       
