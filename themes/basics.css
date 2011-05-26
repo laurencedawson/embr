@@ -38,7 +38,6 @@
 .embr{
   margin-top:-10px;
   float:right;
-  padding: 0 10px 0 0;
   opacity: 1;
 }
 .embr_link a{
@@ -47,10 +46,10 @@
   height: 46px;
   display: block;
   opacity: .2;
-  -webkit-transition: opacity .25s;
-  -moz-transition: opacity .25s;
-  -o-transition: opacity .25s;
-  transition: opacity .25s;
+  -webkit-transition: opacity .735s;
+  -moz-transition: opacity .75s;
+  -o-transition: opacity .75s;
+  transition: opacity .75s;
 }
 
 .embr_link a:hover{

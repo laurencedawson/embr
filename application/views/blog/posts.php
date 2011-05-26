@@ -28,7 +28,7 @@
     if( $post['content']['category'] )
       echo "<span class=\"author\">Posted by $first_name</span> on ".date("l dS F\, Y",strtotime ($post['content']['datet']))." in <a href=\"".base_url()."category/".strtolower( str_replace(" ","-",$post['content']['category']) )."\">".$post['content']['category']."</a></p></div>";
     else
-        echo "<span class=\"author\">Posted by $first_name</span>";
+        echo "<div class=\"author\">Posted by $first_name</div>";
     echo $this->typography->auto_typography( $post['content']['content'] );
     echo "</div>";
 

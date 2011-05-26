@@ -6,11 +6,13 @@
   <title><?=$title?></title>
   <? if( $facebook_connect )
         echo $facebook_connect;
-      else
+      else{
 		echo "<meta property=\"og:title\" content=\"$blog_title\" />";
         echo "<meta property=\"og:url\" content=\"".base_url()."\" />";
 		echo "<meta property=\"og:description\" content=\"".$site_description."\" />";
-		echo "<meta property=\"og:type\" content=\"blog\" />"?>
+		echo "<meta property=\"og:type\" content=\"blog\" />";
+	  }
+  ?>
   <meta name="author" content="<?=$first_name." ".$last_name?>">
   <link rel="stylesheet" href="<?=base_url()."themes/basics.css"?>"/>
   <link rel="stylesheet" href="<?=base_url()."themes/".$style."/style.css"?>"/>
@@ -25,24 +27,23 @@
 
   <div id="container">
 
-    <header class="header">
+    <header>
       <h1><?= anchor('/', $blog_title, 'title="'.$blog_title.'"')?></h1> 
       <h2 id="tagline"><?=$tagline?></h2>
-	  <nav class="navigation">
+	  <nav>
 		<? if( !strstr(uri_string(),"admin/login") && !strstr(uri_string(),"admin/authenticate") )
 		     echo "<a class=\"lg\" href=\"".base_url()."admin\">Admin </a>"?><?=($legend?"<a class=\"legend\" href=\"#\">Legend</a> ":'').anchor('/rss', 'RSS', 'title="RSS"')?>
       </nav>
-
     </header>
 
     <?= $contents ?>
     <?= $tags ?>
     <?= $comments ?>     
 
-    <div class="footer">
+    <footer>
       <div class="embr"><ul><li class="embr_link"><a href="http://embr.co"></a></li></ul></div>
       <p><?="Copyright &copy; 2011 <b>".$first_name." ".$last_name."</b>. All Rights Reserved."?></p>
-    </div>  
+    </footer>  
 
     <? if($legend){ ?>
 	<div class="key_spacer"></div>
@@ -60,7 +61,11 @@
   <script type="text/javascript" src="///code.jquery.com/jquery-1.6.1.min.js"></script>
   <script http-equiv="content-script-type" type="text/javascript" src="<?=base_url()."js/plugins.js"?>"></script>
   <script http-equiv="content-script-type" type="text/javascript" src="<?=base_url()."js/embr.js"?>"></script>
+  <? $loc = "themes/".$style."/scripts.js"; if (is_file($loc)) echo "<script http-equiv=\"content-script-type\" type=\"text/javascript\" src=\"".base_url()."themes/".$style."/scripts.js\"></script>" ?>
+  
+  
   <? $loc = "themes/".$style."/additional.php"; if (is_file($loc)) include $loc ?>
+  
   <? if(strlen($google_analytics)){ ?><script>
     var _gaq=[["_setAccount","<?= $google_analytics ?>"],["_trackPageview"]];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;

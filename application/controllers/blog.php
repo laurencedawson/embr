@@ -29,7 +29,7 @@ class Blog extends CI_Controller {
   function index( $page = '0', $message = null )
   {
 	//Cache output
-	$this->output->cache( 5 );
+	$this->output->cache( $this->config->item('cache_duration') );
 	
 	//Load the typography library
 	$this->load->library('typography');
@@ -73,7 +73,7 @@ class Blog extends CI_Controller {
     */
   function posts( $id = null, $reblog = null )
   {    
-    $this->output->cache(3600);
+    $this->output->cache( $this->config->item('cache_duration') );
 
     if( $id == null)
       show_404();
@@ -116,7 +116,7 @@ class Blog extends CI_Controller {
   function tag( $tag = null, $page = 0 )
   {	
     // Set the cache duration
-    $this->output->cache(3600);
+    $this->output->cache( $this->config->item('cache_duration') );
     
     // Pass the users info through
     $data = $this->data_model->getSiteData();
@@ -154,7 +154,7 @@ class Blog extends CI_Controller {
   function category( $cat = null, $page = 0 )
   {		
     // Set the cache duration
-    $this->output->cache(3600);
+    $this->output->cache( $this->config->item('cache_duration') );
     
     // Pass the users info through
     $data = $this->data_model->getSiteData();

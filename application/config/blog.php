@@ -14,4 +14,4 @@ $config['debug'] = FALSE;
 $config['legend'] = TRUE;
 $config['admin_email'] = 'hello@iamsaul.co.uk';
 $config['admin_pass'] = 'meow';
-
+$config['cache_duration'] = '5';
