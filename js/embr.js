@@ -1,3 +1,6 @@
+/*
+	Show the reblog message
+*/
 $(".reblog_element").click(function(){
   alert("Coming Soon...");
 });
@@ -69,4 +72,45 @@ $(".lg").click(function(){
 	  }
 	}
   } return false;	
+});
+
+
+/*
+	Show / Hide the extra options pane
+*/
+var state2 = 0;
+$(".extra").click(function(){
+  if( state2 ){
+    $('body').find('.extra_options_pane').fadeOut('fast');
+    state2 = 0;
+    $(this).text("More Options");
+  } else {
+    $('body').find('.extra_options_pane').fadeIn('fast');
+    state2 = 1;
+    $(this).text("Less Options");
+  }	
+  return false;
+});
+
+/*
+	Show / Hide the image post options
+*/
+var state = 1;
+$(".aip").click(function(){
+  if( state ){
+    $('body').find('.text_area_wrapper').fadeOut('fast', function() {
+      $(".aip").text("Switch to Text Post");
+      $('body').find('.editor_image_input').fadeIn();
+      $('body').find('.post_label').text("Image Post URL");
+      state=state?0:1;
+    });
+  }else{
+	$('body').find('.editor_image_input').fadeOut('fast', function() {
+      $(".aip").text("Switch to Image Post");
+      $('body').find('.text_area_wrapper').fadeIn();
+      $('body').find('.post_label').text("Text Post");
+      state=state?0:1;
+    });
+  }
+  return false;
 });

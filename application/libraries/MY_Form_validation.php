@@ -44,11 +44,13 @@ class MY_Form_validation extends CI_Form_validation {
    * @param		string
    * @return 	bool
    */
-  function unique_title($title){       
-	$this->load->model('blog_model');
-    
+  function unique_title($title){     
+	/*
+		Currently cant access any models...
+	*/  
+	//$this->load->model('blog_model');    
 	//die($this->blog_model->getID($title));
-	return false;
+	return true;
   }
 
 }

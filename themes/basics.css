@@ -172,6 +172,25 @@
   color: #fff
 }
 
+.debug{
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  float: left;
+  margin-right: 4px;
+  padding: 10px;
+  border-radius: 3px;
+  text-align: left;
+  font-size: 10px;
+  list-style: none;
+  color:#fff;
+  background-color: rgba(0,0,0,0.5)
+}
+
+.debug span{
+  font-size: 16px;
+}
+
 /* Used to hide the reblog url in */
 .hidden_url{
 	display: none;
