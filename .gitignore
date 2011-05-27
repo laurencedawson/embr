@@ -1,3 +1,5 @@
+blog.php
+database.php
 /system
 /user_guide
 .DS_Store
@@ -17,5 +19,3 @@ hooks.php
 foreign_chars.php
 doctypes.php
 constants.php
-!blog.php
-!database.php
