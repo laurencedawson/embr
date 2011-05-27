@@ -20,7 +20,7 @@ foreach($posts as $post){
    }else{
     echo "<div class=\"post index\">";
     echo "<div class=\"post_inner\">";    
-    echo "<span class=\"post_date\"><span class=\"day\">".date("D",$time)."</span><span class=\"date\">".date("j",$time)."</span><span class=\"month\">".date("M",$time)."</span><span class=\"year\">".date("Y",$time)."</span></span>";g
+    echo "<span class=\"post_date\"><span class=\"day\">".date("D",$time)."</span><span class=\"date\">".date("j",$time)."</span><span class=\"month\">".date("M",$time)."</span><span class=\"year\">".date("Y",$time)."</span></span>";
 //    echo "<header>";
     echo "<h2><a href=\"".base_url().strtolower(url_title($post["title"]))."\" class=\"post_link\">".$post["title"]."</a></h2>";
     echo "<p class=\"info\"><span class=\"author\">Posted by $first_name</span><span class=\"info_separator\"> - </span></p>";
