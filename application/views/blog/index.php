@@ -31,7 +31,7 @@ foreach($posts as $post){
 
     if( $post['source'] ){
       echo "<div class=\"tags\">";
-      echo "<div class=\"right\">Source: <a href=\"". $post['source']."\">". $post['source']."</a></div>";
+      echo "<div class=\"source\">Source: <a href=\"". $post['source']."\">". $post['source']."</a></div>";
       echo "&nbsp;</div>";
     }
   } echo "</div>";

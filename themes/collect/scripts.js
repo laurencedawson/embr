@@ -26,7 +26,7 @@ $(document).ready(function(){
 			itemSelector: '.post.index'
 		}, function(){
 			if(window.location.hash != ''){
-				var o = .5;
+				var o = .25;
 			}else{
 				var o = 1;
 			}
@@ -147,7 +147,7 @@ $(document).ready(function(){
 	  $(".toolbox_element").show();
 	  $(".reblog_element").hide();
 	  $(".promo_element").hide();	
-      $(".lg").text("Logout");
+      $(".lg").text("Logout ");
 	  $(".lg").attr("href",base_url+"logout");
 	  //Used to set the users reblog URL
 	  if (window.localStorage)
@@ -196,7 +196,7 @@ $('a.post_link').live('click', function(e){
 	    //$('.loading').remove();
 	    $('#post_viewer').append($(item)).css({'top': top, 'left': left});
 	    $('.blog_post .post_date span').fitTextToParent({adjust:0.95});
-	    $('.post.index').animate({'opacity': .5}, 250);
+	    $('.post.index').animate({'opacity': .25}, 250);
 	    $('a.close').click(function(e){
 	    	e.preventDefault();
 	    	$('#post_viewer').empty();
@@ -245,7 +245,7 @@ $('a.post_link').live('click', function(e){
 	    //$('.loading').remove();
 	    $('#post_viewer').append($(item)).css({'top': top, 'left': left});
 	    $('.blog_post .post_date span').fitTextToParent({adjust:0.95});
-	    $('.post.index').animate({'opacity': .5}, 250);
+	    $('.post.index').animate({'opacity': .25}, 250);
 	    $('a.close').click(function(e){
 	    	e.preventDefault();
 	    	$('#post_viewer').empty();
@@ -279,7 +279,7 @@ $(".lg").click(function(){
   }else{
     //If not cached, grab the admin panel
     if( !lg ){
-	  if( $(this).text()=="Logout" )
+	  if( $(this).text()=="Logout " )
 	    window.location = $(this).attr('href');
 	  else{
   	    //Incase of slow connections show the loading icon
@@ -341,7 +341,7 @@ $(document).scroll(function(){
           		if($('#post_viewer').is(':empty')){
           			$(items).animate({'opacity':1}, 1000, function(){$(this).removeClass('new')});
           		}else{
-          			$(items).animate({'opacity':.5}, 1000, function(){$(this).removeClass('new')});
+          			$(items).animate({'opacity':.25}, 1000, function(){$(this).removeClass('new')});
           		}
           		loading = false;
           	});

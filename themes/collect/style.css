@@ -34,10 +34,12 @@ body {
 a {
   color: rgb(100, 100, 100);
   text-decoration:none;
+  /* Causes blue 'flash' on refresh
   -webkit-transition: color .25s;
   -moz-transition: color .25s;
   -o-transition: color .25s;
   transition: color .25s;
+  */
   padding: 0;
   margin: 0;
 }
@@ -117,7 +119,7 @@ label {
 
 /* Page header */
 header {
-  margin-bottom:20px
+  margin-bottom:40px
 }
 
 header h1{
@@ -141,7 +143,7 @@ nav {
   letter-spacing: 1px;
 }
 
-.navigation a {
+nav a {
   margin-left: 10px
 }
 
@@ -341,11 +343,12 @@ a.close:hover{
 
 /* The source box under a post */
 .source {
+  float: right;
   text-align: right;
   background-color: white;
   border-radius: 5px;
-  padding: 0;
-  padding-top: 5px;
+  padding: 10px;
+  padding-top:0;
   font-size:10px
 }
 

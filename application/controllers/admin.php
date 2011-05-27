@@ -229,7 +229,7 @@ class Admin extends CI_Controller{
 
       //Set the rule that an image post requires a valid image and data OR Set the rule that a text post requires valid content
       $image_post ? $this->form_validation->set_rules('image', 'Image', 'required|valid_url') : 
-        $this->form_validation->set_rules('content', 'Content', 'required|trim|isnt');
+        $this->form_validation->set_rules('content', 'Content', 'required|trim|isnt|unique_title');
 	  
 	  //If the form passes validation create the new post
       if ($this->form_validation->run() == TRUE)

@@ -45,7 +45,7 @@ class Blog extends CI_Controller {
     $data = $this->data_model->getSiteData();
     
     // Load the posts for the index page
-    $data['posts'] = $this->blog_model->getPosts( 5, $page );
+    $data['posts'] = $this->blog_model->getPosts( 8, $page );
     
     // Write to the template and render
     $this->template->write('title', 'Blog');

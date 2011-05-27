@@ -172,11 +172,11 @@ nav a {
 
 /* The source box under a post */
 .source {
+  float: right;
   text-align: right;
   background-color: white;
   border-radius: 5px;
   padding: 0;
-  padding-top: 5px;
   font-size:10px
 }
 

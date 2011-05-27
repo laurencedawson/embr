@@ -1,5 +1,10 @@
 <?php
 class MY_Form_validation extends CI_Form_validation {
+  
+  function MY_Form_validation( $config = array() )
+  {
+    parent::__construct($config);
+  }
 
   /**
    * Alpha-numeric with underscores, dashes and spaces
@@ -32,7 +37,19 @@ class MY_Form_validation extends CI_Form_validation {
     $pattern = '/' . '^(https?:\/\/)[^\s]+$' . '/';
     preg_match($pattern, $url, $matches);
     return (empty($matches)) ? FALSE : TRUE;
-  } 
+  }
+
+  /*
+   * Checks that a post title is unique
+   * @param		string
+   * @return 	bool
+   */
+  function unique_title($title){       
+	$this->load->model('blog_model');
+    
+	//die($this->blog_model->getID($title));
+	return false;
+  }
 
 }
 ?>

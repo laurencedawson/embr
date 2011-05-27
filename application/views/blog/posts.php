@@ -45,7 +45,7 @@
         }
       }else echo "&nbsp;";
 	    if( $post['content']['source'] )
-	      echo "<span class=\"right\">Source: <a href=\"". $post['content']['source']."\">". $post['content']['source']."</a></span>";
+	      echo "<span class=\"source\">Source: <a href=\"". $post['content']['source']."\">". $post['content']['source']."</a></span>";
 	  echo "</div>";
     }
   }
