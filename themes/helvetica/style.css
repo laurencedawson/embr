@@ -7,6 +7,11 @@
  *
  */
 
+*{
+  outline: none
+}
+
+
 html {
   overflow-y: scroll
 }
@@ -377,4 +382,8 @@ footer {
 
 .image_date{
   display: none
+}
+
+.post_date, .info_separator{
+  display: none;
 }

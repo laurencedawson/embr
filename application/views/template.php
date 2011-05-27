@@ -16,7 +16,7 @@
   <meta name="author" content="<?=$first_name." ".$last_name?>">
   <link rel="stylesheet" href="<?=base_url()."themes/basics.css"?>"/>
   <link rel="stylesheet" href="<?=base_url()."themes/".$style."/style.css"?>"/>
-  <link href="<?=base_url()."themes/mobile/style.css"?>" media="screen and (max-device-width: 480px), screen and (-webkit-min-device-pixel-ratio: 2)" rel="stylesheet" type="text/css" /> 
+  <link href="<?=base_url()."themes/mobile/style.css"?>" media="screen and (max-device-width: 480px), screen and (-webkit-min-device-pixel-ratio: 2)" rel="stylesheet"/> 
   <link href="<?=base_url()."rss"?>" rel="alternate" type="application/rss+xml" title="<?= $blog_title ?>" />
   <link type="text/plain" rel="author" href="<?=base_url()."humans.txt"?>" />  
 </head>
@@ -24,7 +24,6 @@
 <body>
   <?=$debug?$this->benchmark->elapsed_time():''?>
   
-
   <div id="container">
 
     <header>
@@ -58,12 +57,10 @@
    
   </div>
 
-  <script type="text/javascript" src="///code.jquery.com/jquery-1.6.1.min.js"></script>
-  <script http-equiv="content-script-type" type="text/javascript" src="<?=base_url()."js/plugins.js"?>"></script>
-  <script http-equiv="content-script-type" type="text/javascript" src="<?=base_url()."js/embr.js"?>"></script>
-  <? $loc = "themes/".$style."/scripts.js"; if (is_file($loc)) echo "<script http-equiv=\"content-script-type\" type=\"text/javascript\" src=\"".base_url()."themes/".$style."/scripts.js\"></script>" ?>
-  
-  
+  <script src="///code.jquery.com/jquery-1.6.1.min.js"></script>
+  <script src="<?=base_url()."js/plugins.js"?>"></script>
+  <script src="<?=base_url()."js/embr.js"?>"></script>
+  <? $loc = "themes/".$style."/scripts.js"; if (is_file($loc)) echo "<script src=\"".base_url()."themes/".$style."/scripts.js\"></script>" ?>
   <? $loc = "themes/".$style."/additional.php"; if (is_file($loc)) include $loc ?>
   
   <? if(strlen($google_analytics)){ ?><script>

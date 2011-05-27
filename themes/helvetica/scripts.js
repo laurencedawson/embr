@@ -11,7 +11,7 @@ $(document).ready(function(){
 	  $('body').find('.reblog').css({'visibility' : 'visible'});
 
   //Focus on the title of any form
-  $(".form_title").focus();
+  $(".editor_element").focus();
 
   //Sets the base url
   base_url = $("header h1 a").attr('href');
