@@ -4,7 +4,7 @@ Embr is a blog engine / tumblelog built using the CodeIgniter framework designed
 
 ## Example
 
-A working text blog can be viewed [here](http://blog.laurencedawson.com/).
+A working text blog can be viewed [here](http://embr.co/demo/).
 
 ## Requires
 
