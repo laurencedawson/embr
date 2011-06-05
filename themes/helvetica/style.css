@@ -2,8 +2,7 @@
  *
  * Helvetica Theme for Embr
  * Author: Laurence Dawson
- * Date: May 2011
- * Version 1.0
+ * Version 1.1
  *
  */
 
@@ -22,8 +21,9 @@ body {
   font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #666;
   background-color: #eee;
-  margin: 0;
-  padding: 0
+  margin: auto;
+  margin-top: 20px;
+  width: 576px
 }
 
 
@@ -110,14 +110,6 @@ label {
  *
  */
 
-/* Main container  */
-#container {
-  margin: auto;
-  margin-top: 20px;
-  width: 576px
-}
-
-
 /* Page header */
 header {
   margin-bottom:20px
@@ -170,17 +162,6 @@ nav a {
 }
 
 
-/* The source box under a post */
-.source {
-  float: right;
-  text-align: right;
-  background-color: white;
-  border-radius: 5px;
-  padding: 0;
-  font-size:10px
-}
-
-
 /* Post index page hover & keyboard navigation highlight */
 .index:hover, .selected {
   box-shadow: 0px 0px 5px #999
@@ -189,12 +170,26 @@ nav a {
 
 /* Blog Author */
 .info {
-  font-size:12px;
+  line-height: 1.4;
+  font-size:11px;
   color:#999;
-  padding-bottom: 5px;
+  padding-top: 10px;
   margin-top:0px;
-  margin-bottom:10px;
-  border-bottom: 1px #ccc solid;
+  margin-bottom:5px;
+  border-top: 1px #ccc solid
+}
+
+.picture_info{
+  line-height: 1.4;
+  font-size:11px;
+  color:#999;
+  padding-top: 10px;
+  margin-top:0px;
+  margin-bottom:10px
+}
+
+.info_image{
+  display:none
 }
 
 .info p{
@@ -210,18 +205,20 @@ nav a {
 .tags {
   clear: both;
   margin:auto;
-  border-top: 1px #ccc solid;
-  padding-top:10px;
-  font-size: 10px
+  padding-top:10px
 }
 
 
 /* Post Footer */
 footer {
   clear: both;
-  padding-top:10px;
+  padding-top:25px;
   margin-bottom: 10px;
   margin-top:20px
+}
+
+footer p{
+  margin-top:17px;
 }
 
 
@@ -365,15 +362,6 @@ footer {
   width: 235px
 }
 
-
-/* The image shown in the embr branding */
-.embr_link a{
-  background-image: url("../../img/embr.png");
-  width: 53px;
-  height: 46px;
-  display: block;
-}
-
 /* Post Date */
 
 .month, .day, .date{
@@ -384,6 +372,6 @@ footer {
   display: none
 }
 
-.post_date, .info_separator{
-  display: none;
+.plus_one{
+  float: right
 }

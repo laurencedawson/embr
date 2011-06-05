@@ -1,0 +1,2 @@
+<meta name="viewport" content="width=636"/>
+<link href="<?=base_url()."themes/mobile/style.css"?>" media="screen and (max-device-width: 480px), screen and (-webkit-min-device-pixel-ratio: 2)" rel="stylesheet"/>

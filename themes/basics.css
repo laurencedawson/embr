@@ -35,13 +35,14 @@
 .clearfix { zoom: 1; }
 
 /* embr footer branding */
-.embr{
+footer ul{
   margin-top:-10px;
   float:right;
   opacity: 1;
 }
-.embr_link a{
-  background-image: url("../img/embr.png");
+
+footer ul a{
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAuCAYAAACI91EoAAAFG0lEQVR42t2aW2hcVRSG5/Sm1cbGNqal3kaLYLXKVB+qRuwIHanWh9ib4DWWsaCgBqIIGog+1Co+FF+KpGBo8aEUpWhsqC02NuhDEQ1GbL2AUZtaak2mmdGQNJfx2/gPLDY5OiFOMqcHftbea69zzvrPuuxzJon9X0d/KnYNeDabiq2LRf2ARACZ2uzq2PeMP+5fHbvhfCBVB0bAYchVRp4QUbk1mwp+y6WCXyF15fkQoXlE5j0I5ZGbpI58lO6ljoaRn0NqfuQJQWIueMdFiYi9LHXkU28phHqRebDRkJ0FqqIaqYf+IRQMMl5jyC5k3oCcHzVCM0GLI0VNjVJTD5i1RcxbwaqoNYgKInTc1ZM631ZDqpq1Ey6SUaunZTg+BPJqFCchkRKpLUTvXORI4fB6pR6EAIBcDzgI0V7kH9jcEzVSTYpQGI6ToldELf1220hBshuSp0FBtyeKe9ThrCKF/BJSLyF/URqeQ24wthe75gGCsvicCEm9OawdU6QGkU+BN0x9tYM5usZ12O8AG8HMcqibWeAuMNfTLyYqp0TiG+YrkQdEaIB5jQhVgIPM20B1OX34pcE2b4+6nrWzIrGf9Rtd5Fw9QbYrq4gg72Q+hnyi3LrcUteqIXK3IXsbyKmmmsFyona60PU4Z7bO3exsymq/EoEqkIPYm4boGpdmIvEK8xU436caG0Y+iP2lyD3qjOlyi1TS1Q5O7jDptwlnh9CPItOs3QKpMyIJgrPojoJRkWoEQbkQmoFTH4Ex0GhIpeVwVqSXMe8utPjCXuWkA/a70F9ULqQa9PT7QI3RN+qdr4fxAnAV652OgIg52PFXYFE51FIaDMjRNrvHoN+niBzSfB42n4B8oa6w7xcxNx9kfvN0E3Jd60+XQsghNzdrCXBSnxtPGv3bjoCIjZByO1l/3RGT7ebpTLn7cCJn3rxzOFijWgrQ7Zb+R/tlyzzNQxhya8KnrrUjG9CPMd7L+bOn48Pvapz4QgU+7JxBuu+ierAEbFPTyIMt3rmuWfwE8iJ9BrlKhF/jWr9js2CqCQU4/apqopdxK878pYYwwLxHY4e28boZ6/tBXnbD2Dxd+PRH14p8GF0wlXUUB6e0r3yAXAG+Nk4W0uoQ69eOf41gPXZjejAOthaXc967YPFU1tJjxvEXpbsD7AId4H39NaPyX6I9A5vnQRfY6xNg/hzn31+EO00Gk4pUs0jluPlao78ALAGXTOR9EfsqX6+6fLyIS+SBMImDVDmiKP1Qqj2FSLpPmZumjlQqOKbN8ijy8hKmeTCFpGI/q7N1MF4YYlapPO82N+32cj8B2oUWsB1kZJuRLi5pr7E9hFQt6DTzfSBhbNsNEpLYISHznWrqM9KkOoSQvbiPFtkljS4EIulDxIo7Xw0r9LqQgkyHWndnSMu2T7ZTT7DOuxA6kfJsJX190tNnQhytA03FPwAIuXWINOtN4ATydj9K3klxs1bvpUYyxLa2SL3vaF3Ig+32bKXDV7tPqVGMMH6koC8+pXRR31bHhPT+vHjb+vH+1tSnN4q3JkxKmGZSSZ/UhZDZqb2qy73cmuV4WPop3EkhUQJS1lFbV5kwW5/YSvPT16PecrvX6eIi1GKLtwSkOkFcdhnrQygp/zcJIvSCUvBb5GXe/pP5rzZbAlJhSBRDyv4LgdLQry27uVmg001KQMq/X0YdM1Y0KUWsAkJb3TcRkXvGXzfpABiX+LD3m/Tv6BBbCz5kvCEWweNvUWZhOaY8rQIAAAAASUVORK5CYII=);
   width: 53px;
   height: 46px;
   display: block;
@@ -52,7 +53,7 @@
   transition: opacity .75s;
 }
 
-.embr_link a:hover{
+footer ul a:hover{
 	opacity: 1;
 }
 

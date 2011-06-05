@@ -1,5 +1,5 @@
 <?php
-class Blog extends CI_Controller {
+class Blog extends MY_Controller {
 
   public function __construct()
   {
@@ -46,6 +46,13 @@ class Blog extends CI_Controller {
     
     // Load the posts for the index page
     $data['posts'] = $this->blog_model->getPosts( 8, $page );
+
+	//Load the core plugins
+	$this->facebook_plugin( $data );
+    $this->legend_plugin( $data );
+    $this->debug_plugin( $data );
+    $this->mobile_plugin( $data );
+    $this->analytics_plugin( $data );
     
     // Write to the template and render
     $this->template->write('title', 'Blog');
@@ -98,11 +105,18 @@ class Blog extends CI_Controller {
       $this->load->view('blog/xml_posts', $data);
     else if ( $reblog == "json" )
       $this->load->view('blog/json_posts', $data);
-    else{    
-      // Write to the view
+    else{
+	  
+	  //Load the core plugins
+	  $this->facebook_plugin( $data );
+      $this->disqus_plugin( $data );
+      $this->legend_plugin( $data );
+      $this->debug_plugin( $data );
+      $this->mobile_plugin( $data );
+      $this->analytics_plugin( $data );
+      
+      // Write the essentials view
 	  $this->template->write('title', $data['post']['content']['title'] );
-	  $this->template->write_view('facebook_connect', 'blog/facebook', $data);
-      $this->template->write_view( 'comments', 'blog/comments', $data );
       $this->template->write_view( 'contents', 'blog/posts', $data );
       $this->template->render();
     }

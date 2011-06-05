@@ -50,6 +50,9 @@ function linker(){
       window.location = url
     }
   });
+
+  //Refresh plus one
+  gapi.plusone.go();
 }
 
 /*

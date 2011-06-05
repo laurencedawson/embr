@@ -66,7 +66,11 @@ $template['default']['regions'] = array(
    'comments',
    'recent',
    'related',
-   'facebook_connect'
+   'opengraph',
+   'legend',
+   'debug',
+   'mobile',
+   'analytics'
 );
 $template['default']['parser'] = 'parser';
 $template['default']['parser_method'] = 'parse';

@@ -12,13 +12,15 @@ class data_model extends CI_Model {
     $data['first_name'] = $this->config->item('first_name');
     $data['last_name'] = $this->config->item('last_name');
     $data['contact_email'] = $this->config->item('contact_email');
-    $data['style'] = $this->config->item('style');	
+    $data['style'] = $this->config->item('style');
     $data['disqus'] = $this->config->item('disqus');
-	$data['google_analytics'] = $this->config->item('google_analytics');
-    $data['not_found'] = $this->config->item('not_found');
-	$data['site_description'] = $this->config->item('site_description');
-	$data['debug'] = $this->config->item('debug');
-	$data['legend'] = $this->config->item('legend');
+    $data['google_analytics'] = $this->config->item('google_analytics');
+    $data['site_description'] = $this->config->item('site_description');
+    $data['debug'] = $this->config->item('debug');
+    $data['legend'] = $this->config->item('legend');
+    $data['opengraph'] = $this->config->item('opengraph');
+    $data['mobile'] = $this->config->item('mobile');
+    $data['plus_one'] = $this->config->item('plus_one');
     return $data;
   }
   
