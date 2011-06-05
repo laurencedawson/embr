@@ -71,4 +71,4 @@ echo "\nembr is ready to go, have fun!\n";
 
 # remove the installer
 cd ..
-rm install.php
+rm install.sh
