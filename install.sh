@@ -68,3 +68,7 @@ chmod 777 cache
 
 # all done
 echo "\nembr is ready to go, have fun!\n";
+
+# delete the installer
+cd ..
+rm install.sh
