@@ -54,7 +54,7 @@ $(".lg").click(function(){
 	    window.location = $(this).attr('href');
 	  else{
   	    //Incase of slow connections show the loading icon
-        $('header').append("<div class=\"loading\"><img src=\"img/load.gif\"/></div>");	
+        $('nav').prepend("<div class=\"loading left\"><img src=\"img/load.gif\"/></div>");	
         //Grab the admin link
 	    var l = $(this).attr('href')+"/index/min";
         //Set the admin button text to hide
