@@ -78,7 +78,8 @@ $(window).keypress(function(e){
         if( endreached&&!stop )
           $('.key_spacer').height( $('.key_spacer').height() + t.clientHeight + 20 );
         //Scroll down to the next blog post
-        $(window).scrollTop( t.offsetTop-20 );
+        $('html, body').animate({scrollTop:t.offsetTop-20}, 'fast');
+
       }else if(!stop)
         stop = true;			
 	}
@@ -93,12 +94,12 @@ $(window).keypress(function(e){
 		//Set the currently selected elements style
 		last = t.className; t.className+=" selected";
 		//Scroll up to the next blog post
-		$(window).scrollTop( t.offsetTop-20 );
+        $('html, body').animate({scrollTop:t.offsetTop-20}, 'fast');
 	  }else{
 		//Handles case to display header
 		if( typeof last != "undefined")
           $('.posts').find('.post').get(index).className = last;
-	 	$(window).scrollTop( 0 );
+        $('html, body').animate({scrollTop:0}, 'fast');
 		index=-1;
 	  }
 	}

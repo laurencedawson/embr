@@ -38,13 +38,13 @@ $(".lg").click(function(){
   //If cached, toggle the hide and show operations
   if( d ){
     if( !lg ){
-      $(this).text("Hide ");
-      $('header').find('.post').show();
+      $(this).text("Hide");
+      $('header').find('.post').fadeIn('fast');
       lg= true;
     }else{
 
       $(this).text("Admin ");
-      $('header').find('.post').hide();
+      $('header').find('.post').fadeOut('fast');
       lg = false;
     }
   }else{
@@ -63,8 +63,10 @@ $(".lg").click(function(){
         $.get(l,function(data){
           var d=$(data);
           var items=d.find('.post');
+          items.hide();
           $('.loading').remove();
           $('header').append( items );
+          items.fadeIn('fast');
         });
 	    //Set the cached & showing variables as true
 	    lg = true;
