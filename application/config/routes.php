@@ -38,7 +38,7 @@
 |
 */
 $route['default_controller'] = 'blog';
-$route['^((?!customize|update|tools|create|about|blog|tag|login|logout|contact|feed|rss|error|edit|delete|archive|admin|reblog)\S*)'] = "blog/posts/$1";
+$route['^((?!category|customize|update|tools|create|about|blog|tag|login|logout|contact|feed|rss|error|edit|delete|archive|admin|reblog)\S*)'] = "blog/posts/$1";
 $route['tag/(:any)'] = 'blog/tag/$1';
 $route['category/(:any)'] = 'blog/category/$1';
 $route['feed.xml$'] = "feed";

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <?=$opengraph?>
-  <title><?=$title?></title>
+  <title><?=($title?$title.' - ':'').$blog_title?></title>
   <link rel="stylesheet" href="<?=base_url().'themes/basics.css'?>"/>
   <link rel="stylesheet" href="<?=base_url().'themes/'.$style.'/style.css'?>"/>
   <link href="<?=base_url()?>rss" rel="alternate" type="application/rss+xml" title="<?=$blog_title?>"/>

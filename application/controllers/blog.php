@@ -48,14 +48,14 @@ class Blog extends MY_Controller {
     $data['posts'] = $this->blog_model->getPosts( 8, $page );
 
 	//Load the core plugins
-	$this->facebook_plugin( $data );
+    $this->facebook_plugin( $data );
     $this->legend_plugin( $data );
     $this->debug_plugin( $data );
     $this->mobile_plugin( $data );
     $this->analytics_plugin( $data );
     
     // Write to the template and render
-    $this->template->write('title', 'Blog');
+    $this->template->write('title', '');
     $this->template->write_view('contents', 'blog/index', $data);
     $this->template->render();
 

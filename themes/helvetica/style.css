@@ -151,7 +151,11 @@ nav a {
 }
 
 .post h2 {
-  margin-top:0px
+  border-bottom: solid 1px #ddd;
+  margin-top:0px;
+  margin-bottom: 15px;
+  padding:0;
+  padding-bottom: 15px;
 }
 
 
@@ -169,50 +173,32 @@ nav a {
 
 
 /* Blog Author */
-.info {
+.info, .picture_info {
   line-height: 1.4;
   font-size:11px;
   color:#999;
-  padding-top: 10px;
-  margin-top:0px;
-  margin-bottom:5px;
-  border-top: 1px #ccc solid
+
+  margin-top:10px;
+  margin-bottom:10px;
 }
 
-.picture_info{
-  line-height: 1.4;
-  font-size:11px;
-  color:#999;
+.info{
   padding-top: 10px;
-  margin-top:0px;
-  margin-bottom:10px
-}
-
-.info_image{
-  display:none
+  border-top: 1px #ddd solid	
 }
 
 .info p{
 	margin:0;
 }
 
-.info a{
+.info a, .picture_info a{
   border: 0
 }
-
-
-/* Post Tags */
-.tags {
-  clear: both;
-  margin:auto;
-  padding-top:10px
-}
-
 
 /* Post Footer */
 footer {
   clear: both;
-  padding-top:25px;
+  padding-top:45px;
   margin-bottom: 10px;
   margin-top:20px
 }
@@ -373,5 +359,14 @@ footer p{
 }
 
 .plus_one{
+  margin-left: 10px;
   float: right
+}
+
+.source{
+  float: right;
+}
+
+.source a{
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAXklEQVR42pWPgQkAMQgDf1rX6Bzu5E55FOVL0D4NpNKaw/oAuHIcrLUWOn8AhVUVJAL6CTMgItgcTTM7A6k97NXvLTCGaycGKhTNCvt77hSVAf5GAikGSP9A4xG48guwYm1lnu3+ZAAAAABJRU5ErkJggg==) center right no-repeat;padding-right:15px
 }
