@@ -323,23 +323,23 @@ AddCharset utf-8 .html .css .js .xml .json .rss
 # Custom Codeigniter rules
 # ----------------------------------------------------------------------
 
+RewriteBase /embr
+
 #stop libwww access
 RewriteCond %{HTTP_USER_AGENT} libwww [NC,OR]
 RewriteCond %{QUERY_STRING} ^(.*)=http [NC]
 RewriteRule ^(.*)$ – [F,L]
 
 #Remove duplicate entry point
-RewriteRule ^(blog(/index)?|index(\.php)?)/?$ / [L,R=301]
-RewriteRule ^(.*)/index/?$ ${lowercase:%{HTTP_HOST}}/$1 [L,R=301]
-RewriteRule ^blog/posts/(.+)$  ${lowercase:%{HTTP_HOST}}/$1 [L,R=301]
+RewriteRule ^(blog[/a-z0-9\-]*)/$ . [R=301,L]
+RewriteRule ^blog/posts/(.+)$  $1 [L,R=301]
 
-#Remove access to system
-RewriteCond %{REQUEST_URI} ^system.*
-RewriteRule ^(.*)$ ${lowercase:%{HTTP_HOST}} [L]
+#Remove access to the system and application folders
+RewriteRule ^(application[/a-z0-9\-]*)/$ . [R=303,L]
+RewriteRule ^(system[/a-z0-9\-]*)/$ . [R=303,L]
 
 # Removes trailing slashes (prevents SEO duplicate content issues)
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)/$ ${lowercase:%{HTTP_HOST}}/$1 [L,R=301]
+RewriteRule ^(.+)/$ $1 [L,R=301]
 
 #Remove index.php from urls
 RewriteCond %{REQUEST_FILENAME} !-f

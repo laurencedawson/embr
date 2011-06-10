@@ -54,6 +54,8 @@ $route['update'] = "admin/update";
 $route['create'] = "admin/create";
 $route['logout'] = "admin/logout";
 $route['login'] = "admin/login";
+$route['combined.css'] = "tools/combine_css";
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
