@@ -72,7 +72,7 @@ echo "\nEnter the subdirectory embr is installed in (default is root):"
 # get the password
 read line
 # set the password in the database file
-perl -pi -e 's/SUBDIRECTORY/'$line'/g' 'blog.php'
+perl -pi -e 's/SUBDIRECTORY/'$line'/g' '.htaccess'
 
 # all done
 echo "\nembr is ready to go, have fun!\n";
