@@ -35,6 +35,6 @@
   <script async src="<?=base_url()."js/plugins.js"?>"></script>
   <script async src="<?=base_url()."themes/".$style."/scripts.js"?>"></script>
   <script type="text/javascript" src="http://apis.google.com/js/plusone.js">{parsetags: 'explicit'}</script>
-
+</script>
 </body>
 </html>

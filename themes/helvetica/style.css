@@ -151,11 +151,9 @@ nav a {
 }
 
 .post h2 {
-  border-bottom: solid 1px #ddd;
   margin-top:0px;
-  margin-bottom: 15px;
   padding:0;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
 }
 
 
@@ -198,7 +196,7 @@ nav a {
 /* Post Footer */
 footer {
   clear: both;
-  padding-top:45px;
+  padding-top:20px;
   margin-bottom: 10px;
   margin-top:20px
 }
@@ -210,6 +208,7 @@ footer p{
 
 /* Pagination loading element */
 .loading {
+  margin-top:-10px;
   text-align:center 
 }
 
@@ -322,6 +321,30 @@ footer p{
   padding-bottom:0
 }
 
+/* Default style for an element in the settings */
+.settings_element{
+  padding-top: 3px;
+  border:1px #ccc solid;
+  padding-bottom: 2px;
+  width:430px;
+  padding-left:3px;
+  padding-right:3px
+}
+
+.settings_label{
+  margin:0;
+  padding: 0;
+  background-color: #fff;
+  color: #555;
+  border:0;
+  font-size: 12px;
+  float:left;
+  border-radius:2px;
+  background-color: #fff;
+  color: #555;
+  width: 90px
+}
+
 
 /* Default style for an element on the editor */
 .editor_element{
@@ -369,4 +392,8 @@ footer p{
 
 .source a{
   background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAXklEQVR42pWPgQkAMQgDf1rX6Bzu5E55FOVL0D4NpNKaw/oAuHIcrLUWOn8AhVUVJAL6CTMgItgcTTM7A6k97NXvLTCGaycGKhTNCvt77hSVAf5GAikGSP9A4xG48guwYm1lnu3+ZAAAAABJRU5ErkJggg==) center right no-repeat;padding-right:15px
+}
+
+.toolbox_element a:visited,.toolbox_element a {
+  color: #fff
 }

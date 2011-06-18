@@ -61,10 +61,18 @@ read line
 # set the password in the database file
 perl -pi -e 's/ADMINPASS/'$line'/g' 'blog.php'
 
-
 # set the cache as writable
 cd ..
 chmod 777 cache
+
+
+# ask for the install directory
+cd ..
+echo "\nEnter the subdirectory embr is installed in (default is root):"
+# get the password
+read line
+# set the password in the database file
+perl -pi -e 's/SUBDIRECTORY/'$line'/g' 'blog.php'
 
 # all done
 echo "\nembr is ready to go, have fun!\n";

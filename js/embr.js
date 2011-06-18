@@ -1,3 +1,36 @@
+
+var element;
+var t;
+var y;
+$(".settings_element").focus(function(){
+  $(this).keydown(function(e) {
+  element = $(this);
+
+if( e.keyCode=='13' || e.keyCode=='9' ){
+	if( t && y ){
+	  clearTimeout(t);
+	  element.css('background','url(http://localhost/embr/img/icons/check.gif)418px center no-repeat');
+	  y=false
+	}
+}else{
+
+    element.css('background','url(http://localhost/embr/img/load.gif)412px center no-repeat');
+   y = true;
+  
+	if( !t )
+	  t = setTimeout("element.css('background','url(http://localhost/embr/img/icons/check.gif)418px center no-repeat');y=false;",800);
+	else{
+	 clearTimeout(t);
+	 t = setTimeout("element.css('background','url(http://localhost/embr/img/icons/check.gif)418px center no-repeat');y=false;",800);
+	}
+
+}
+
+  });
+});
+
+
+
 /*
 	Show the reblog message
 */

@@ -15,7 +15,8 @@
 
 
 .bump{
-	margin-top:20px
+  clear:both;
+  margin-top:20px
 }
 
 
@@ -166,10 +167,6 @@ footer ul a:hover{
   list-style: none;
   color:#fff;
   background-color: rgba(0,0,0,0.5)
-}
-
-.toolbox_element a{
-  color: #fff
 }
 
 .debug{

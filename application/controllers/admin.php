@@ -316,4 +316,12 @@ class Admin extends CI_Controller{
     $this->new_post( prep_url(base64_decode($url)."/xml") );
   }
 
+
+  /*
+   * Updates the settings from the customize screens
+   */
+  function update_settings()
+  {
+  }
+
 }

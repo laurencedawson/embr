@@ -323,7 +323,7 @@ AddCharset utf-8 .html .css .js .xml .json .rss
 # Custom Codeigniter rules
 # ----------------------------------------------------------------------
 
-RewriteBase /
+RewriteBase /SUBDIRECTORY
 
 #stop libwww access
 RewriteCond %{HTTP_USER_AGENT} libwww [NC,OR]

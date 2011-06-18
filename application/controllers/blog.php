@@ -45,7 +45,7 @@ class Blog extends MY_Controller {
     $data = $this->data_model->getSiteData();
     
     // Load the posts for the index page
-    $data['posts'] = $this->blog_model->getPosts( 8, $page );
+    $data['posts'] = $this->blog_model->getPosts( 5, $page );
 
 	//Load the core plugins
     $this->facebook_plugin( $data );

@@ -33,9 +33,7 @@ function minify( $css ) {
   function combine_css()
   {
 	  $this->output
-        ->set_content_type('text/css')
-        ->set_output($this->minify(file_get_contents(base_url().'themes/basics.css').file_get_contents(base_url().'themes/'.$this->config->item('style').'/style.css')));
-
+        ->set_content_type('text/css')        ->set_output($this->minify(file_get_contents(base_url().'themes/basics.css').file_get_contents(base_url().'themes/'.$this->config->item('style').'/style.css')));
   }
 
 }
