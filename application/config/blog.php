@@ -21,4 +21,4 @@ $config['debug'] = FALSE;
 $config['legend'] = TRUE;
 $config['opengraph'] = FALSE;
 $config['mobile'] = FALSE;
-$config['plus_one'] = TRUE;
+$config['plus_one'] = FALSE;
