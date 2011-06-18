@@ -78,5 +78,4 @@ perl -pi -e 's/SUBDIRECTORY/'$line'/g' '.htaccess'
 echo "\nembr is ready to go, have fun!\n";
 
 # remove the installer
-cd ..
 rm install.sh
