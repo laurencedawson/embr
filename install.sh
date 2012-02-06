@@ -3,23 +3,23 @@
 # alert the user
 echo "Setting up embr";
 # grab a copy of ci reactor
-curl -OL https://github.com/philsturgeon/codeigniter-reactor/tarball/master
-# extract the tarball
-tar -zxvf master
-# remove the tarball
-rm master
+curl -OL http://codeigniter.com/download_files/reactor/CodeIgniter_2.1.0.zip
+# extract the zip
+unzip -qq CodeIgniter_2.1.0.zip
+# remove the zip
+rm CodeIgniter_2.1.0.zip
 # copy the system folder into embr
-cp -r philsturgeon-codeigniter-reactor-*/system system 
+cp -r CodeIgniter_2.1.0/system system 
 # merge cis application folder with embrs 
-cp -nr philsturgeon-codeigniter-reactor-*/application/* application/ 
+cp -nr CodeIgniter_2.1.0/application/* application/ 
 # remove the ci folder
-rm -r philsturgeon-codeigniter-reactor-*/
+rm -r CodeIgniter_2.1.0/
 # move into the app folder
 cd application
 # grab a copy of the ci templater
 curl -OL http://williamsconcepts.com/ci/codeigniter/libraries/template/Template_1.4.1.zip
 # unzip the archive
-unzip Template_1.4.1.zip -x config/* docs/* views/*
+unzip Template_1.4.1.zip -x config/* docs/* views/* -qq
 # remove the template folder
 rm Template_1.4.1.zip
 
@@ -68,7 +68,7 @@ chmod 777 cache
 
 # ask for the install directory
 cd ..
-echo "\nEnter the subdirectory embr is installed in (default is root):"
+echo "\nEnter the subdirectory embr is installed in (default is embr):"
 # get the password
 read line
 # set the password in the database file

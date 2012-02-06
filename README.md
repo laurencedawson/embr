@@ -8,7 +8,7 @@ A working text blog can be viewed [here](http://embr.co/demo/).
 
 ## Requires
 
-* [Codeigniter 2.0.2](http://codeigniter.com/download_files/reactor/CodeIgniter_2.0.2.zip)
+* [Codeigniter 2.0.2](http://codeigniter.com/download_files/reactor/CodeIgniter_2.1.0.zip)
 
 * [CI Template Library](http://williamsconcepts.com/ci/codeigniter/libraries/template/)
 
@@ -26,8 +26,12 @@ Blog settings can be changed by editing the file:
 
 	application/config/blog.php
 
-## In Development
+## Roadmap
 
+- Rewrite template system from scratch
+- Work on a new basic theme
+- Separate the front-end and backend to allow for easier theme creation
+- Support "pages" of non-blog content such as an About me page
 - Post "reblogging" across self hosted embr blogs
 
 
