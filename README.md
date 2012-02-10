@@ -8,7 +8,7 @@ A working text blog can be viewed [here](http://embr.co/demo/).
 
 ## Requires
 
-* [Codeigniter 2.0.2](http://codeigniter.com/download_files/reactor/CodeIgniter_2.1.0.zip)
+* [Codeigniter 2.1.0](http://codeigniter.com/download_files/reactor/CodeIgniter_2.1.0.zip)
 
 * [CI Template Library](http://williamsconcepts.com/ci/codeigniter/libraries/template/)
 
