@@ -2,10 +2,6 @@
 
 Embr is a blog engine / tumblelog built using the CodeIgniter framework designed to be lightweight and fast. Currently embr supports text and image posts, provides a simple CMS, Disquss commenting, infinite-scrolling, keyboard navigation, Facebook opengraph tags and finally is in the final stages of allowing custom themes and "reblogging" of posts. Installation is designed to be as simple as possible; a standard LAMP setup should do just fine. 
 
-## Example
-
-A working text blog can be viewed [here](http://embr.co/demo/).
-
 ## Requires
 
 * [Codeigniter 2.1.0](http://codeigniter.com/download_files/reactor/CodeIgniter_2.1.0.zip)
